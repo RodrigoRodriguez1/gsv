@@ -4,11 +4,14 @@
 
 
 
-<div class="section-vest" id="vestWp">
+
+<div  class="container " id="vestWp">
     <!-- TODOS OS ITENS SERÃO ADICIONADOS AQUI, DINAMICAMENTE -->
 
-    <div class="vest-wraper">
-        <div  *ngFor="let item of roupas; " > 
+    <div class="row ">
+        <div class="col-md-4 col-sm-6 col-12
+        " *ngFor="let item of roupas; " > 
+
         <div  class="vest-single productHy fotoCategoriaTshirt"></div>
         <div class="info-product">
             <h3>{{item.nome}}</h3>
@@ -17,5 +20,3 @@
         </div>
     </div>
 </div>
-
-</div><!--section-vest-->
