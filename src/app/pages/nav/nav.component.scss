@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;1,100&display=swap');
+
+.navBar{
+  height: 56px !important;
+  background-color: #e0e0e0;
+  border-bottom: 4px solid #bdbdbd;
+  font-family: 'Lato' !important;
+  position: relative;
+  .textPrincipal{
+    font-size: 26px;
+    font-family: 'Lato';
+    font-weight: 700;
+    color: black;
+  }
+  ul{
+    padding: 0 20px;
+    a{
+      font-size: 16;
+      color: black;
+    }
+    .fa-instagram{
+      font-size: 20px;
+      color: white;
+    }
+  }
+ 
+}

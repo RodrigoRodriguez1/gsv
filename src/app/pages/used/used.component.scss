@@ -1,0 +1,63 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lato';
+}
+
+html,body{  
+    height: 100%;
+}
+
+.clear{
+    clear: both;
+}
+
+.container{
+    max-width: 1280px;
+    padding: 0 2%;
+    margin: 0 auto;
+}
+
+
+
+.vestWelcome{
+    text-align: center;
+    padding: 65px;
+    font-size: 22px;
+}
+
+.vestWelcome h2{
+    margin: 0 auto;
+    width: 50%;
+    border-bottom: 1px solid black;
+}
+
+
+.section-vest{
+    text-align: center;
+    padding: 10px 120px;
+}
+
+
+.vest-wraper{
+    display: inline-block;
+    width: 33%;
+}
+
+
+.vest-single{
+    display: inline-block;
+    width:75%;
+    height: 348px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    /*background-image: url('../images/Categoria_roupa.jpg');*/
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+.fotoCategoriaTshirt{
+    background-image: url('../../../images/Categoria_roupa.jpg');
+}

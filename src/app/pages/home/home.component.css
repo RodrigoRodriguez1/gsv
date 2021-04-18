@@ -1,0 +1,192 @@
+
+
+.foto{
+
+    height: 356px !important;
+    width:auto;
+    width: 900px !important;
+    
+    background-image: url('../../../images/image_data_01.jpg');
+}
+
+.foto2{
+
+    height: 356px !important;
+    width:auto;
+    width: 900px !important;
+    
+    background-image: url('../../../images/image_data_02.jpg');
+}
+
+.foto3{
+
+    height: 356px !important;
+    width:auto;
+    width: 900px !important;
+    
+    background-image: url('../../../images/image_data_03.jpg');
+}
+
+.fotoCategoriaVest{
+    background-image: url('../../../images/Categoria_roupa.jpg');
+    padding: 10px;
+}
+
+.fotoCategoriaShoes{
+    background-image: url('../../../images/Categoria_tenis.jpg');
+    margin-right: 3PX;
+
+}
+
+
+
+.clear{
+    clear: both;
+}
+
+.containerSlide{
+    max-width: 1280px;
+    padding: 0 2%;
+    margin: 0 auto;
+}
+
+
+.menu-desktop{
+    float: right;
+    position: relative;
+    right: 0;
+    top: 50%;
+    transform: translate(-0%,-120%);
+    transform:translate(-0%,-120%);
+   transform:translate(-0%,-120%);
+}
+
+.menu-desktop ul li{
+    display: inline-block;
+    padding: 0 20px;
+    cursor: pointer;
+}
+
+
+.images-data{
+    position: relative;
+    right:0;
+    top:50%;
+    transform: translate(0%,10%);
+    transform:translate(0%,10%);
+   transform:translate(0%,10%);
+}
+
+
+.image-data-single{
+    display: none;
+    margin: 0 auto;
+    width: 75%;
+    height:360px;
+    position: absolute;
+    right:0;
+    top:50%;
+    transform: translate(-15%,10%);
+    transform:translate(-20%,10%);
+    transform:translate(-20%,10%);
+    background-size: cover;
+    background-position:center;
+    background-repeat: no-repeat;
+}
+.categorias-home{
+    margin: 0 auto;
+    margin-top: 410px;
+    width: 100%;
+}
+
+.categorias-home-content{
+    text-align: center;
+    padding: 10px 0;
+}
+
+.categorias-home-content h2{
+    text-align: center;
+    padding: 40px 0;
+}
+
+.categorias-home .categorias-home-content .categorias-single{
+    padding: 105px;
+    display: inline-block;
+    cursor: pointer;
+    /*background-image: linear-gradient(#ff00d4, #b31982);*/
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: white;
+    transition: 0.5s;
+    font-size: 22px;
+}
+
+.categorias-single:hover{
+    transform: translateY(-12%);
+}
+
+.product-home{
+    margin-top: 120px;
+    text-align: center;
+    padding: 20px;
+    background-color: rgba(230,230,230,0.4);
+    min-height: 600px;
+}
+
+.arrows-change{
+    font-size: 38px;
+    color: gray;
+}
+
+.arrows-change .fa-chevron-circle-right{
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.arrows-change .fa-chevron-circle-left{
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+
+.content-wraper{
+    display: none;
+}
+
+.product-wraper{
+    display: inline-block;
+    width: 33%;
+    padding: 20px 0;
+}
+
+
+
+.product-content-single{
+    display: inline-block;
+    width:70%;
+    height: 348px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+}
+
+
+.info-product{
+   text-align: center;
+}
+
+.info-product h3{
+   cursor: pointer;
+}
+
+
+.espaco{
+    height: 100px;
+    background-color: white;
+}
+
+.destaque{
+    background-color: rgba(230,230,230,0.4)
+}

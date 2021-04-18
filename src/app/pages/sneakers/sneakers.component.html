@@ -1,0 +1,25 @@
+<div class="shoes-welcome">
+  <h2>CONFIRA NOSSOS TÊNIS</h2>
+</div><!--shoes-welcome-->
+
+
+
+
+<div class="tenis-section" id="tenis-wp">
+  <!-- TODOS OS ITENS SERÃO ADICIONADOS AQUI, DINAMICAMENTE -->
+
+  <div class="tenis-section-wraper">
+    <div  *ngFor="let item of tenis; " >
+      
+    <div class="fotoCategoriaShoes tenis-single produtoHr">
+    </div><!--tenis-single-->
+
+    <div class="info-product">
+        <h3>{{item.nome}}</h3>
+        <p>Gênero</p>
+        <p style="color:#2b922c;">R$ 200</p>
+    </div><!--info-product-->
+    </div>
+    </div><!--tenis-section-wraper-->
+
+</div><!--tenis-section-->

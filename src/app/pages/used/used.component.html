@@ -1,0 +1,21 @@
+<div class="vestWelcome">
+    <h2>CONFIRA NOSSOS USADOS</h2>
+</div><!--vestWelcome-->
+
+
+
+<div class="section-vest" id="vestWp">
+    <!-- TODOS OS ITENS SERÃO ADICIONADOS AQUI, DINAMICAMENTE -->
+
+    <div class="vest-wraper">
+        <div  *ngFor="let item of roupas; " > 
+        <div  class="vest-single productHy fotoCategoriaTshirt"></div>
+        <div class="info-product">
+            <h3>{{item.nome}}</h3>
+            <p>Genero</p>
+            <p style="color:#2b922c;">R$ 200</p>
+        </div>
+    </div>
+</div>
+
+</div><!--section-vest-->
