@@ -1,0 +1,129 @@
+<form [formGroup]="registerForm">
+    <div class="container">
+
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="text-description">
+                    Dados Pessoais
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+
+                <mat-form-field>
+                    <mat-label>Nome:</mat-label>
+                    <input formControlName="nome" matInput type="text"
+                          required>
+                </mat-form-field>
+
+                <mat-form-field>
+                    <mat-label>Sobrenome:</mat-label>
+                    <input formControlName="sobrenome" matInput type="text"
+                        name="sobrenome" id="sobrenome"  required>
+                </mat-form-field>
+
+                <mat-form-field>
+                    <mat-label>CPF:</mat-label>
+                    <input matInput
+                        maxlength="18" formControlName="cpf" 
+                        mask="000.000.000-00" required autocomplete="off">
+                </mat-form-field>
+
+
+                <mat-form-field>
+                    <mat-label>Data De Nascimento:</mat-label>
+                    <input formControlName="dataNascimento" matInput type="date" name="nascimento" id="nascimento"
+                       required>
+                </mat-form-field>
+
+                <mat-form-field>
+                    <mat-label>Telefone:</mat-label>
+                    <input formControlName="telefone" matInput type="tel" name="tel" 
+                        mask="(00)00000-0000" id="tel" required>
+                </mat-form-field>
+
+                <mat-form-field>
+                    <mat-label>E-mail:</mat-label>
+                    <input formControlName="email" matInput type="email" name="email" id="email"
+                       required>
+                </mat-form-field><br><br>
+
+                <mat-form-field>
+                    <mat-label>Senha:</mat-label>
+                    <input formControlName="senha" matInput type="password" name="senha" id="senha"
+                        minlength="6" maxlength="8" required>
+                </mat-form-field>
+
+                <mat-form-field>
+                    <mat-label>Confirmar Senha:</mat-label>
+                    <input formControlName="confirmarSenha" matInput type="password" name="confirmarSenha"
+                        minlength="6" maxlength="8"  id="confirmarSenha" required>
+                </mat-form-field>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="text-description">
+                    Endereço
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+
+                <mat-form-field>
+                    <mat-label>CEP:</mat-label>
+                    <input formControlName="cep" matInput  mask="00000-000 " name="cep"
+                        id="cep" (blur)="consultaCEP($event.target.value)" required>
+                </mat-form-field>
+
+                <mat-form-field>
+                    <mat-label>Rua:</mat-label>
+                    <input style="text-transform: capitalize;" formControlName="logradouro" matInput type="text"
+                        name="logradouro" id="logradouro" required>
+                </mat-form-field>
+
+                <mat-form-field>
+                    <mat-label>Número:</mat-label>
+                    <input formControlName="numero" matInput  name="numero"
+                        required>
+                </mat-form-field>
+
+                <mat-form-field>
+                    <mat-label>Complemento:</mat-label>
+                    <input style="text-transform: capitalize;" formControlName="complemento" matInput
+                       name="complemento">
+                </mat-form-field>
+
+                <mat-form-field>
+                    <mat-label>Bairro:</mat-label>
+                    <input style="text-transform: capitalize;" formControlName="bairro" matInput
+                        name="bairro" required>
+                </mat-form-field>
+
+                <mat-form-field>
+                    <mat-label>Cidade:</mat-label>
+                    <input style="text-transform: capitalize;" formControlName="cidade" matInput
+                       name="cidade" required>
+                </mat-form-field>
+
+                <mat-form-field>
+                    <mat-label>Estado:</mat-label>
+                    <input style="text-transform: uppercase;" formControlName="estado" matInput
+                        name="uf" required>
+                </mat-form-field>
+            </div>
+        </div>
+        <a>
+            <button  type="button" (click)="save()" class="btn btn-cadastrar btn-lg"  >
+                Cadastrar
+            </button><br>
+        </a>
+    </div>
+</form>

@@ -1,0 +1,38 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h2>Tela de login</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <form>
+
+                <mat-form-field>
+                    <mat-label>E-mail:</mat-label>
+                    <input matInput type="email"  required>
+                </mat-form-field><br>
+
+                <mat-form-field>
+                    <mat-label>Senha:</mat-label>
+                    <input matInput type="password"  required>
+                </mat-form-field><br>
+               
+                <div>
+                    <button class="btn" mat-raised-button color="primary"> Login <mat-icon>send</mat-icon></button>
+                <!-- <button type="button" class="btn btn-primary">
+                    Login
+                    <mat-icon aria-label="Example home icon">send</mat-icon>
+
+                </button> -->
+
+
+                <a  class="link"  [routerLink]="['/register']"  >
+                    É novo aqui?
+                </a>
+            </div>
+
+            </form>
+        </div>
+    </div>
+</div>
