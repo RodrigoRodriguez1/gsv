@@ -6,31 +6,26 @@
     </div>
     <div class="row">
         <div class="col-md-12">
-            <form>
+            <form [formGroup]="registerForm">
 
                 <mat-form-field>
                     <mat-label>E-mail:</mat-label>
-                    <input matInput type="email"  required>
+                    <input matInput formControlName="login" type="email" required>
                 </mat-form-field><br>
 
                 <mat-form-field>
                     <mat-label>Senha:</mat-label>
-                    <input matInput type="password"  required>
+                    <input matInput formControlName="password" type="password" required>
                 </mat-form-field><br>
-               
+
                 <div>
-                    <button class="btn" mat-raised-button color="primary"> Login <mat-icon>send</mat-icon></button>
-                <!-- <button type="button" class="btn btn-primary">
-                    Login
-                    <mat-icon aria-label="Example home icon">send</mat-icon>
+                    <button class="btn" (click)="onLogin()" mat-raised-button color="primary"> Login <mat-icon>send
+                        </mat-icon></button>
 
-                </button> -->
-
-
-                <a  class="link"  [routerLink]="['/register']"  >
-                    É novo aqui?
-                </a>
-            </div>
+                    <a class="link" [routerLink]="['/register']">
+                        É novo aqui?
+                    </a>
+                </div>
 
             </form>
         </div>

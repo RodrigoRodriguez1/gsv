@@ -13,10 +13,11 @@ export class UsersService {
     constructor(private http: HttpClient,
         private snackBar: MatSnackBar) { }
 
-    url = 'http://localhost:3000/usuarios/cadastro'
+    urlProd = "https://gsvapi.herokuapp.com/usuarios/"  
+    urlLocal = "http://localhost:3000/usuarios/"  
 
     createUser(request){
-        return this.http.post(this.url, request)
+        return this.http.post(this.urlProd + 'cadastro', request)
     }
 
     showMessage(msg: string, isErro: boolean = false): void {
