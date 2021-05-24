@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
+import { HttpClientModule } from '@angular/common/http';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -26,8 +28,10 @@ import { UsedComponent } from './pages/used/used.component';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    AngularFontAwesomeModule
-
+    AngularFontAwesomeModule,
+    HttpClientModule,
+    MatSnackBarModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
