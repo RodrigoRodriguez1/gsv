@@ -20,13 +20,4 @@ export class UsersService {
         return this.http.post(this.urlProd + 'cadastro', request)
     }
 
-    showMessage(msg: string, isErro: boolean = false): void {
-        this.snackBar.open(msg, 'X', {
-            duration: 4000,
-            horizontalPosition: "right",
-            verticalPosition: "top",
-            panelClass: isErro ? ['msg-erro'] : ['msg-success']
-        })
-    }
-
 }
