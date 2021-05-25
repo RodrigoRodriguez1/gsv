@@ -13,6 +13,15 @@ import { SneakersComponent } from './pages/sneakers/sneakers.component';
 import { FooterComponent } from './pages/footer/footer.component';
 import { ClothingComponent } from './pages/clothing/clothing.component';
 import { UsedComponent } from './pages/used/used.component';
+import { LoginComponent } from './pages/login/login.component';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'; 
+import {
+  MatIconModule,
+  MatInputModule,
+} from '@angular/material';
+import { RegisterComponent } from './pages/register/register.component';
+import { MaterialModule } from './modules/material/material.module';
 
 @NgModule({
   declarations: [
@@ -23,6 +32,8 @@ import { UsedComponent } from './pages/used/used.component';
     FooterComponent,
     ClothingComponent,
     UsedComponent,
+    LoginComponent,
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,
@@ -32,8 +43,15 @@ import { UsedComponent } from './pages/used/used.component';
     HttpClientModule,
     MatSnackBarModule,
     
+    MatFormFieldModule,
+    FormsModule,
+    MatInputModule,
+    ReactiveFormsModule,
+    MatIconModule,
+    MaterialModule,
+    HttpClientModule,
   ],
-  providers: [],
+  providers: [HttpClientModule],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
