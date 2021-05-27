@@ -12,42 +12,8 @@ export class ClothingComponent implements OnInit {
     private ProdutosService: ProdutosService,
   ) { }
 
-  roupas = [
-    {
-        id: 0,
-        nome: 'Nome do Produto',
-        img: '../images/Categoria_roupa.jpg',
-        genero: 'Gênero',
-        preco: 200.00,
-        link: ''
-    },
-    {
-        id: 1,
-        nome: 'Nome do Produto',
-        img: '../images/Categoria_roupa.jpg',
-        genero: 'Gênero',
-        preco: 200.00,
-        link: ''
-    },
-    {
-        id: 2,
-        nome: 'Nome do Produto',
-        img: '../images/Categoria_roupa.jpg',
-        genero: 'Gênero',
-        preco: 200.00,
-        link: ''
-    },
-    {
-        id: 3,
-        nome: 'Nome do Produto',
-        img: '../images/Categoria_roupa.jpg',
-        genero: 'Gênero',
-        preco: 200.00,
-        link: ''
-    }
-]
-
-produtos
+  itemsCarrinho = []
+  produtos
 
   ngOnInit() {
 
@@ -60,6 +26,35 @@ produtos
         console.log(error);
       }
     );
+  }
+
+  adicionarCarrinho(idProduto, nome, preco, quantidade) {
+
+    let conjunto = {
+      'idProduto': idProduto,
+      'Nome': nome,
+      'Preco': preco,
+      'Quantidade': quantidade
+    }
+
+    if (JSON.parse(localStorage.getItem('carrinho')) == null) {
+
+      this.itemsCarrinho = []
+      this.itemsCarrinho.push(conjunto)
+      localStorage.setItem('carrinho', JSON.stringify(this.itemsCarrinho))
+      localStorage.getItem('carrinho')
+
+    } else {
+
+      this.itemsCarrinho = JSON.parse(localStorage.getItem('carrinho'))
+      this.itemsCarrinho.push(conjunto)
+      localStorage.setItem('carrinho', JSON.stringify(this.itemsCarrinho))
+      localStorage.getItem('carrinho')
+
+    }
+
+    let fodase = JSON.parse(localStorage.getItem('carrinho'))
+
   }
 
 }

@@ -6,12 +6,14 @@
   border-bottom: 4px solid #bdbdbd;
   font-family: 'Lato' !important;
   position: relative;
-  .textPrincipal{
+
+.textPrincipal{
     font-size: 26px;
-    font-family: 'Lato';
-    font-weight: 700;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
     color: black;
   }
+  
   ul{
     padding: 0 20px;
     a{

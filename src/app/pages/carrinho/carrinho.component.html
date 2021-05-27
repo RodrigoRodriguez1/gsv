@@ -1,0 +1,9 @@
+<div class="container">
+    <div class="row">
+        <div class="col text-center">
+            <h1>Carrinho de Compras</h1>
+
+            <div *ngFor="let i of itemsCarrinho; let ind = index">Produto: {{i.Nome}} - Preço: {{i.Preco | currency:'BRL'}} - Quantidade disponivel: {{i.Quantidade}} <button (click)="removerItem(ind)">-</button></div>
+        </div>
+    </div>
+</div>

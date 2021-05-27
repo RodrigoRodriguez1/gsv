@@ -12,9 +12,19 @@ export class NavComponent implements OnInit {
   constructor(private authService: AuthService, private router: Router) { }
 
   usuario;
+  qtdCarrinhoParse;
+  qtdCarrinho;
 
   ngOnInit() {
     this.takeUser()
+
+    this.qtdCarrinhoParse = JSON.parse(localStorage.getItem('carrinho'))
+    if (JSON.parse(localStorage.getItem('carrinho')) == null) {
+      this.qtdCarrinho = 0
+    } else {
+      this.qtdCarrinho = this.qtdCarrinhoParse.length
+
+    }
   }
 
   takeUser() {
@@ -25,6 +35,12 @@ export class NavComponent implements OnInit {
     this.authService.logoutUser()
     this.router.navigate(['/']).then(nav => {
       window.location.reload();
+    });
+  }
+
+  areacliente() {
+    this.router.navigate(['/area-cliente']).then(nav => {
+      // window.location.reload();
     });
   }
 

@@ -29,19 +29,28 @@
         </li>
 
         <li class="nav-item" *ngIf="usuario == null">
-          
           <a class="nav-link" [routerLink]="['/login']">Login
           <i class="fa fa-user" aria-hidden="true"></i>
         </a>
         </li>
 
-        <li class="nav-item" *ngIf="usuario != null" (click)="logout()"> 
-          
-          <a class="nav-link" > {{usuario.nome}}
-            <i class="fas fa-sign-out-alt"></i>
-
-
+        <li class="nav-item" *ngIf="usuario != null" (click)="areacliente()"> 
+          <a class="nav-link"> {{usuario.nome}}
+            <i class="fas fa-user"></i>
         </a>
+        </li>
+
+        <li class="nav-item" *ngIf="usuario != null" (click)="logout()"> 
+          <a class="nav-link"> Sair &nbsp;
+          <i class="fas fa-sign-out-alt"></i>
+        </a>
+        </li>
+        &nbsp;&nbsp;
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/carrinho']">
+            <i class="fas fa-shopping-cart"></i>
+            <span style="margin-left: 5px;">({{qtdCarrinho}})</span>
+          </a>
         </li>
 
       </ul>

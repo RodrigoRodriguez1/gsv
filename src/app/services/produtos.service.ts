@@ -18,8 +18,6 @@ export class ProdutosService {
   constructor(private http: HttpClient, private snackBar: MatSnackBar) { }
 
   public getProdutos() {
-    console.log("eaeaeae")
-    this.showMessage('Salve!', true)
     return this.http.get(`${this.apiUrl}/products/todosProdutos`)
   }
 

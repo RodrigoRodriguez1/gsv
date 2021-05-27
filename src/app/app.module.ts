@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { HttpClientModule } from '@angular/common/http';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { NgxMaskModule, IConfig } from 'ngx-mask'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -22,6 +23,8 @@ import {
 } from '@angular/material';
 import { RegisterComponent } from './pages/register/register.component';
 import { MaterialModule } from './modules/material/material.module';
+import { AreaClienteComponent } from './pages/area-cliente/area-cliente.component';
+import { CarrinhoComponent } from './pages/carrinho/carrinho.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +37,8 @@ import { MaterialModule } from './modules/material/material.module';
     UsedComponent,
     LoginComponent,
     RegisterComponent,
+    AreaClienteComponent,
+    CarrinhoComponent,
   ],
   imports: [
     BrowserModule,
@@ -50,6 +55,7 @@ import { MaterialModule } from './modules/material/material.module';
     MatIconModule,
     MaterialModule,
     HttpClientModule,
+    NgxMaskModule.forRoot(),
   ],
   providers: [HttpClientModule],
   bootstrap: [AppComponent]
