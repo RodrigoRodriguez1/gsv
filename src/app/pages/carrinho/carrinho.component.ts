@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-carrinho',
@@ -7,24 +8,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CarrinhoComponent implements OnInit {
 
-  constructor() { }
+  constructor(private authService: AuthService) { }
+
+  usuario
 
   itemsCarrinho
-  itemsCarrinhoRemovido
 
   ngOnInit() {
-    this.itemsCarrinho = JSON.parse(localStorage.getItem('carrinho'))
+    this.takeUser()
 
-    console.log(this.itemsCarrinho)
+    this.itemsCarrinho = JSON.parse(localStorage.getItem('carrinho'))
   }
 
   removerItem(i) {
     console.log(i)
     this.itemsCarrinho = JSON.parse(localStorage.getItem('carrinho'))
 
-    this.itemsCarrinhoRemovido = this.itemsCarrinho.splice(i)
-    console.log(this.itemsCarrinhoRemovido)
-    // localStorage.setItem('carrinho', JSON.stringify(this.itemsCarrinhoRemovido))
+    this.itemsCarrinho.splice(i, 1)
+    localStorage.setItem('carrinho', JSON.stringify(this.itemsCarrinho))
+  }
+
+  takeUser() {
+    this.usuario = this.authService.getCurrentUser();
   }
 
 }

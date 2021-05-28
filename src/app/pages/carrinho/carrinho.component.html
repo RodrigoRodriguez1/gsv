@@ -2,8 +2,17 @@
     <div class="row">
         <div class="col text-center">
             <h1>Carrinho de Compras</h1>
-
             <div *ngFor="let i of itemsCarrinho; let ind = index">Produto: {{i.Nome}} - Preço: {{i.Preco | currency:'BRL'}} - Quantidade disponivel: {{i.Quantidade}} <button (click)="removerItem(ind)">-</button></div>
+
+            <!-- Botoes de compra -->
+            <div class="login" *ngIf="usuario == null">
+                <h1>É necessário realizar login para finalizar a compra</h1>
+                <button class="btn btn-default" routerLink="/login">Login</button>
+            </div>
+
+            <div class="login" *ngIf="usuario != null">
+                <button class="btn btn-default" routerLink="/login">Finalizar Compra</button>
+            </div>
         </div>
     </div>
 </div>
