@@ -47,7 +47,7 @@
         </li>
         &nbsp;&nbsp;
         <li class="nav-item">
-          <a class="nav-link" [routerLink]="['/carrinho']">
+          <a class="nav-link" (click)="carrinho()">
             <i class="fas fa-shopping-cart"></i>
             <span style="margin-left: 5px;">({{qtdCarrinho}})</span>
           </a>

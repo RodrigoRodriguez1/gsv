@@ -5,6 +5,7 @@ import { CarrinhoComponent } from './pages/carrinho/carrinho.component';
 import { ClothingComponent } from './pages/clothing/clothing.component';
 import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
+import { MetodosPagamentoComponent } from './pages/metodos-pagamento/metodos-pagamento.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { SneakersComponent } from './pages/sneakers/sneakers.component';
 import { UsedComponent } from './pages/used/used.component';
@@ -19,7 +20,8 @@ const routes: Routes = [
    { path: 'login', component: LoginComponent},
    { path: 'register', component: RegisterComponent},
    { path: 'area-cliente', component: AreaClienteComponent},
-   { path: 'carrinho', component: CarrinhoComponent}
+   { path: 'carrinho', component: CarrinhoComponent},
+   { path: 'metodo', component: MetodosPagamentoComponent},
 
 ];
 

@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { Validators, FormBuilder, FormGroup, ValidatorFn } from '@angular/forms'
 import { AuthService } from 'src/app/services/auth.service';
 import { MatSnackBar } from '@angular/material';
+import * as $ from 'jquery';
 
 @Component({
   selector: 'app-login',
@@ -20,6 +21,14 @@ export class LoginComponent implements OnInit {
 
 
   ngOnInit() {
+    // ################################################################
+    // Tirando o finalizar compra caso necessario (ajuste tecnico)
+    $(function(){
+      document.getElementById("finalizar").style.display = "none";
+    });
+    // ################################################################
+
+
     this.registerForm = this.formBuilder.group({
       login: ['', Validators.required],
       password: ['', Validators.required],

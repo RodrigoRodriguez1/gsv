@@ -3,6 +3,7 @@ import { Validators, FormBuilder, FormGroup, ValidatorFn } from '@angular/forms'
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { UsersService } from 'src/app/services/user.service';
+import * as $ from 'jquery';
 
 @Component({
   selector: 'app-register',
@@ -17,6 +18,15 @@ export class RegisterComponent implements OnInit {
   cadastroUsuario
 
   ngOnInit() {
+    // ################################################################
+    // Tirando o finalizar compra caso necessario (ajuste tecnico)
+    $(function(){
+      document.getElementById("finalizar").style.display = "none";
+    });
+    // ################################################################
+
+
+
     this.registerForm = this.formBuilder.group({
       nome: ['', Validators.required],
       sobrenome: ['', Validators.required],

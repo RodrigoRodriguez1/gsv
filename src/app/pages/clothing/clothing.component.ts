@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProdutosService } from 'src/app/services/produtos.service';
+import * as $ from 'jquery';
 
 @Component({
   selector: 'app-clothing',
@@ -16,6 +17,13 @@ export class ClothingComponent implements OnInit {
   produtos
 
   ngOnInit() {
+
+    // ################################################################
+    // Tirando o finalizar compra caso necessario (ajuste tecnico)
+    $(function(){
+      document.getElementById("finalizar").style.display = "none";
+    });
+    // ################################################################
 
     this.ProdutosService.getProdutos().subscribe(
       (data) => {

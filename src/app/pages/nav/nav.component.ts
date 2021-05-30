@@ -44,4 +44,12 @@ export class NavComponent implements OnInit {
     });
   }
 
+  async carrinho() {
+    await localStorage.removeItem("globalId")
+
+    this.router.navigate(['/carrinho']).then(nav => {
+      window.location.reload()
+    });
+  }
+
 }

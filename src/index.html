@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-br">
 <head>
   <meta charset="utf-8">
@@ -20,4 +20,63 @@
   <app-root></app-root>
   <noscript>Please enable JavaScript to continue using this application.</noscript>
 </body>
+
+<script src="https://sdk.mercadopago.com/js/v2"></script>
+<script>
+
+  var checkout
+  console.log("salve")
+  // Adicione as credenciais do SDK
+    const mp = new MercadoPago('TEST-b9574a10-5632-470c-8074-6182ca38b9f9', {
+        locale: 'pt-BR'
+  });
+
+  this.orderData = {
+      quantity: 1,
+      description: "Compra GSV",
+      price: localStorage.getItem('somado')
+    };
+
+
+
+(async () => {
+    const rawResponse = await fetch("http://localhost:3000/pagamentos/create_preference", {
+      method: "POST",
+      headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(this.orderData),
+})
+
+const content = await rawResponse.json();
+
+console.log(content);
+
+localStorage.setItem("globalId", content.response.globalid)
+
+})();
+
+var globalId = localStorage.getItem("globalId")
+// console.log("globalId que vai ser chamado: ")
+// console.log(globalId)
+
+  // Inicialize o checkout
+
+  console.log("GLOBAL ID QUE VAI PUXAR: ")
+  console.log(localStorage.getItem("globalId"))
+  this.checkout = mp.checkout({
+  preference: {
+      id: localStorage.getItem("globalId")
+  },
+  theme: {
+        elementsColor: '#00ebc6',
+        headerColor: '#00ebc6',
+    }
+}); 
+</script>
+<button id="finalizar" class="btn btn-default" style="display: flex; margin: auto; position: relative; top: -130px; background: #828282; color: white;" onclick="checkout.open()">Mercado Pago</button>
+<script>
+document.getElementById("finalizar").style.display = "none";
+</script>
 </html>

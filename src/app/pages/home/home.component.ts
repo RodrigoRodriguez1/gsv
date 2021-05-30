@@ -14,6 +14,9 @@ export class HomeComponent implements OnInit {
 
     $(function(){
 
+      // TIRANDO O FINALIZAR COMPRA
+      document.getElementById("finalizar").style.display = "none";
+
 
       // VARIÁVEIS DA FUNÇÃO "IMAGE DATA"
       var curData = 0;

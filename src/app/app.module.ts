@@ -25,6 +25,7 @@ import { RegisterComponent } from './pages/register/register.component';
 import { MaterialModule } from './modules/material/material.module';
 import { AreaClienteComponent } from './pages/area-cliente/area-cliente.component';
 import { CarrinhoComponent } from './pages/carrinho/carrinho.component';
+import { MetodosPagamentoComponent } from './pages/metodos-pagamento/metodos-pagamento.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { CarrinhoComponent } from './pages/carrinho/carrinho.component';
     RegisterComponent,
     AreaClienteComponent,
     CarrinhoComponent,
+    MetodosPagamentoComponent,
   ],
   imports: [
     BrowserModule,

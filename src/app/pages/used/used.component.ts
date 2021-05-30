@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import * as $ from 'jquery';
 
 @Component({
   selector: 'app-used',
@@ -45,6 +46,12 @@ export class UsedComponent implements OnInit {
 ]
 
   ngOnInit() {
+    // ################################################################
+    // Tirando o finalizar compra caso necessario (ajuste tecnico)
+    $(function(){
+      document.getElementById("finalizar").style.display = "none";
+    });
+    // ################################################################
   }
 
 }

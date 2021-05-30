@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import * as $ from 'jquery';
 
 @Component({
   selector: 'app-sneakers',
@@ -63,6 +64,12 @@ export class SneakersComponent implements OnInit {
 ]
 
   ngOnInit() {
+    // ################################################################
+    // Tirando o finalizar compra caso necessario (ajuste tecnico)
+    $(function(){
+        document.getElementById("finalizar").style.display = "none";
+      });
+      // ################################################################
   }
 
 }
