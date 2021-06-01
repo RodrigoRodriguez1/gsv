@@ -15,8 +15,13 @@
         <div  class="vest-single productHy fotoCategoriaTshirt"></div>
         <div class="info-product">
             <h3>{{item.nome}}</h3>
-            <p>Genero</p>
+            <p>Gênero</p>
             <p style="color:#2b922c;">R$ 200</p>
         </div>
+
+        <div class="maismenos">
+            <button class="botao-compra" (click)="adicionarCarrinho(item.idProdutos, item.nome, item.preco, item.quantidade)">Adicionar no carrinho</button>
+        </div><!--maismenos-->
+
     </div>
 </div>

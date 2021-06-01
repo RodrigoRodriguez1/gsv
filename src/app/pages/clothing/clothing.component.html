@@ -17,11 +17,11 @@
                 </div>
                 <div class="info-product">
                     <h3>{{item.nome}}</h3>
-                    <p>Genero</p>
+                    <p>Gênero</p>
                     <p style="color:#2b922c;">{{item.preco | currency: 'BRL'}}</p>
                 </div>
                 <div class="maismenos">
-                    <button (click)="adicionarCarrinho(item.idProdutos, item.nome, item.preco, item.quantidade)">Adicionar no carrinho</button>
+                    <button class="botao-compra" (click)="adicionarCarrinho(item.idProdutos, item.nome, item.preco, item.quantidade)">Adicionar no carrinho</button>
                 </div>
             </div>
         </div>

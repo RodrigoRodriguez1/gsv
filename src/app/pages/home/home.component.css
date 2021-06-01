@@ -5,8 +5,8 @@
     height: 356px !important;
     width:auto;
     width: 900px !important;
-    
-    background-image: url('../../../images/image_data_01.jpg');
+
+    background-image: url('../../../images/image_data_01.png');
 }
 
 .foto2{
@@ -15,7 +15,7 @@
     width:auto;
     width: 900px !important;
     
-    background-image: url('../../../images/image_data_02.jpg');
+    background-image: url('../../../images/image_data_02.png');
 }
 
 .foto3{
@@ -24,7 +24,7 @@
     width:auto;
     width: 900px !important;
     
-    background-image: url('../../../images/image_data_03.jpg');
+    background-image: url('../../../images/image_data_03.png');
 }
 
 .fotoCategoriaVest{
@@ -34,7 +34,7 @@
 
 .fotoCategoriaShoes{
     background-image: url('../../../images/Categoria_tenis.jpg');
-    margin-right: 3PX;
+    margin-right: 3px;
 
 }
 
@@ -58,7 +58,7 @@
     top: 50%;
     transform: translate(-0%,-120%);
     transform:translate(-0%,-120%);
-   transform:translate(-0%,-120%);
+    transform:translate(-0%,-120%);
 }
 
 .menu-desktop ul li{
@@ -74,7 +74,7 @@
     top:50%;
     transform: translate(0%,10%);
     transform:translate(0%,10%);
-   transform:translate(0%,10%);
+    transform:translate(0%,10%);
 }
 
 
@@ -110,6 +110,8 @@
 }
 
 .categorias-home .categorias-home-content .categorias-single{
+    width: 900px;
+    height: 240px;
     padding: 105px;
     display: inline-block;
     cursor: pointer;
@@ -123,7 +125,7 @@
 }
 
 .categorias-single:hover{
-    transform: translateY(-12%);
+    transform: translateY(-4%);
 }
 
 .product-home{
@@ -164,7 +166,7 @@
 
 .product-content-single{
     display: inline-block;
-    width:70%;
+    width:90%;
     height: 348px;
     background-size: cover;
     background-repeat: no-repeat;
@@ -175,10 +177,23 @@
 
 .info-product{
    text-align: center;
+   line-height: 5px;
 }
 
 .info-product h3{
    cursor: pointer;
+}
+
+
+.maismenos > .botao-compra{
+    background-color: #f1e9f2;
+    color: #3d343d;
+    border: 2px solid #dfd5e0;
+    padding: 10px;
+}
+
+.maismenos > .botao-compra:hover{
+    background-color: #f7f1f7;
 }
 
 
