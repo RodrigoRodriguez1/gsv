@@ -3,7 +3,7 @@
         <div class="col text-center">
             <div class="carrinho">
                 <h1>Carrinho de Compras</h1>
-                <div *ngFor="let i of itemsCarrinho; let ind = index">Produto: {{i.Nome}} - Preço: {{i.Preco | currency:'BRL'}} - Quantidade disponivel: {{i.Quantidade}} <button (click)="removerItem(ind)">-</button></div>
+                <div style="font-family: sans-serif;" *ngFor="let i of itemsCarrinho; let ind = index">Produto: {{i.Nome}} - Preço: {{i.Preco | currency:'BRL'}} - Quantidade disponivel: {{i.Quantidade}} <button class="botao-remover" (click)="removerItem(ind)">X</button></div>
 
                 <!-- Botoes de compra -->
                 <div class="login" id="aqui" *ngIf="usuario == null && itemsCarrinho.length != 0">

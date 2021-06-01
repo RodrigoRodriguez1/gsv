@@ -75,12 +75,14 @@ html,body{
     color: #3d343d;
     border: 2px solid #dfd5e0;
     padding: 10px;
+    transition: 0.5s;
 }
 
 .maismenos > .botao-compra:hover{
     background-color: #f7f1f7;
+    padding-left: calc(30px - 10px);
+    padding-right: calc(25px - 10px);
 }
-
 
 
 
