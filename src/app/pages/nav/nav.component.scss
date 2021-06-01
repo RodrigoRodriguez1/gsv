@@ -2,27 +2,27 @@
 
 .navBar{
   height: 56px !important;
-  background-color: #e0e0e0;
-  border-bottom: 4px solid #bdbdbd;
-  font-family: 'Lato' !important;
+  background-color: #f1e9f2;
+  border-bottom: 4px solid #dfd5e0;
+  font-family: 'Roboto', sans-serif !important;
   position: relative;
 
 .textPrincipal{
     font-size: 26px;
     font-family: 'Roboto', sans-serif;
     font-weight: 500;
-    color: black;
+    color: #3d343d;
   }
   
   ul{
     padding: 0 20px;
     a{
       font-size: 16;
-      color: black;
+      color: #3d343d;
     }
     .fa-instagram{
       font-size: 20px;
-      color: white;
+      color: #3d343d;
     }
     li{
       cursor: pointer;
