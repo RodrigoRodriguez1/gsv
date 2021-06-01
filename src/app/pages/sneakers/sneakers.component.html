@@ -10,15 +10,14 @@
 
   <div class="row">
     
-    <div class="col-md-4 col-sm-6 col-12" *ngFor="let item of tenis; " >
+    <div class="col-md-4 col-sm-6 col-12" *ngFor="let item of produtos;" >
       
-    <div class="fotoCategoriaShoes tenis-single produtoHr">
-    </div><!--tenis-single-->
+    <img [attr.src]="'http://localhost:3000/' + item.imagem" width="200px" />
 
     <div class="info-product">
-        <h3>{{item.nome}}</h3>
-        <p>Gênero</p>
-        <p style="color:#2b922c;">R$ 200</p>
+      <h3>{{item.nome}}</h3>
+      <p>{{item.genero}}</p>
+      <p style="color:#2b922c;">{{item.preco | currency: 'BRL'}}</p>
     </div><!--info-product-->
     
     <div class="maismenos">

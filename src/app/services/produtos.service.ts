@@ -21,6 +21,14 @@ export class ProdutosService {
     return this.http.get(`${this.apiUrl}/products/produtosVestuario`)
   }
 
+  public getProdutosTenis() {
+    return this.http.get(`${this.apiUrl}/products/produtosTenis`)
+  }
+
+  public getProdutosUsados() {
+    return this.http.get(`${this.apiUrl}/products/produtosUsados`)
+  }
+
   errorHandler(e: any): Observable<any> {
     console.log(e)
     this.showMessage('Ocorreu um erro!', true)

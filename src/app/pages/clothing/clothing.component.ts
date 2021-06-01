@@ -61,8 +61,6 @@ export class ClothingComponent implements OnInit {
 
     }
 
-    let fodase = JSON.parse(localStorage.getItem('carrinho'))
-
   }
 
 }

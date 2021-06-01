@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ProdutosService } from 'src/app/services/produtos.service';
 import * as $ from 'jquery';
 
 @Component({
@@ -8,60 +9,10 @@ import * as $ from 'jquery';
 })
 export class SneakersComponent implements OnInit {
 
-  constructor() { }
+  constructor(private ProdutosService: ProdutosService,) { }
 
-  tenis = [
-    
-    
-    {
-        id: 0,
-        nome: 'Nome do Produto',
-        img: '../images/Categoria_tenis.jpg',
-        genero: 'Gênero',
-        preco: 200.00,
-        link: ''
-    },
-    {
-        id: 1,
-        nome: 'Nome do Produto',
-        img: '../images/Categoria_tenis.jpg',
-        genero: 'Gênero',
-        preco: 200.00,
-        link: ''
-    },
-    {
-        id: 2,
-        nome: 'Nome do Produto',
-        img: '../images/Categoria_tenis.jpg',
-        genero: 'Gênero',
-        preco: 200.00,
-        link: ''
-    },
-    {
-        id: 3,
-        nome: 'Nome do Produto',
-        img: '../images/Categoria_tenis.jpg',
-        genero: 'Gênero',
-        preco: 200.00,
-        link: ''
-    },
-    {
-        id: 4,
-        nome: 'Nome do Produto',
-        img: '../images/Categoria_tenis.jpg',
-        genero: 'Gênero',
-        preco: 200.00,
-        link: ''
-    },
-    {
-        id: 5,
-        nome: 'Nome do Produto',
-        img: '../images/Categoria_tenis.jpg',
-        genero: 'Gênero',
-        preco: 200.00,
-        link: ''
-    }
-]
+  produtos
+  itemsCarrinho = []
 
   ngOnInit() {
     // ################################################################
@@ -70,6 +21,44 @@ export class SneakersComponent implements OnInit {
         document.getElementById("finalizar").style.display = "none";
       });
       // ################################################################
+
+
+      this.ProdutosService.getProdutosTenis().subscribe(
+        (data) => {
+          console.log(data['mensagem'])
+          this.produtos = data['mensagem']
+        },
+        (error) => {
+          console.log(error);
+        }
+      );
+  }
+
+  adicionarCarrinho(idProduto, nome, preco, quantidade) {
+
+    let conjunto = {
+      'idProduto': idProduto,
+      'Nome': nome,
+      'Preco': preco,
+      'Quantidade': quantidade
+    }
+
+    if (JSON.parse(localStorage.getItem('carrinho')) == null) {
+
+      this.itemsCarrinho = []
+      this.itemsCarrinho.push(conjunto)
+      localStorage.setItem('carrinho', JSON.stringify(this.itemsCarrinho))
+      localStorage.getItem('carrinho')
+
+    } else {
+
+      this.itemsCarrinho = JSON.parse(localStorage.getItem('carrinho'))
+      this.itemsCarrinho.push(conjunto)
+      localStorage.setItem('carrinho', JSON.stringify(this.itemsCarrinho))
+      localStorage.getItem('carrinho')
+
+    }
+
   }
 
 }

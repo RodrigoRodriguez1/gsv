@@ -9,14 +9,15 @@
     <!-- TODOS OS ITENS SERÃO ADICIONADOS AQUI, DINAMICAMENTE -->
 
     <div class="row ">
-        <div class="col-md-4 col-sm-6 col-12
-        " *ngFor="let item of roupas; " > 
+        <div class="col-md-4 col-sm-6 col-12"
+        *ngFor="let item of produtos;" > 
 
-        <div  class="vest-single productHy fotoCategoriaTshirt"></div>
+        <img [attr.src]="'http://localhost:3000/' + item.imagem" width="200px" />
+
         <div class="info-product">
             <h3>{{item.nome}}</h3>
-            <p>Gênero</p>
-            <p style="color:#2b922c;">R$ 200</p>
+            <p>{{item.genero}}</p>
+            <p style="color:#2b922c;">{{item.preco | currency: 'BRL'}}</p>
         </div>
 
         <div class="maismenos">
