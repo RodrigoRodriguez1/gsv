@@ -18,7 +18,7 @@ export class ProdutosService {
   constructor(private http: HttpClient, private snackBar: MatSnackBar) { }
 
   public getProdutos() {
-    return this.http.get(`${this.apiUrl}/products/todosProdutos`)
+    return this.http.get(`${this.apiUrl}/products/produtosVestuario`)
   }
 
   errorHandler(e: any): Observable<any> {
@@ -36,6 +36,14 @@ export class ProdutosService {
     })
   }
 
+  /* GERANDO O PEDIDO */
+  public createPedido(pedidos) {
+    return this.http.post(`${this.apiUrl}/pedidos/createPedido`, pedidos)
+  }
+
+  public createPedidoDetalhado(pedidos) {
+    return this.http.post(`${this.apiUrl}/pedidos/createPedidoDet`, pedidos)
+  }
   /* PAGAMENTOS */
 
   pagamento(email: string, senha: string): Observable<any> {

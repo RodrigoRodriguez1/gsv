@@ -13,11 +13,11 @@
                 " *ngFor="let item of produtos;"> 
 
                 <div class="vest-single productHy">
-                    <img src="{{item.imagem}}" width="200px" />
+                    <img [attr.src]="'http://localhost:3000/' + item.imagem" width="200px" />
                 </div>
                 <div class="info-product">
                     <h3>{{item.nome}}</h3>
-                    <p>Genero</p>
+                    <p>{{item.genero}}</p>
                     <p style="color:#2b922c;">{{item.preco | currency: 'BRL'}}</p>
                 </div>
                 <div class="maismenos">

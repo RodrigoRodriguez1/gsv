@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/services/auth.service';
 import { Renderer2, Inject } from '@angular/core';
+import { ProdutosService } from 'src/app/services/produtos.service';
 import * as $ from 'jquery';
 import { Router } from '@angular/router';
 
@@ -12,15 +13,17 @@ import { Router } from '@angular/router';
 export class CarrinhoComponent implements OnInit {
 
   constructor(private authService: AuthService,
-    private router: Router) {}
+    private router: Router,
+    private ProdutosService: ProdutosService) {}
 
   usuario
 
   itemsCarrinho
-
   finalizandoCompra
   precoSomado = 0
   orderData
+  pedidoDetalhado
+  idPedidoAtual
 
   ngOnInit() {
 
@@ -39,7 +42,8 @@ export class CarrinhoComponent implements OnInit {
 
     localStorage.setItem('somado', this.precoSomado.toString())
 
-    console.log(this.precoSomado)
+    console.log(this.itemsCarrinho)
+    
   }
 
   removerItem(i) {
@@ -58,45 +62,18 @@ export class CarrinhoComponent implements OnInit {
 
   finalizar() {
 
-    this.router.navigate(['/metodo']).then(nav => {
-      window.location.reload()
-    });
+    this.ProdutosService.createPedidoDetalhado(this.itemsCarrinho).subscribe(
+      (data) => {
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
 
-//     this.orderData = {
-//       quantity: 1,
-//       description: "Compra GSV",
-//       price: this.precoSomado
-//     };
+    // this.router.navigate(['/metodo']).then(nav => {
+    //   window.location.reload()
+    // });
 
-//     fetch("http://localhost:3000/pagamentos/create_preference", {
-//       method: "POST",
-//       headers: {
-//           "Content-Type": "application/json",
-//       },
-//       body: JSON.stringify(this.orderData),
-// })
-
-
-//   .then(function(response) {
-//       return response.json();
-//   })
-//   .then(function(preference) {
-//       this.createCheckoutButton(preference.id);
-//   })
-//   .catch(function() {
-    
-//   });;
-
-
-//     var script = document.createElement("script");
-  
-//     // The source domain must be completed according to the site for which you are integrating.
-//     // For example: for Argentina ".com.ar" or for Brazil ".com.br".
-//     script.src = "https://www.mercadopago.com.br/integrations/v1/web-payment-checkout.js";
-//     script.type = "text/javascript";
-//     script.dataset.preferenceId = preference;
-//     document.getElementById("button-checkout").innerHTML = "";
-//     document.querySelector("#button-checkout").appendChild(script);
   }
 
 }
