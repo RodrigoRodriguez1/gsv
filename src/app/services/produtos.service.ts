@@ -49,8 +49,12 @@ export class ProdutosService {
     return this.http.post(`${this.apiUrl}/pedidos/createPedido`, pedidos)
   }
 
-  public createPedidoDetalhado(pedidos) {
-    return this.http.post(`${this.apiUrl}/pedidos/createPedidoDet`, pedidos)
+  public createPedidoDetalhado(pedidos, dadosUser) {
+    let dados = {
+      'pedidos': pedidos,
+      'dadosUser': dadosUser
+    }
+    return this.http.post(`${this.apiUrl}/pedidos/createPedidoDet`, dados)
   }
   /* PAGAMENTOS */
 

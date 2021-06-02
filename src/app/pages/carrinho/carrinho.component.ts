@@ -61,8 +61,9 @@ export class CarrinhoComponent implements OnInit {
   }
 
   finalizar() {
-
-    this.ProdutosService.createPedidoDetalhado(this.itemsCarrinho).subscribe(
+    console.log()
+    let dadosUser = localStorage.getItem('currentUser')
+    this.ProdutosService.createPedidoDetalhado(this.itemsCarrinho, dadosUser).subscribe(
       (data) => {
       },
       (error) => {
