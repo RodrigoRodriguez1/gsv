@@ -36,13 +36,14 @@ export class ClothingComponent implements OnInit {
     );
   }
 
-  adicionarCarrinho(idProduto, nome, preco, quantidade) {
+  adicionarCarrinho(idProduto, nome, preco, quantidade, imagem) {
 
     let conjunto = {
       'idProduto': idProduto,
       'Nome': nome,
       'Preco': preco,
-      'Quantidade': quantidade
+      'Quantidade': quantidade,
+      'imagem': imagem
     }
 
     if (JSON.parse(localStorage.getItem('carrinho')) == null) {

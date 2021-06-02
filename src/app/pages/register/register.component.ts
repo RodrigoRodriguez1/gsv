@@ -55,7 +55,9 @@ export class RegisterComponent implements OnInit {
            debugger;
             this.cadastroUsuario = res
             this.showMessage('Cadastrado com sucesso!')
-  
+            this.router.navigate(['/']).then(nav => {
+              window.location.reload()
+            });
           }, error => {
             debugger
             if (error.status === 409)

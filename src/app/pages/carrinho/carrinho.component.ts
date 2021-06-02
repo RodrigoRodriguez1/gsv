@@ -71,9 +71,9 @@ export class CarrinhoComponent implements OnInit {
       }
     );
 
-    // this.router.navigate(['/metodo']).then(nav => {
-    //   window.location.reload()
-    // });
+    this.router.navigate(['/metodo']).then(nav => {
+      window.location.reload()
+    });
 
   }
 
