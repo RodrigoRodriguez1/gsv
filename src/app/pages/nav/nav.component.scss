@@ -1,9 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;1,100&display=swap');
 
 .navBar{
-  height: 56px !important;
+  height: 46px !important;
   background-color: #f1e9f2;
-  border-bottom: 4px solid #dfd5e0;
   font-family: 'Roboto', sans-serif !important;
   position: relative;
 
@@ -15,6 +14,7 @@
   }
   
   ul{
+    
     padding: 0 20px;
     a{
       font-size: 16;
