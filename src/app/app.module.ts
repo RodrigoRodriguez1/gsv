@@ -26,6 +26,8 @@ import { MaterialModule } from './modules/material/material.module';
 import { AreaClienteComponent } from './pages/area-cliente/area-cliente.component';
 import { CarrinhoComponent } from './pages/carrinho/carrinho.component';
 import { MetodosPagamentoComponent } from './pages/metodos-pagamento/metodos-pagamento.component';
+import { PedidoDetalhadoComponent } from './pages/area-cliente/pedido-detalhado/pedido-detalhado.component';
+import { ProdutoDetalheComponent } from './pages/produto-detalhe/produto-detalhe.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +43,8 @@ import { MetodosPagamentoComponent } from './pages/metodos-pagamento/metodos-pag
     AreaClienteComponent,
     CarrinhoComponent,
     MetodosPagamentoComponent,
+    PedidoDetalhadoComponent,
+    ProdutoDetalheComponent,
   ],
   imports: [
     BrowserModule,
