@@ -30,7 +30,7 @@
     width: 165px;
     height: 40px;
     align-items: center;
-    margin-bottom: 5%;
+    margin-bottom: 15%;
     transition: 0.2s;
 }
 
@@ -61,7 +61,6 @@
 }
 
 .info-imagem > img{
-    width: 140px;
-    max-width: 140px;
-    margin-top: 30px;
+    width: 160px;
+    max-width: 160px;
 }

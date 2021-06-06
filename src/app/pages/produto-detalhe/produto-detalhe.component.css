@@ -1,0 +1,88 @@
+
+
+.content-page .product-image{
+    display: none;
+    position: relative;
+    width: 620px;
+    height: 420px;
+    margin-top: 60px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+
+
+.foto1{
+    width: 620px !important;
+    height: 420px !important;
+    background-image: url('../../../images/a3.jpeg');
+}
+
+.foto2{
+    width: 620px !important;
+    height: 420px !important;
+    background-image: url('../../../images/a4.jpeg');
+}
+
+.foto3{
+    width: 620px !important;
+    height: 420px !important;
+    background-image: url('../../../images/a2.jpeg');
+}
+
+.foto4{
+    width: 620px !important;
+    height: 420px !important;
+    background-image: url('../../../images/a1.jpeg');
+}
+
+.foto5{
+    width: 620px !important;
+    height: 420px !important;
+    background-image: url('../../../images/a3.jpeg');
+}
+
+.foto6{
+    width: 620px !important;
+    height: 420px !important;
+    background-image: url('../../../images/a4.jpeg');
+}
+
+.foto7{
+    width: 620px !important;
+    height: 420px !important;
+    background-image: url('../../../images/a2.jpeg');
+}
+
+
+
+
+
+
+.content-page .infos{
+    position: relative;
+    right: 0px;
+    left: 50%;
+    top: -50%;
+    transform: translate(5%,10%);
+    width: 45%;
+    text-align: center;
+}
+
+.botao-compra{
+    background-color: #c36ee2;
+    color: white;
+    border: 0px solid white;
+    padding: 10px 20px;
+    align-items: center;
+ 
+    transition: 0.2s;
+}
+
+.botao-compra:hover{
+    background-color: #ab57c9;
+    padding-left: calc(24px - 3px);
+    padding-right: calc(24px - 3px);
+}
