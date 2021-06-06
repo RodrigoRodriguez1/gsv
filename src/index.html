@@ -25,7 +25,6 @@
 <script>
 
   var checkout
-  console.log("salve")
   // Adicione as credenciais do SDK
     const mp = new MercadoPago('TEST-b9574a10-5632-470c-8074-6182ca38b9f9', {
         locale: 'pt-BR'
@@ -63,8 +62,8 @@ var globalId = localStorage.getItem("globalId")
 
   // Inicialize o checkout
 
-  console.log("GLOBAL ID QUE VAI PUXAR: ")
-  console.log(localStorage.getItem("globalId"))
+  // console.log("GLOBAL ID QUE VAI PUXAR: ")
+  // console.log(localStorage.getItem("globalId"))
   this.checkout = mp.checkout({
   preference: {
       id: localStorage.getItem("globalId")

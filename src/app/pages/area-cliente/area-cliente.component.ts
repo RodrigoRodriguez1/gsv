@@ -30,8 +30,8 @@ export class AreaClienteComponent implements OnInit {
     this.takeUser()
 
     this.pedidosService.getPedidosCliente(this.usuario.id_usuario).subscribe(data => {
-      console.log("data: ")
-      console.log(data)
+      // console.log("data: ")
+      // console.log(data)
       this.pedidos = data
     })
     

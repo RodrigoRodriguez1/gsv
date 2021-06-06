@@ -24,13 +24,11 @@ export class AuthService {
   })
 
   loginUser(email: string, senha: string): Observable<any> {
-    debugger
     return this.http.post(this.urlProd + 'login', { email, senha }, { headers: this.headers })
       .pipe(map(data => data))
   }
 
   updateUser(id: string, senhaUser: string): Observable<any> {
-    debugger
     const url_api = `https://companythoth.com.br/get-user/updateSenha/${id}`;
 
    var senha = {

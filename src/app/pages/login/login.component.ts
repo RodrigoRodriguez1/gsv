@@ -38,7 +38,6 @@ export class LoginComponent implements OnInit {
   onLogin() {
     if (this.registerForm.valid) {
     return this.authService.loginUser(this.registerForm.value['login'], this.registerForm.value['password']).subscribe(data => {
-      debugger
       if (this.registerForm.controls['login'].value === data.results[0].email) {
         this.authService.setUser(data['results'][0])
         this.token = data.token

@@ -59,7 +59,6 @@ export class ProdutosService {
   /* PAGAMENTOS */
 
   pagamento(email: string, senha: string): Observable<any> {
-    debugger
     return this.http.post(this.apiUrl + '/pagamentos/create_preference', email)
   }
 

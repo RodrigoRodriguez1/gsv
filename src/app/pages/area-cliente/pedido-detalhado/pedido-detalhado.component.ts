@@ -15,8 +15,8 @@ export class PedidoDetalhadoComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log("pega nada otario")
-    console.log(this.idPedido)
+    // console.log("pega nada otario")
+    // console.log(this.idPedido)
   }
 
 }
