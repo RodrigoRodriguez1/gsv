@@ -12,7 +12,7 @@ import { map } from 'rxjs/operators';
 
 export class AuthService {
 
-  urlProd = "https://gsvapi.herokuapp.com/usuarios/"  
+  urlProd = "http://localhost:3000/usuarios/"  
   urlLocal = "http://localhost:3000/usuarios/"  
 
   constructor(private router: Router,

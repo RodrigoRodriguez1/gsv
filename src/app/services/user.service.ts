@@ -13,7 +13,7 @@ export class UsersService {
     constructor(private http: HttpClient,
         private snackBar: MatSnackBar) { }
 
-    urlProd = "https://gsvapi.herokuapp.com/usuarios/"  
+    urlProd = "http://localhost:3000/usuarios/"  
     urlLocal = "http://localhost:3000/usuarios/"  
 
     createUser(request){
