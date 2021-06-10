@@ -1,6 +1,42 @@
+<nav class="second-navbar navbar-expand-lg navbar-dark  fixed-top navBar">
+  <div class="container">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+      aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item" *ngIf="usuario == null">
+        <a class="nav-link" [routerLink]="['/login']">Login
+        <i class="fa fa-user" aria-hidden="true"></i>
+      </a>
+      </li>
+
+      <li class="nav-item" *ngIf="usuario != null" (click)="areacliente()"> 
+        <a class="nav-link"> {{usuario.nome}}
+          <i class="fas fa-user"></i>
+      </a>
+      </li>
+
+      <li class="nav-item" *ngIf="usuario != null" (click)="logout()"> 
+        <a class="nav-link"> Sair &nbsp;
+        <i class="fas fa-sign-out-alt"></i>
+      </a>
+      </li>
+      &nbsp;&nbsp;
+      <li class="nav-item">
+        <a class="nav-link" (click)="carrinho()">
+          <i class="fas fa-shopping-cart"></i>
+          <span style="margin-left: 5px;">({{qtdCarrinho}})</span>
+        </a>
+      </li>
+
+    </ul>
+  </div>
+</nav>
+
 <nav class="navbar navbar-expand-lg navbar-dark  fixed-top navBar">
   <div class="container">
-    <a class="navbar-brand textPrincipal" href="#">GSV APPAREL</a>
+    <!--<a class="navbar-brand textPrincipal" href="#">GSV APPAREL</a>-->
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
       aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -28,6 +64,7 @@
           </a>
         </li>
 
+        <!--
         <li class="nav-item" *ngIf="usuario == null">
           <a class="nav-link" [routerLink]="['/login']">Login
           <i class="fa fa-user" aria-hidden="true"></i>
@@ -52,6 +89,7 @@
             <span style="margin-left: 5px;">({{qtdCarrinho}})</span>
           </a>
         </li>
+      -->
 
       </ul>
       

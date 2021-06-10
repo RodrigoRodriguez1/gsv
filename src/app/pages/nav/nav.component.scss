@@ -2,7 +2,7 @@
 
 .navBar{
   height: 46px !important;
-  background-color: #f1e9f2;
+  background-color: #c97eec;
   font-family: 'Roboto', sans-serif !important;
   position: relative;
 
@@ -14,19 +14,61 @@
   }
   
   ul{
-    
     padding: 0 20px;
     a{
       font-size: 16;
-      color: #3d343d;
+      color: white;
     }
     .fa-instagram{
       font-size: 20px;
-      color: #3d343d;
+      color: white;
     }
     li{
       cursor: pointer;
     }
   }
  
+}
+
+.second-navbar{
+  height: 36px !important;
+  background-color: #7b3a99;
+  font-family: 'Roboto', sans-serif !important;
+  position: relative;
+
+.textPrincipal{
+    font-size: 26px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    color: #3d343d;
+  }
+  
+  ul{
+    margin: 0 auto;
+    padding: 0 20px;
+    a{
+      font-size: 16;
+      color: white;
+    }
+    .fa-instagram{
+      font-size: 20px;
+      color: white;
+    }
+    li{
+      cursor: pointer;
+    }
+  }
+ 
+}
+
+@media screen and (max-width: 1480px) {
+  .navBar ul{
+    left: 0px;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+    .navBar ul{
+      left: 0px;
+    }
 }

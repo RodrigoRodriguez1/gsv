@@ -15,9 +15,9 @@
     <img [attr.src]="'http://localhost:3000/' + item.imagem" width="200px" />
 
     <div class="info-product">
-      <h3>{{item.nome}}</h3>
+      <p>{{item.nome}}</p>
       <p>{{item.genero}}</p>
-      <p style="color:#2b922c;">{{item.preco | currency: 'BRL'}}</p>
+      <p style="font-weight: bold;">{{item.preco | currency: 'BRL'}}</p>
     </div><!--info-product-->
     
     <div class="maismenos">
