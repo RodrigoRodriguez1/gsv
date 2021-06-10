@@ -140,8 +140,24 @@
 }
 
 .categorias-home .categorias-home-content .categorias-single:hover{
-    transform: translateY(-2%);
+    
 }
+
+
+.row-content{
+    width: 172.3%;
+    height: 90px;
+    position: relative;
+    transform: translate(-21%,146px);
+    background-color: rgba(1,1,1,0.8);
+}
+
+
+.row-content a{
+    color: white;
+    outline: 0;
+}
+
 
 .product-home{
     margin-top: 120px;
