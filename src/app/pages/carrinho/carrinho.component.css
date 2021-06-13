@@ -20,7 +20,7 @@
 .login button:hover {
     background-color: #ab57c9;
 
-    width: 170px;
+    /*width: 170px;*/
 }
 
 .botao-remover{
@@ -36,8 +36,6 @@
 
 .botao-remover:hover {
     background-color: #ab57c9;
-
-    width: 170px;
 }
 
 .carrinho {
