@@ -37,10 +37,14 @@
                         <div class="categorias-home-content">
                             <h2>CATEGORIAS <i class="fa fa-list-ul"></i></h2>
                             <div id="categoryShoesClick" class="fotoCategoriaShoes categorias-single">
-                                
+                                <div class="row-content">
+                                    <p [routerLink]="['/tenis']">Tênis <i [routerLink]="['/tenis']" class="far fa-arrow-alt-circle-right"></i></p>
+                                </div>
                             </div>
                             <div id="categoryVestClick" class="fotoCategoriaVest  categorias-single">
-                                
+                                <div class="row-content">
+                                    <p [routerLink]="['/vestuario']">Vestuário <i [routerLink]="['/vestuario']" class="far fa-arrow-alt-circle-right"></i></p>
+                                </div>
                             </div>
                         </div>
                         <!--categorias-home-content-->
@@ -103,7 +107,7 @@
                     <div class="info-product">
                         <h3>Nome do Produto</h3>
                         <p>Gênero</p>
-                        <p style="color:#2b922c;">R$ 200</p>
+                        <p style="font-weight: bold;">R$ 200</p>
                         <div class="maismenos">
                             <button class="botao-compra" (click)="adicionarCarrinho(item.idProdutos, item.nome, item.preco, item.quantidade)">Adicionar no carrinho</button>
                         </div>
@@ -114,7 +118,7 @@
                     <div class="info-product">
                         <h3>Nome do Produto</h3>
                         <p>Gênero</p>
-                        <p style="color:#2b922c;">R$ 200</p>
+                        <p style="font-weight: bold;">R$ 200</p>
                         <div class="maismenos">
                             <button class="botao-compra" (click)="adicionarCarrinho(item.idProdutos, item.nome, item.preco, item.quantidade)">Adicionar no carrinho</button>
                         </div>
@@ -125,7 +129,7 @@
                     <div class="info-product">
                         <h3>Nome do Produto</h3>
                         <p>Gênero</p>
-                        <p style="color:#2b922c;">R$ 200</p>
+                        <p style="font-weight: bold;">R$ 200</p>
                         <div class="maismenos">
                             <button class="botao-compra" (click)="adicionarCarrinho(item.idProdutos, item.nome, item.preco, item.quantidade)">Adicionar no carrinho</button>
                         </div>
@@ -135,8 +139,8 @@
             <!--content-wraper-->
 
             <div class="arrows-change">
-                <i id="arrow-change-left" class="fa fa-chevron-circle-left"></i>
-                <i id="arrow-change-right" class="fa fa-chevron-circle-right"></i>
+                <i style="cursor:pointer;" id="arrow-change-left" class="far fa-arrow-alt-circle-left"></i>
+                <i style="border-left: 25px solid white;cursor:pointer;" id="arrow-change-right" class="far fa-arrow-alt-circle-right"></i>
             </div>
 
         </div>

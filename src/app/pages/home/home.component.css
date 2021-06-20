@@ -48,7 +48,7 @@
 }
 
 .fotoCategoriaShoes{
-    background-image: url('../../../images/Categoria_tenis.jpg');
+    background-image: url('../../../images/image_data_03.png');
     margin-right: 3px;
 
 }
@@ -129,7 +129,6 @@
     height: 340px;
     padding: 105px;
     display: inline-block;
-    cursor: pointer;
     /*background-image: linear-gradient(#ff00d4, #b31982);*/
     background-size: cover;
     background-repeat: no-repeat;
@@ -140,8 +139,25 @@
 }
 
 .categorias-home .categorias-home-content .categorias-single:hover{
-    transform: translateY(-2%);
+    
 }
+
+
+.row-content{
+    width: 172.3%;
+    height: 50px;
+    position: relative;
+    transform: translate(-21%,185px);
+    background-color: rgba(1,1,1,0.8);
+    cursor: pointer;
+}
+
+
+.row-content a{
+    color: white;
+    outline: 0;
+}
+
 
 .product-home{
     margin-top: 120px;
@@ -212,8 +228,8 @@
 
 .maismenos > .botao-compra:hover{
     background-color: #ab57c9;
-    padding-left: calc(24px - 3px);
-    padding-right: calc(24px - 3px);
+    /*padding-left: calc(24px - 3px);*/
+    /*padding-right: calc(24px - 3px);*/
 }
 
 

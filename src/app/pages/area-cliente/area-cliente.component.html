@@ -8,18 +8,22 @@
 <div class="container" *ngIf="usuario">
     <div class="row align-items-center main">
     <div class="col text-center">
-        <h1>Olá {{usuario.nome}}! Seja bem-vindo a Área do Cliente!</h1>
-        <h3>Aqui estão seus pedidos: </h3>
+        <h1 style="font-weight: normal;">Olá <span style="font-weight: bold;">{{usuario.nome}}</span>! Seja bem-vindo a Área do Cliente!</h1>
+        <h3 style="font-weight: normal;">Aqui estão seus pedidos: </h3>
 
         <div class="container">
             <div class="row justify-content-center align-items-center">
                 <div class="box" *ngFor="let p of pedidos" (click)="goDetalhados(p.idPedido)">
-                    <h1>Pedido {{p.idPedido}}</h1>
-                    <h2>Clique para ver detalhes</h2>
+                    <h1 style="font-weight: normal;">Pedido {{p.idPedido}}</h1>
+                    <h2 style="font-weight: normal;">Clique para ver detalhes</h2>
                 </div>
             </div>
         </div>
 
     </div>
+</div>
+
+<div style="max-height: 1600px;height: 500px;">
+
 </div>
 

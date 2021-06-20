@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col text-center">
             <div class="carrinho">
-                <h1 style="padding: 40px 2%;">Carrinho de Compras</h1>
+                <h1 style="padding: 40px 2%;border-bottom: 1px solid black;">Carrinho de Compras <i style="font-size:40px;"class="fas fa-shopping-cart"></i></h1>
                 <div class="informacoes-produto" style="font-family: sans-serif;" *ngFor="let i of itemsCarrinho; let ind = index">
 
                     <div class="info-imagem">
@@ -29,7 +29,7 @@
                 </div>
 
                 <div class="login" *ngIf="itemsCarrinho.length == 0">
-                    <h1>O carrinho está vazio!</h1>
+                    <h1 style="padding: 6px;height: 610px;max-height: 1080px;">O carrinho está vazio! <i class="far fa-frown"></i></h1>
                 </div>
             </div>
         </div>
