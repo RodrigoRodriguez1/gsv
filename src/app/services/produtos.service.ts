@@ -62,4 +62,13 @@ export class ProdutosService {
     return this.http.post(this.apiUrl + '/pagamentos/create_preference', email)
   }
 
+  /* Pegando o valor do frete */
+
+  getFrete() {
+    // Pegando o cep do usuario:
+    let dadosUsuario = JSON.parse(localStorage.getItem('currentUser'))
+
+    return this.http.get(this.apiUrl + '/pagamentos/getValorFrete/' + dadosUsuario.cep)
+  }
+
 }

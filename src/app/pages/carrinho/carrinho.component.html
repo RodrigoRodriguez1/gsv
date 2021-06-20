@@ -23,6 +23,8 @@
                 </div>
 
                 <div class="login" *ngIf="usuario != null && itemsCarrinho.length != 0">
+                    <h1>FRETE: R${{this.valorFrete}}</h1>
+                    <h1>VALOR TOTAL: {{precoSomadoFrete | currency:'BRL'}}</h1><br />
                     <button class="btn btn-default" (click)="finalizar()" id="button-checkout">Finalizar Compra</button>
                 </div>
 

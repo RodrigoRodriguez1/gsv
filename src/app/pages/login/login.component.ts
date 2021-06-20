@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { Validators, FormBuilder, FormGroup, ValidatorFn } from '@angular/forms'
 import { AuthService } from 'src/app/services/auth.service';
 import { MatSnackBar } from '@angular/material';
+import { ProdutosService } from 'src/app/services/produtos.service';
 import * as $ from 'jquery';
 
 @Component({
@@ -13,11 +14,12 @@ import * as $ from 'jquery';
 })
 export class LoginComponent implements OnInit {
 
-  constructor( public formBuilder: FormBuilder,private authService: AuthService, private snackBar: MatSnackBar,private router: Router) { }
+  constructor( public formBuilder: FormBuilder,private authService: AuthService, private snackBar: MatSnackBar,private router: Router, private ProdutosService: ProdutosService) { }
 
   registerForm: FormGroup;
   errorSenha: boolean = false
   token;
+  valorFrete
 
 
   ngOnInit() {
@@ -42,6 +44,7 @@ export class LoginComponent implements OnInit {
         this.authService.setUser(data['results'][0])
         this.token = data.token
         this.authService.setToken(this.token)
+        this.freteUsuario()
         this.router.navigate(['/']).then(nav => {
           window.location.reload();
         });
@@ -62,6 +65,16 @@ export class LoginComponent implements OnInit {
       horizontalPosition: "right",
       verticalPosition: "top",
       panelClass: isErro ? ['msg-erro'] : ['msg-success']
+    })
+  }
+
+  // Pegando o valor de frete do usuario
+  freteUsuario() {
+    this.ProdutosService.getFrete().subscribe(ret => {
+      
+      this.valorFrete = ret['valor']
+      console.log(this.valorFrete)
+      localStorage.setItem('precoFrete', this.valorFrete)
     })
   }
 

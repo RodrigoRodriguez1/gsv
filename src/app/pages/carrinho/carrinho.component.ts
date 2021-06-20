@@ -24,6 +24,11 @@ export class CarrinhoComponent implements OnInit {
   orderData
   pedidoDetalhado
   idPedidoAtual
+  precoSomadoFrete
+
+
+  valorFrete = localStorage.getItem('precoFrete')
+  total = localStorage.getItem('somado')
 
   ngOnInit() {
 
@@ -32,6 +37,7 @@ export class CarrinhoComponent implements OnInit {
     });
 
     this.takeUser()
+    // this.freteUsuario()
 
     this.itemsCarrinho = JSON.parse(localStorage.getItem('carrinho'))
 
@@ -40,7 +46,11 @@ export class CarrinhoComponent implements OnInit {
       this.precoSomado =+ this.finalizandoCompra[x].Preco + this.precoSomado
     }
 
-    localStorage.setItem('somado', this.precoSomado.toString())
+    let valorFreteTratado = this.valorFrete.replace(',', '.')
+
+    this.precoSomadoFrete = Number(this.precoSomado) + Number(valorFreteTratado)
+    debugger
+    localStorage.setItem('somado', this.precoSomadoFrete.toString())
 
     console.log(this.itemsCarrinho)
     
@@ -74,7 +84,15 @@ export class CarrinhoComponent implements OnInit {
     this.router.navigate(['/metodo']).then(nav => {
       window.location.reload()
     });
+  }
 
+  freteUsuario() {
+    this.ProdutosService.getFrete().subscribe(ret => {
+      
+      this.valorFrete = ret['valor']
+      console.log(this.valorFrete)
+      localStorage.setItem('precoFrete', this.valorFrete)
+    })
   }
 
 }
