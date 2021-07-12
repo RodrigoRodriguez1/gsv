@@ -64,11 +64,18 @@ export class ProdutosService {
 
   /* Pegando o valor do frete */
 
-  getFrete() {
+  getFreteSEDEX() {
     // Pegando o cep do usuario:
     let dadosUsuario = JSON.parse(localStorage.getItem('currentUser'))
 
-    return this.http.get(this.apiUrl + '/pagamentos/getValorFrete/' + dadosUsuario.cep)
+    return this.http.get(this.apiUrl + '/pagamentos/getValorFreteSEDEX/' + dadosUsuario.cep)
+  }
+
+  getFretePAC() {
+    // Pegando o cep do usuario:
+    let dadosUsuario = JSON.parse(localStorage.getItem('currentUser'))
+    
+    return this.http.get(this.apiUrl + '/pagamentos/getValorFretePAC/' + dadosUsuario.cep)
   }
 
 }
