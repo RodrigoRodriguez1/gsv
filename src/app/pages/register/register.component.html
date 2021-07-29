@@ -78,13 +78,13 @@
 
                 <mat-form-field>
                     <mat-label>CEP:</mat-label>
-                    <input formControlName="cep" matInput  mask="00000-000 " name="cep"
+                    <input formControlName="cep" [(ngModel)]="cep" matInput  mask="00000-000 " name="cep"
                         id="cep" (blur)="consultaCEP($event.target.value)" required>
                 </mat-form-field>
 
                 <mat-form-field>
                     <mat-label>Rua:</mat-label>
-                    <input style="text-transform: capitalize;" formControlName="logradouro" matInput type="text"
+                    <input style="text-transform: capitalize;" formControlName="logradouro" [(ngModel)]="logradouro" matInput type="text"
                         name="logradouro" id="logradouro" required>
                 </mat-form-field>
 
@@ -103,19 +103,19 @@
                 <mat-form-field>
                     <mat-label>Bairro:</mat-label>
                     <input style="text-transform: capitalize;" formControlName="bairro" matInput
-                        name="bairro" required>
+                        name="bairro" required [(ngModel)]="bairro">
                 </mat-form-field>
 
                 <mat-form-field>
                     <mat-label>Cidade:</mat-label>
                     <input style="text-transform: capitalize;" formControlName="cidade" matInput
-                       name="cidade" required>
+                       name="cidade" [(ngModel)]="cidade" required>
                 </mat-form-field>
 
                 <mat-form-field>
                     <mat-label>Estado:</mat-label>
                     <input style="text-transform: uppercase;" formControlName="estado" matInput
-                        name="uf" required>
+                        name="uf" [(ngModel)]="estado" required>
                 </mat-form-field>
             </div>
         </div>

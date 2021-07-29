@@ -57,6 +57,7 @@ export class LoginComponent implements OnInit {
 
       }, error => {
         this.errorSenha = true, console.log(error)
+        this.showMessage('Usuário ou senha incorreta!')
       })
     } else {
       this.showMessage('Preencha todos os campos')

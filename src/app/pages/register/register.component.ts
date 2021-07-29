@@ -17,6 +17,8 @@ export class RegisterComponent implements OnInit {
   registerForm: FormGroup;
   cadastroUsuario
 
+  dadosCEP
+
   ngOnInit() {
     // ################################################################
     // Tirando o finalizar compra caso necessario (ajuste tecnico)
@@ -89,6 +91,32 @@ export class RegisterComponent implements OnInit {
       horizontalPosition: "right",
       verticalPosition: "top",
       panelClass: isErro ? ['msg-erro'] : ['msg-success']
+    })
+  }
+
+  logradouro
+  bairro
+  cidade
+  estado
+
+  cep
+  consultaCEP(cep) {
+    this.userService.consultaCEP(cep).subscribe(result => {
+      console.log('retorno consulta cep: ')
+      console.log(result['dadosCEP'])
+
+      if(result['dadosCEP'] != 'nao_encontrado') {
+        this.logradouro = result['dadosCEP'].logradouro
+        this.bairro = result['dadosCEP'].bairro
+        this.cidade = result['dadosCEP'].localidade
+        this.estado = result['dadosCEP'].uf
+      } else {
+        this.cep = ''
+
+        this.showMessage('CEP INVALIDO!')
+      }
+
+
     })
   }
 

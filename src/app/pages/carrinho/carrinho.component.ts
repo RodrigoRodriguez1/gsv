@@ -48,21 +48,43 @@ export class CarrinhoComponent implements OnInit {
     });
 
     this.takeUser()
-    // this.freteUsuario()
-    this.itemsCarrinho = JSON.parse(localStorage.getItem('carrinho'))
-    this.finalizandoCompra = JSON.parse(localStorage.getItem('carrinho'))
+    
+    try {
+      this.freteUsuario()
+      this.freteUsuarioPAC()
 
-    for (var x = 0; this.finalizandoCompra.length > x; x++) {
-      this.precoSomado = + this.finalizandoCompra[x].Preco + this.precoSomado
-    }
+      this.itemsCarrinho = JSON.parse(localStorage.getItem('carrinho'))
+      this.finalizandoCompra = JSON.parse(localStorage.getItem('carrinho'))
 
-    if (this.valorFrete != null) {
+      for (var x = 0; this.finalizandoCompra.length > x; x++) {
+        this.precoSomado = + this.finalizandoCompra[x].Preco + this.precoSomado
+      }
 
-      this.precoSomadoFrete = ''
+      if (this.valorFrete != null) {
 
-      console.log(this.itemsCarrinho)
-    } else {
-      console.log('é necessário fazer login!')
+        this.precoSomadoFrete = ''
+
+        console.log(this.itemsCarrinho)
+      } else {
+        console.log('é necessário fazer login!')
+      }
+
+    } catch {
+      this.itemsCarrinho = JSON.parse(localStorage.getItem('carrinho'))
+      this.finalizandoCompra = JSON.parse(localStorage.getItem('carrinho'))
+
+      for (var x = 0; this.finalizandoCompra.length > x; x++) {
+        this.precoSomado = + this.finalizandoCompra[x].Preco + this.precoSomado
+      }
+
+      if (this.valorFrete != null) {
+
+        this.precoSomadoFrete = ''
+
+        console.log(this.itemsCarrinho)
+      } else {
+        console.log('é necessário fazer login!')
+      }
     }
   }
 
@@ -158,8 +180,6 @@ export class CarrinhoComponent implements OnInit {
       localStorage.setItem('entrega', this.tipoEntrega)
       localStorage.getItem('entrega')
     }
-
-
   }
 
   // snackbar
@@ -167,7 +187,8 @@ export class CarrinhoComponent implements OnInit {
     this.snackBar.open(message, action, {
       duration: 3000
     });
-    
+
   }
+
 
 }
