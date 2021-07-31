@@ -48,7 +48,7 @@ export class CarrinhoComponent implements OnInit {
     });
 
     this.takeUser()
-    
+
     try {
       this.freteUsuario()
       this.freteUsuarioPAC()
@@ -116,12 +116,17 @@ export class CarrinhoComponent implements OnInit {
         }
       );
 
+
       this.router.navigate(['/metodo']).then(nav => {
-        window.location.reload()
+        setTimeout(() => {
+          window.location.reload()
+          window.location.reload()
+          window.location.reload()
+        }, 1000);
       });
     }
-
   }
+
   // PEGANDO O FRETE DO USUARIO SEDEX
   freteUsuario() {
     this.ProdutosService.getFreteSEDEX().subscribe(ret => {

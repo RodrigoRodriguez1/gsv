@@ -35,8 +35,7 @@
       description: "Compra GSV",
       price: localStorage.getItem('somado')
     };
-
-
+    
 
 (async () => {
     const rawResponse = await fetch("http://localhost:3000/pagamentos/create_preference", {
@@ -74,7 +73,7 @@ var globalId = localStorage.getItem("globalId")
     }
 }); 
 </script>
-<button id="finalizar" class="btn btn-default" style="display: flex; margin: auto; position: relative; top: -130px; background: #828282; color: white;" onclick="checkout.open()">Mercado Pago</button>
+<button id="finalizar" class="btn btn-default" style="display: flex; margin: auto; position: relative; top: -150px; background: #828282; color: white;" onclick="checkout.open()">Pagar</button>
 <script>
 document.getElementById("finalizar").style.display = "none";
 </script>

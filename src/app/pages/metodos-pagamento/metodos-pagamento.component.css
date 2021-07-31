@@ -1,3 +1,19 @@
 .metodos {
     margin: 30px 0px 125px 0px;
 }
+
+.btnMercadoPago {
+    background-color: #00aeee;
+    border: none;
+    padding: 10px;
+    color: white;
+    border-radius: 20px 10px;
+
+    transition: 0.5s;
+}
+
+.btnMercadoPago:hover {
+    background-color: #007eac;
+
+    transition: 0.5s;
+}

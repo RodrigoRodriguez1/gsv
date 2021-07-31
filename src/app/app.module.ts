@@ -28,6 +28,7 @@ import { CarrinhoComponent } from './pages/carrinho/carrinho.component';
 import { MetodosPagamentoComponent } from './pages/metodos-pagamento/metodos-pagamento.component';
 import { PedidoDetalhadoComponent } from './pages/area-cliente/pedido-detalhado/pedido-detalhado.component';
 import { ProdutoDetalheComponent } from './pages/produto-detalhe/produto-detalhe.component';
+import { PagarMpComponent } from './pages/metodos-pagamento/pagar-mp/pagar-mp.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +46,7 @@ import { ProdutoDetalheComponent } from './pages/produto-detalhe/produto-detalhe
     MetodosPagamentoComponent,
     PedidoDetalhadoComponent,
     ProdutoDetalheComponent,
+    PagarMpComponent,
   ],
   imports: [
     BrowserModule,
