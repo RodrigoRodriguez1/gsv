@@ -1,0 +1,15 @@
+h1 {
+    font-size: 32px;
+
+    font-family: 'Roboto', sans-serif;
+}
+
+.conteudo {
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+}
+
+.pagar {
+    margin-top: 150px;
+}

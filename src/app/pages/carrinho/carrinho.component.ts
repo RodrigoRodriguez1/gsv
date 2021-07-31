@@ -4,6 +4,7 @@ import { Renderer2, Inject } from '@angular/core';
 import { ProdutosService } from 'src/app/services/produtos.service';
 import * as $ from 'jquery';
 import { Router } from '@angular/router';
+import { MatSnackBar } from '@angular/material';
 
 @Component({
   selector: 'app-carrinho',
@@ -14,9 +15,13 @@ export class CarrinhoComponent implements OnInit {
 
   constructor(private authService: AuthService,
     private router: Router,
-    private ProdutosService: ProdutosService) {}
+    private ProdutosService: ProdutosService,
+    private snackBar: MatSnackBar) { }
 
   usuario
+
+  tipoEntrega
+  valorSelecionadoEntrega
 
   itemsCarrinho
   finalizandoCompra
@@ -28,32 +33,59 @@ export class CarrinhoComponent implements OnInit {
 
 
   valorFrete = localStorage.getItem('precoFrete')
+  valorFretePAC = localStorage.getItem('precoFretePAC')
+
+  prazoFrete = localStorage.getItem('prazoFrete')
+  prazoFretePAC = localStorage.getItem('prazoFretePAC')
+
+
   total = localStorage.getItem('somado')
 
   ngOnInit() {
 
-    $(function(){
+    $(function () {
       document.getElementById("finalizar").style.display = "none";
     });
 
     this.takeUser()
-    // this.freteUsuario()
 
-    this.itemsCarrinho = JSON.parse(localStorage.getItem('carrinho'))
+    try {
+      this.freteUsuario()
+      this.freteUsuarioPAC()
 
-    this.finalizandoCompra = JSON.parse(localStorage.getItem('carrinho'))
-    for(var x = 0; this.finalizandoCompra.length > x; x++) {
-      this.precoSomado =+ this.finalizandoCompra[x].Preco + this.precoSomado
+      this.itemsCarrinho = JSON.parse(localStorage.getItem('carrinho'))
+      this.finalizandoCompra = JSON.parse(localStorage.getItem('carrinho'))
+
+      for (var x = 0; this.finalizandoCompra.length > x; x++) {
+        this.precoSomado = + this.finalizandoCompra[x].Preco + this.precoSomado
+      }
+
+      if (this.valorFrete != null) {
+
+        this.precoSomadoFrete = ''
+
+        console.log(this.itemsCarrinho)
+      } else {
+        console.log('é necessário fazer login!')
+      }
+
+    } catch {
+      this.itemsCarrinho = JSON.parse(localStorage.getItem('carrinho'))
+      this.finalizandoCompra = JSON.parse(localStorage.getItem('carrinho'))
+
+      for (var x = 0; this.finalizandoCompra.length > x; x++) {
+        this.precoSomado = + this.finalizandoCompra[x].Preco + this.precoSomado
+      }
+
+      if (this.valorFrete != null) {
+
+        this.precoSomadoFrete = ''
+
+        console.log(this.itemsCarrinho)
+      } else {
+        console.log('é necessário fazer login!')
+      }
     }
-
-    let valorFreteTratado = this.valorFrete.replace(',', '.')
-
-    this.precoSomadoFrete = Number(this.precoSomado) + Number(valorFreteTratado)
-    debugger
-    localStorage.setItem('somado', this.precoSomadoFrete.toString())
-
-    console.log(this.itemsCarrinho)
-    
   }
 
   removerItem(i) {
@@ -71,28 +103,97 @@ export class CarrinhoComponent implements OnInit {
   }
 
   finalizar() {
-    console.log()
-    let dadosUser = localStorage.getItem('currentUser')
-    this.ProdutosService.createPedidoDetalhado(this.itemsCarrinho, dadosUser).subscribe(
-      (data) => {
-      },
-      (error) => {
-        console.log(error);
-      }
-    );
+    if (this.precoSomadoFrete == '') {
+      this.openSnackBar('Você deve selecionar o meio de entrega antes de finalizar a compra!', 'Fechar')
+    }
+    else {
+      let dadosUser = localStorage.getItem('currentUser')
+      this.ProdutosService.createPedidoDetalhado(this.itemsCarrinho, dadosUser).subscribe(
+        (data) => {
+        },
+        (error) => {
+          console.log(error);
+        }
+      );
 
-    this.router.navigate(['/metodo']).then(nav => {
-      window.location.reload()
-    });
+
+      this.router.navigate(['/metodo']).then(nav => {
+        setTimeout(() => {
+          window.location.reload()
+          window.location.reload()
+          window.location.reload()
+        }, 1000);
+      });
+    }
   }
 
+  // PEGANDO O FRETE DO USUARIO SEDEX
   freteUsuario() {
-    this.ProdutosService.getFrete().subscribe(ret => {
-      
+    this.ProdutosService.getFreteSEDEX().subscribe(ret => {
+
       this.valorFrete = ret['valor']
+      this.prazoFrete = ret['prazo']
       console.log(this.valorFrete)
       localStorage.setItem('precoFrete', this.valorFrete)
+      localStorage.setItem('prazoFrete', this.prazoFrete)
     })
   }
+
+  // Pegando o valor de frete do usuario SEDEX
+  freteUsuarioPAC() {
+    this.ProdutosService.getFretePAC().subscribe(ret => {
+
+      this.valorFretePAC = ret['valor']
+      this.prazoFretePAC = ret['prazo']
+      console.log(this.valorFretePAC)
+      localStorage.setItem('precoFretePAC', this.valorFretePAC)
+      localStorage.setItem('prazoFretePAC', this.prazoFretePAC)
+    })
+  }
+
+
+  attFrete() {
+    console.log("ae")
+    console.log(this.tipoEntrega)
+    if (this.tipoEntrega == 'pac') {
+      this.valorSelecionadoEntrega = this.valorFretePAC
+
+      let valorFreteTratado = this.valorFretePAC.replace(',', '.')
+      // Capturando o tipo de entrega informada pelo usuario
+
+      this.precoSomadoFrete = Number(this.precoSomado) + Number(valorFreteTratado)
+
+      localStorage.setItem('somado', this.precoSomadoFrete.toString())
+      localStorage.getItem('somado')
+
+      // Para enviar para o pedido no dash:
+      localStorage.setItem('entrega', this.tipoEntrega)
+      localStorage.getItem('entrega')
+
+    } else if (this.tipoEntrega = 'sedex') {
+      this.valorSelecionadoEntrega = this.valorFrete
+
+      let valorFreteTratado = this.valorFrete.replace(',', '.')
+      // Capturando o tipo de entrega informada pelo usuario
+
+      this.precoSomadoFrete = Number(this.precoSomado) + Number(valorFreteTratado)
+
+      localStorage.setItem('somado', this.precoSomadoFrete.toString())
+      localStorage.getItem('somado')
+
+      // Para enviar para o pedido no dash:
+      localStorage.setItem('entrega', this.tipoEntrega)
+      localStorage.getItem('entrega')
+    }
+  }
+
+  // snackbar
+  openSnackBar(message: string, action: string) {
+    this.snackBar.open(message, action, {
+      duration: 3000
+    });
+
+  }
+
 
 }

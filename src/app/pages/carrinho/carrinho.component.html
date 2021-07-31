@@ -23,8 +23,25 @@
                 </div>
 
                 <div class="login" *ngIf="usuario != null && itemsCarrinho.length != 0">
-                    <h1>FRETE: R${{this.valorFrete}}</h1>
-                    <h1>VALOR TOTAL: {{precoSomadoFrete | currency:'BRL'}}</h1><br />
+                    <h1>Escolha o metodo de entrega: </h1>
+
+                    <mat-radio-group
+                    [(ngModel)]="tipoEntrega">
+
+
+
+                    <h1>SEDEX: R$ {{valorFrete}} PRAZO: {{prazoFrete}} Dia(s) Uteis 
+                        <mat-radio-button value="pac" (change)="attFrete()"></mat-radio-button>
+                    </h1>
+
+                    <h1>PAC: R$ {{valorFretePAC}} PRAZO: {{prazoFretePAC}} Dia(s) Uteis 
+                        <mat-radio-button value="sedex" (change)="attFrete()"></mat-radio-button>
+                    </h1>
+                    </mat-radio-group>
+
+                    <h1 *ngIf="precoSomadoFrete == ''">Selecione um meio de entrega</h1><br />
+                    <h1 *ngIf="precoSomadoFrete != ''">VALOR TOTAL: {{precoSomadoFrete | currency:'BRL'}}</h1><br />
+                    <!-- <h1>VALOR TOTAL: {{precoSomadoFrete | currency:'BRL'}}</h1><br /> -->
                     <button class="btn btn-default" (click)="finalizar()" id="button-checkout">Finalizar Compra</button>
                 </div>
 

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import * as $ from 'jquery';
 
 @Component({
@@ -8,14 +9,22 @@ import * as $ from 'jquery';
 })
 export class MetodosPagamentoComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router,) { }
 
   ngOnInit() {
 
     $(function(){
-      document.getElementById("finalizar").style.display = "flex";
+      document.getElementById("finalizar").style.display = "none";
     });
 
+  }
+
+  goMercadoPago() {
+    this.router.navigate(['/pagar-mp']).then(nav => {
+      setTimeout(() => {
+        window.location.reload()
+      }, 1000);
+    });
   }
 
 }

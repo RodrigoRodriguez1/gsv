@@ -13,11 +13,15 @@ export class UsersService {
     constructor(private http: HttpClient,
         private snackBar: MatSnackBar) { }
 
-    urlProd = "http://localhost:3000/usuarios/"  
-    urlLocal = "http://localhost:3000/usuarios/"  
+    urlProd = "http://localhost:3000/"
+    urlLocal = "http://localhost:3000/"  
 
     createUser(request){
-        return this.http.post(this.urlProd + 'cadastro', request)
+        return this.http.post(this.urlProd + 'usuarios/cadastro', request)
+    }
+
+    consultaCEP(cep) {
+        return this.http.get(this.urlProd + 'pagamentos/consultaCEP/' + cep)
     }
 
 }

@@ -30,6 +30,7 @@ import { PedidoDetalhadoComponent } from './pages/area-cliente/pedido-detalhado/
 import { ProdutoDetalheComponent } from './pages/produto-detalhe/produto-detalhe.component';
 import { MatCarouselModule } from '@ngmodule/material-carousel';
 
+import { PagarMpComponent } from './pages/metodos-pagamento/pagar-mp/pagar-mp.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +48,7 @@ import { MatCarouselModule } from '@ngmodule/material-carousel';
     MetodosPagamentoComponent,
     PedidoDetalhadoComponent,
     ProdutoDetalheComponent,
+    PagarMpComponent,
   ],
   imports: [
     BrowserModule,
