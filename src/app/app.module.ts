@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { HttpClientModule } from '@angular/common/http';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
-import { NgxMaskModule, IConfig } from 'ngx-mask'
+// import { NgxMaskModule, IConfig } from 'ngx-mask';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -28,6 +28,8 @@ import { CarrinhoComponent } from './pages/carrinho/carrinho.component';
 import { MetodosPagamentoComponent } from './pages/metodos-pagamento/metodos-pagamento.component';
 import { PedidoDetalhadoComponent } from './pages/area-cliente/pedido-detalhado/pedido-detalhado.component';
 import { ProdutoDetalheComponent } from './pages/produto-detalhe/produto-detalhe.component';
+import { MatCarouselModule } from '@ngmodule/material-carousel';
+
 
 @NgModule({
   declarations: [
@@ -53,15 +55,16 @@ import { ProdutoDetalheComponent } from './pages/produto-detalhe/produto-detalhe
     AngularFontAwesomeModule,
     HttpClientModule,
     MatSnackBarModule,
-    
     MatFormFieldModule,
+    MatCarouselModule,
     FormsModule,
     MatInputModule,
     ReactiveFormsModule,
     MatIconModule,
     MaterialModule,
     HttpClientModule,
-    NgxMaskModule.forRoot(),
+  
+    // NgxMaskModule.forRoot(),
   ],
   providers: [HttpClientModule],
   bootstrap: [AppComponent]

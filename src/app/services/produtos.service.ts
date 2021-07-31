@@ -29,6 +29,13 @@ export class ProdutosService {
     return this.http.get(`${this.apiUrl}/products/produtosUsados`)
   }
 
+  public getProduto(id: number) : any{
+    return this.http.get(this.apiUrl + `/products/${id}`)
+  }
+  public getProdutoImage(id: number, imagem: number) : any{
+    return this.http.get(this.apiUrl + `/products/produtoImage${imagem}/${id}`)
+  }
+
   errorHandler(e: any): Observable<any> {
     console.log(e)
     this.showMessage('Ocorreu um erro!', true)
@@ -43,6 +50,7 @@ export class ProdutosService {
       panelClass: isErro ? ['msg-erro'] : ['msg-success']
     })
   }
+
 
   /* GERANDO O PEDIDO */
   public createPedido(pedidos) {

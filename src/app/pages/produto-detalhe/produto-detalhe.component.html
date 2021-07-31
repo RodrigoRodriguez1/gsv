@@ -3,14 +3,12 @@
 
         <div class="content-page">
 
-            <div class="product-image foto1"></div> <!-- Imagem(s) do Produto -->
+            <div class="product-image  foto1"  [ngStyle]="{'background-image':' url(' + 'http://localhost:3000/' +images[1] + ')'}"></div> <!-- Imagem(s) do Produto -->
             <div class="product-image foto2"></div> <!-- Imagem(s) do Produto -->
             <div class="product-image foto3"></div> <!-- Imagem(s) do Produto -->
             <div class="product-image foto4"></div> <!-- Imagem(s) do Produto -->
             <div class="product-image foto5"></div> <!-- Imagem(s) do Produto -->
-            <div class="product-image foto6"></div> <!-- Imagem(s) do Produto -->
-            <div class="product-image foto7"></div> <!-- Imagem(s) do Produto -->
-        
+         
             <div class="botoes-imagem" style="width: 47.88%;height:40px;background-color:rgb(240, 240, 240)">
                 <button id="botao-prosseguir" style="float: right;border:0px solid white;font-size:24px;width: 50px;">></button>
                 <button id="botao-voltar" style="float: left;border:0px solid white;font-size:24px;width: 50px;"><</button>
@@ -19,12 +17,35 @@
 
             <div style="clear: both;"></div>
             <div class="infos">
-                <h2>Nome do Produto</h2>
-                <p>Gênero</p>
-                <p style="font-weight: bold;">R$ 99999999</p>
-                <p>Descrição</p>
+                <h2>{{produtos.nome}}</h2>
+                <p>{{produtos.genero}}</p>
+                <p style="font-weight: bold;">R$ {{produtos.preco}}</p>
+                <p>{{produtos.descricao}}</p>
                 <button class="botao-compra">Adicionar ao Carrinho</button>
             </div> 
         </div>
+  
     </div>
+
+    <mat-carousel
+  timings="200ms ease-in"
+  [autoplay]="true"
+  interval="6000"
+  color="black"
+>
+  <mat-carousel-slide
+    *ngFor="let slide of slides; let i = index"
+    [image]="slide.image"
+    overlayColor="#ffffff"
+    [hideOverlay]="false"
+  ></mat-carousel-slide>
+</mat-carousel>
+
+   <img [attr.src]="'http://localhost:3000/' +  images[1]" width="100px" />
+    <div></div>
+   <!--   <img [attr.src]="'http://localhost:3000/' +  images[2]" width="100px" />
+    <div></div>
+    <img [attr.src]="'http://localhost:3000/' + images[3]" width="100px" />
+    <div></div>
+    <img [attr.src]="'http://localhost:3000/' + images[4]" width="100px" /> -->
 </div>

@@ -24,6 +24,7 @@ const routes: Routes = [
    { path: 'area-cliente', component: AreaClienteComponent},
    { path: 'carrinho', component: CarrinhoComponent},
    { path: 'metodo', component: MetodosPagamentoComponent},
+   { path: 'produto-detalhado/:id', component: ProdutoDetalheComponent },
    { path: 'pedido-detalhado', component: PedidoDetalhadoComponent},
    { path: 'produto', component: ProdutoDetalheComponent}
 
