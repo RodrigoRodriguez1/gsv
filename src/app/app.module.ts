@@ -29,6 +29,7 @@ import { MetodosPagamentoComponent } from './pages/metodos-pagamento/metodos-pag
 import { PedidoDetalhadoComponent } from './pages/area-cliente/pedido-detalhado/pedido-detalhado.component';
 import { ProdutoDetalheComponent } from './pages/produto-detalhe/produto-detalhe.component';
 import { MatCarouselModule } from '@ngmodule/material-carousel';
+import { CarouselModule } from 'ngx-owl-carousel-o';
 
 import { PagarMpComponent } from './pages/metodos-pagamento/pagar-mp/pagar-mp.component';
 
@@ -65,6 +66,7 @@ import { PagarMpComponent } from './pages/metodos-pagamento/pagar-mp/pagar-mp.co
     MatIconModule,
     MaterialModule,
     HttpClientModule,
+    CarouselModule 
   
     // NgxMaskModule.forRoot(),
   ],

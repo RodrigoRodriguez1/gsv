@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import * as $ from 'jquery';
 import { ProdutosService } from 'src/app/services/produtos.service';
+import { OwlOptions } from 'ngx-owl-carousel-o';
 
 //declare function hello(): void;
 
@@ -16,52 +17,51 @@ export class ProdutoDetalheComponent implements OnInit {
     private route: ActivatedRoute,
     private produtosService: ProdutosService,) {
 
-    $(function () {
+    // $(function () {
 
-      var imagens = $('.product-image').length;
-      var imagemAtual = 0;
+    //   var imagens = $('.product-image').length;
+    //   var imagemAtual = 0;
 
-      atualizarContagemImagens();
-      avancarImagem();
-      voltarImagem();
+    //   atualizarContagemImagens();
+    //   avancarImagem();
+    //   voltarImagem();
 
-      $('.product-image').eq(imagemAtual).css('display', 'block');
+    //   $('.product-image').eq(imagemAtual).css('display', 'block');
 
-      function avancarImagem() {
-        $('#botao-prosseguir').click(function () {
-          $('.product-image').eq(imagemAtual).css('display', 'none');
-          imagemAtual++;
-          if (imagemAtual > imagens - 1) {
-            imagemAtual = imagens - 1;
-          }
-          $('.product-image').eq(imagemAtual).css('display', 'block');
-        });
-      }
+    //   function avancarImagem() {
+    //     $('#botao-prosseguir').click(function () {
+    //       $('.product-image').eq(imagemAtual).css('display', 'none');
+    //       imagemAtual++;
+    //       if (imagemAtual > imagens - 1) {
+    //         imagemAtual = imagens - 1;
+    //       }
+    //       $('.product-image').eq(imagemAtual).css('display', 'block');
+    //     });
+    //   }
 
-      function voltarImagem() {
-        $('#botao-voltar').click(function () {
-          $('.product-image').eq(imagemAtual).css('display', 'none');
-          imagemAtual--;
-          if (imagemAtual < 0) {
-            imagemAtual = 0;
-          }
-          $('.product-image').eq(imagemAtual).css('display', 'block');
-        });
-      }
+    //   function voltarImagem() {
+    //     $('#botao-voltar').click(function () {
+    //       $('.product-image').eq(imagemAtual).css('display', 'none');
+    //       imagemAtual--;
+    //       if (imagemAtual < 0) {
+    //         imagemAtual = 0;
+    //       }
+    //       $('.product-image').eq(imagemAtual).css('display', 'block');
+    //     });
+    //   }
 
-      function atualizarContagemImagens() {
-        setInterval(function () {
-          var numeroTotalImagens = $('.product-image').length;
-          var numeroAtualImagem = imagemAtual + 1;
-          var textoContagem = document.getElementById('numero-imagens');
-          textoContagem.innerHTML = "(" + numeroAtualImagem + "/" + numeroTotalImagens + ")";
-        });
-      }
+    //   function atualizarContagemImagens() {
+    //     setInterval(function () {
+    //       var numeroTotalImagens = $('.product-image').length;
+    //       var numeroAtualImagem = imagemAtual + 1;
+    //       var textoContagem = document.getElementById('numero-imagens');
+    //       textoContagem.innerHTML = "(" + numeroAtualImagem + "/" + numeroTotalImagens + ")";
+    //     });
+    //   }
 
-    });
+    // });
 
   }
-  slides = [{'image': 'techiediaries.com/handsonangular.png?ezimgfmt=rs:160x255/rscb3/ng:webp/ngcb3'},];
 
   sub: any;
   idProduto = 0;
@@ -112,5 +112,31 @@ export class ProdutoDetalheComponent implements OnInit {
     
 
   }
+
+  customOptions: OwlOptions = {
+    loop: true,
+    mouseDrag: false,
+    touchDrag: false,
+    pullDrag: false,
+    dots: false,
+    navSpeed: 700,
+    navText: ['', ''],
+    responsive: {
+      0: {
+        items: 1
+      },
+      100: {
+        items: 2
+      },
+      140: {
+        items: 3
+      },
+      200: {
+        items: 1  
+      }
+    },
+    nav: true
+  }
+
 
 }

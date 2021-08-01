@@ -86,6 +86,11 @@ ngb-carousel {
     height: inherit;
 }
 
+.caroussel23{
+    width: 300px;
+    height: 600px;
+}
+
 .carousel-inner {
     overflow: visible;
 }

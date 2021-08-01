@@ -3,17 +3,28 @@
 
         <div class="content-page">
 
-            <div class="product-image  foto1"  [ngStyle]="{'background-image':' url(' + 'http://localhost:3000/' +images[1] + ')'}"></div> <!-- Imagem(s) do Produto -->
-            <div class="product-image foto2"></div> <!-- Imagem(s) do Produto -->
-            <div class="product-image foto3"></div> <!-- Imagem(s) do Produto -->
-            <div class="product-image foto4"></div> <!-- Imagem(s) do Produto -->
-            <div class="product-image foto5"></div> <!-- Imagem(s) do Produto -->
-         
-            <div class="botoes-imagem" style="width: 47.88%;height:40px;background-color:rgb(240, 240, 240)">
-                <button id="botao-prosseguir" style="float: right;border:0px solid white;font-size:24px;width: 50px;">></button>
-                <button id="botao-voltar" style="float: left;border:0px solid white;font-size:24px;width: 50px;"><</button>
-                <p id="numero-imagens" style="text-align: center;font-size:18px;">(0/7)</p>
-            </div>
+          <div class="caroussel23">
+
+            <owl-carousel-o [options]="customOptions">
+              <ng-template [width]="10" carouselSlide>
+                <img [attr.src]="'http://localhost:3000/' +  images[0]" width="10" /> 
+              </ng-template>  
+              <ng-template [width]="10" carouselSlide>
+                <img [attr.src]="'http://localhost:3000/' +  images[1]"  width="10"/> 
+              </ng-template>  
+              <ng-template [width]="10"carouselSlide>
+                <img [attr.src]="'http://localhost:3000/' +  images[2]"  width="10"/> 
+              </ng-template>  
+              <ng-template [width]="10"carouselSlide>
+                <img [attr.src]="'http://localhost:3000/' +  images[3]"  width="10"/> 
+              </ng-template>  
+              <ng-template [width]="10"carouselSlide>
+                <img [attr.src]="'http://localhost:3000/' +  images[4]" width="10" /> 
+              </ng-template>  
+            </owl-carousel-o>
+        </div>
+
+          
 
             <div style="clear: both;"></div>
             <div class="infos">
@@ -23,29 +34,24 @@
                 <p>{{produtos.descricao}}</p>
                 <button class="botao-compra">Adicionar ao Carrinho</button>
             </div> 
-        </div>
-  
-    </div>
+            
+           
+  </div>
 
-    <mat-carousel
-  timings="200ms ease-in"
-  [autoplay]="true"
-  interval="6000"
-  color="black"
->
-  <mat-carousel-slide
-    *ngFor="let slide of slides; let i = index"
-    [image]="slide.image"
-    overlayColor="#ffffff"
-    [hideOverlay]="false"
-  ></mat-carousel-slide>
-</mat-carousel>
+  </div>
 
-   <img [attr.src]="'http://localhost:3000/' +  images[1]" width="100px" />
-    <div></div>
-   <!--   <img [attr.src]="'http://localhost:3000/' +  images[2]" width="100px" />
-    <div></div>
-    <img [attr.src]="'http://localhost:3000/' + images[3]" width="100px" />
-    <div></div>
-    <img [attr.src]="'http://localhost:3000/' + images[4]" width="100px" /> -->
+   
+ 
 </div>
+
+<!-- <div class="product-image  foto1"  [ngStyle]="{'background-image':' url(' + 'http://localhost:3000/' +images[1] + ')'}"></div> 
+<div class="product-image foto2"></div> 
+<div class="product-image foto3"></div> 
+<div class="product-image foto4"></div> 
+<div class="product-image foto5"></div> 
+
+<div class="botoes-imagem" style="width: 47.88%;height:40px;background-color:rgb(240, 240, 240)">
+    <button id="botao-prosseguir" style="float: right;border:0px solid white;font-size:24px;width: 50px;">></button>
+    <button id="botao-voltar" style="float: left;border:0px solid white;font-size:24px;width: 50px;"><</button>
+    <p id="numero-imagens" style="text-align: center;font-size:18px;">(0/7)</p>
+</div> -->

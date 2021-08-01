@@ -29,11 +29,14 @@
             ],
             "styles": [
               "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
-              "src/styles.sass"
+              "src/styles.sass",
+              "node_modules/ngx-owl-carousel-o/lib/styles/prebuilt-themes/owl.carousel.min.css",
+              "node_modules/ngx-owl-carousel-o/lib/styles/prebuilt-themes/owl.theme.default.min.css",
+              {
+                "input": "./node_modules/bootstrap/dist/css/bootstrap.min.css"
+              }
             ],
-            "scripts": [
-              
-            ]
+            "scripts": []
           },
           "configurations": {
             "production": {
