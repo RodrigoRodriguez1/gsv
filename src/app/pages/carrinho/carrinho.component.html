@@ -46,7 +46,7 @@
 
                     </mat-radio-group>
 
-                    <p *ngIf="precoSomadoFrete == ''">Selecione um Meio de Entrega</p><br />
+                    <p *ngIf="precoSomadoFrete == ''">Selecione um Método de Entrega</p><br />
                     <p *ngIf="precoSomadoFrete != ''">VALOR TOTAL: <span style="font-weight: bold;">{{precoSomadoFrete | currency:'BRL'}}</span></p><br />
                     <!-- <h1>VALOR TOTAL: {{precoSomadoFrete | currency:'BRL'}}</h1><br /> -->
                     <button class="btn btn-default" (click)="finalizar()" id="button-checkout">Finalizar Compra</button>

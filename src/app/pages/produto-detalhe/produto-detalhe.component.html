@@ -1,25 +1,42 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap" rel="stylesheet">
+
+<div class="logo">
+  <div class="logo-image"></div>
+</div>
+
+<div class="faixa">
+  <div class="titulo">
+    <p style="font-size: 48px;font-family: 'Oswald';">{{produtos.nome}}</p>
+  </div>
+</div>
+
 <div class="container">
     <div class="row">
-
-        <div class="content-page">
+    
+        <div class="content-page" style="transform: translate(0px, -30%);">
 
           <div class="caroussel23">
 
             <owl-carousel-o [options]="customOptions">
               <ng-template [width]="10" carouselSlide>
-                <img [attr.src]="'http://localhost:3000/' +  images[0]" width="10" /> 
+                <img style="margin-top: 20%;border: 16px solid white;" [attr.src]="'http://localhost:3000/' +  images[0]" width="10" /> 
               </ng-template>  
               <ng-template [width]="10" carouselSlide>
-                <img [attr.src]="'http://localhost:3000/' +  images[1]"  width="10"/> 
+                <img style="margin-top: 20%;border: 16px solid white;" [attr.src]="'http://localhost:3000/' +  images[1]"  width="10"/> 
               </ng-template>  
               <ng-template [width]="10"carouselSlide>
-                <img [attr.src]="'http://localhost:3000/' +  images[2]"  width="10"/> 
+                <img style="margin-top: 20%;border: 16px solid white;" [attr.src]="'http://localhost:3000/' +  images[2]"  width="10"/> 
               </ng-template>  
               <ng-template [width]="10"carouselSlide>
-                <img [attr.src]="'http://localhost:3000/' +  images[3]"  width="10"/> 
+                <img style="margin-top: 20%;border: 16px solid white;" [attr.src]="'http://localhost:3000/' +  images[3]"  width="10"/> 
               </ng-template>  
               <ng-template [width]="10"carouselSlide>
-                <img [attr.src]="'http://localhost:3000/' +  images[4]" width="10" /> 
+                <img style="margin-top: 20%;border: 16px solid white;" [attr.src]="'http://localhost:3000/' +  images[4]" width="10" /> 
               </ng-template>  
             </owl-carousel-o>
         </div>
@@ -28,12 +45,14 @@
 
             <div style="clear: both;"></div>
             <div class="infos">
-                <h2>{{produtos.nome}}</h2>
-                <p>{{produtos.genero}}</p>
-                <p style="font-weight: bold;">R$ {{produtos.preco}}</p>
-                <p>{{produtos.descricao}}</p>
-                <button class="botao-compra">Adicionar ao Carrinho</button>
-            </div> 
+              <p class="tamanho">Tamanho: </p>
+              <!--<p>Gênero: <span style="font-weight: bold;">{{produtos.genero}}</span></p>-->
+              <p class="preco">R$ {{produtos.preco}}</p>
+              <!--<p>Descrição: <span style="font-weight: bold;">{{produtos.descricao}}</span></p>-->
+              <div class="linha-h"></div>
+              <p class="cep">Calcule seu frete: </p>
+              <button class="botao-compra">Adicionar ao Carrinho</button>
+           </div> 
             
            
   </div>

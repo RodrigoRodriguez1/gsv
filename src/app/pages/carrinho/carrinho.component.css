@@ -55,7 +55,8 @@
 
 
 .info-imagem{
-    float:left;
+    float: left;
+    transform: translate(-20px, -20px);
 }
 
 .info-imagem > img{
