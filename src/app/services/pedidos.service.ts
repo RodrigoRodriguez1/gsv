@@ -21,4 +21,8 @@ export class PedidosService {
     return this.http.get(`${this.apiUrl}/pedidos/pedidosCliente/${id}`)
   }
 
+  public pedidoDetalhadoAreaCliente(id) {
+    return this.http.get(`${this.apiUrl}/pedidos/pedidoDetalhadoAreaCliente/${id}`)
+  }
+
 }

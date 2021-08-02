@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, LOCALE_ID} from '@angular/core';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { HttpClientModule } from '@angular/common/http';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
@@ -32,6 +32,11 @@ import { MatCarouselModule } from '@ngmodule/material-carousel';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 
 import { PagarMpComponent } from './pages/metodos-pagamento/pagar-mp/pagar-mp.component';
+
+import ptBr from '@angular/common/locales/pt';
+import { registerLocaleData } from '@angular/common';
+
+registerLocaleData(ptBr);
 
 @NgModule({
   declarations: [
@@ -70,7 +75,9 @@ import { PagarMpComponent } from './pages/metodos-pagamento/pagar-mp/pagar-mp.co
   
     // NgxMaskModule.forRoot(),
   ],
-  providers: [HttpClientModule],
+  providers: [HttpClientModule,
+  { provide: LOCALE_ID, useValue: 'pt' }],
+  
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,1 +1,21 @@
-<p>pedido-detalhado works!</p>
+<div class="carregando" *ngIf="carregando">
+    <img src="https://i.imgur.com/gnuXFbP.gif" width="100px">
+    <p>Carregando...</p>
+</div>
+
+<div class="container main" *ngIf="!carregando">
+    <div class="row">
+        <div class="col text-center">
+            <h1>PEDIDO NUMERO: {{idPedido}}</h1>
+            <h2>STATUS DO PEDIDO: <span style="color: #00a841;">{{STATUS}}</span></h2>
+            <h3>PRODUTOS: </h3>
+            <div *ngFor="let p of pedidoDet">
+                <p>{{p.nome}} - {{p.preco | currency:'BRL'}}</p>
+            </div>
+            <hr />
+            <p>TOTAL: {{somado | currency:'BRL'}}</p>
+
+            <h4>Algum problema? Entre em contato no e-mail: gsv@gsv.com</h4>
+        </div>
+    </div>
+</div>
