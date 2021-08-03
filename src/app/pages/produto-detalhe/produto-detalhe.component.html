@@ -16,51 +16,66 @@
 </div>
 
 <div class="container">
-    <div class="row">
-    
-        <div class="content-page" style="transform: translate(0px, -30%);">
+  <div class="row">
 
-          <div class="caroussel23">
+    <div class="content-page" style="transform: translate(0px, -30%);">
 
-            <owl-carousel-o [options]="customOptions">
-              <ng-template [width]="10" carouselSlide>
-                <img style="margin-top: 20%;border: 16px solid white;" [attr.src]="'http://localhost:3000/' +  images[0]" width="10" /> 
-              </ng-template>  
-              <ng-template [width]="10" carouselSlide>
-                <img style="margin-top: 20%;border: 16px solid white;" [attr.src]="'http://localhost:3000/' +  images[1]"  width="10"/> 
-              </ng-template>  
-              <ng-template [width]="10"carouselSlide>
-                <img style="margin-top: 20%;border: 16px solid white;" [attr.src]="'http://localhost:3000/' +  images[2]"  width="10"/> 
-              </ng-template>  
-              <ng-template [width]="10"carouselSlide>
-                <img style="margin-top: 20%;border: 16px solid white;" [attr.src]="'http://localhost:3000/' +  images[3]"  width="10"/> 
-              </ng-template>  
-              <ng-template [width]="10"carouselSlide>
-                <img style="margin-top: 20%;border: 16px solid white;" [attr.src]="'http://localhost:3000/' +  images[4]" width="10" /> 
-              </ng-template>  
-            </owl-carousel-o>
-        </div>
+      <div class="caroussel23">
 
-          
+        <owl-carousel-o [options]="customOptions">
+          <ng-template [width]="10" carouselSlide>
+            <img style="margin-top: 20%;border: 16px solid white;" [attr.src]="'http://localhost:3000/' +  images[0]"
+              width="10" />
+          </ng-template>
+          <ng-template [width]="10" carouselSlide>
+            <img style="margin-top: 20%;border: 16px solid white;" [attr.src]="'http://localhost:3000/' +  images[1]"
+              width="10" />
+          </ng-template>
+          <ng-template [width]="10" carouselSlide>
+            <img style="margin-top: 20%;border: 16px solid white;" [attr.src]="'http://localhost:3000/' +  images[2]"
+              width="10" />
+          </ng-template>
+          <ng-template [width]="10" carouselSlide>
+            <img style="margin-top: 20%;border: 16px solid white;" [attr.src]="'http://localhost:3000/' +  images[3]"
+              width="10" />
+          </ng-template>
+          <ng-template [width]="10" carouselSlide>
+            <img style="margin-top: 20%;border: 16px solid white;" [attr.src]="'http://localhost:3000/' +  images[4]"
+              width="10" />
+          </ng-template>
+        </owl-carousel-o>
+      </div>
 
-            <div style="clear: both;"></div>
-            <div class="infos">
-              <p class="tamanho">Tamanho: </p>
-              <!--<p>Gênero: <span style="font-weight: bold;">{{produtos.genero}}</span></p>-->
-              <p class="preco">R$ {{produtos.preco}}</p>
-              <!--<p>Descrição: <span style="font-weight: bold;">{{produtos.descricao}}</span></p>-->
-              <div class="linha-h"></div>
-              <p class="cep">Calcule seu frete: </p>
-              <button class="botao-compra">Adicionar ao Carrinho</button>
-           </div> 
-            
-           
+
+
+      <div style="clear: both;"></div>
+      <div class="infos">
+        <p class="tamanho">Tamanho: </p>
+        <!--<p>Gênero: <span style="font-weight: bold;">{{produtos.genero}}</span></p>-->
+        <p class="preco">R$ {{produtos.preco}}</p>
+        <!--<p>Descrição: <span style="font-weight: bold;">{{produtos.descricao}}</span></p>-->
+        <div class="linha-h"></div>
+        <p class="cep">Calcule seu frete: </p>
+
+        <mat-form-field>
+          <mat-label>CEP:</mat-label>
+          <input placeholder="Insira o CEP" [(ngModel)]="cep" matInput mask="00000-000" name="cep" id="cep" />
+        </mat-form-field>
+
+        <br />
+        <label *ngIf="loadingPAC">PAC: {{valorFretePAC}} - {{prazoFretePAC}} Dias</label><br />
+        <label *ngIf="loadingSEDEX">SEDEX: {{valorFreteSEDEX}} - {{prazoFreteSEDEX}} Dias</label><br />
+        <button class="botao-calc-frete" (click)="consultaCEP(cep)">Calcular</button>
+
+        <br />
+        <br />
+        <button class="botao-compra">Adicionar ao Carrinho</button>
+      </div>
+
+
+    </div>
+
   </div>
-
-  </div>
-
-   
- 
 </div>
 
 <!-- <div class="product-image  foto1"  [ngStyle]="{'background-image':' url(' + 'http://localhost:3000/' +images[1] + ')'}"></div> 
