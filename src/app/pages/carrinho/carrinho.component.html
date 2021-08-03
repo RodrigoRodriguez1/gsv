@@ -1,46 +1,65 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet"> 
 <div class="container">
     <div class="row">
         <div class="col text-center">
             <div class="carrinho">
-                <h1 style="padding: 40px 2%;border-bottom: 1px solid black;">Carrinho de Compras <i style="font-size:40px;"class="fas fa-shopping-cart"></i></h1>
+                <h1 style="padding: 40px 2%;border-bottom: 1px solid black;
+                margin-bottom: 40px;">Carrinho de Compras <i style="font-size:40px;"class="fas fa-shopping-cart"></i></h1>
+                
+                <div class="rev-pt" *ngIf="itemsCarrinho.length != 0">
+                    <h1 style="font-size: 34px;"><span>1</span> Revisão</h1>
+                </div>
+                
                 <div class="informacoes-produto" style="font-family: sans-serif;" *ngFor="let i of itemsCarrinho; let ind = index">
-
                     <div class="info-imagem">
                         <img [attr.src]="'http://localhost:3000/' + i.imagem" />
                         <div style="clear: both;"></div>
                     </div>
 
-                    <p>Produto: <span style="font-weight: bold;">{{i.Nome}}</span></p>
-                    <p>Preço: <span style="font-weight: bold;">{{i.Preco | currency:'BRL'}}</span></p>
-                    <p>Quantidade disponivel: <span style="font-weight: bold;">{{i.Quantidade}}</span></p>
-                    <button class="botao-remover" (click)="removerItem(ind)">Remover</button>
+                    <div class="info-t" style="font-family: 'Roboto Condensed';">
+                        <p>Nome: <span style="font-weight: bold;">{{i.Nome}}</span></p>
+                        <p>Tamanho: </p>
+                        <p>Preço: <span style="font-weight: bold;">{{i.Preco | currency:'BRL'}}</span></p>
+                        <!--<p>Quantidade disponivel: <span style="font-weight: bold;">{{i.Quantidade}}</span></p>-->
+                        <button class="botao-remover" (click)="removerItem(ind)"><i class="fas fa-trash-alt"></i></button>
+                    </div>
+                    <div style="clear: both;"></div>
                 </div>
-
                 <!-- Botoes de compra -->
                 <div class="login" id="aqui" *ngIf="usuario == null && itemsCarrinho.length != 0">
                     <h1>É necessário realizar login para finalizar a compra</h1>
                     <button class="btn btn-default" routerLink="/login">Login</button>
                 </div>
+                
+                
+                <div class="rev-pt" *ngIf="itemsCarrinho.length != 0">
+                    <h1 style="font-size: 34px;"><span>2</span> Método de Pagamento</h1>
+                </div>
 
-                <div class="login" *ngIf="usuario != null && itemsCarrinho.length != 0">
-                    <h1 style="padding: 40px 2%;border-bottom: 1px solid black;font-size: 40px;">Método de Entrega <i class="fas fa-bus"></i> </h1>
 
+                <div class="login pagamento-rev" *ngIf="usuario != null && itemsCarrinho.length != 0">
+                    
                     <mat-radio-group
                     [(ngModel)]="tipoEntrega">
 
 
 
-                    <p style="font-size: 18px;">
-                        <span style="font-weight: bold;">SEDEX</span> | VALOR:
+                    <p style="font-size: 18px;text-align: left;padding-left: 48px;
+                    padding-top: 90px;">
+                        <span style="font-size: 32px;">SEDEX </span>
+                        <!--<span style="font-weight: bold;">SEDEX</span> | VALOR:
                         <span style="font-weight: bold;"> R$ {{valorFrete}}</span> 
-                        | PRAZO: <span style="font-weight: bold;"> {{prazoFrete}} Dia(s)</span> Uteis 
+                        | PRAZO: <span style="font-weight: bold;"> {{prazoFrete}} Dia(s)</span> Uteis-->
                         <mat-radio-button value="pac" (change)="attFrete()"></mat-radio-button>
                     </p>
 
-                    <p style="font-size: 18px;">
-                        <span style="font-weight: bold;">PAC</span>  | VALOR:
+                    <p style="font-size: 18px;text-align: left;padding-left: 48px;">
+                        <span style="font-size: 32px">PAC </span>
+                        <!--<span style="font-weight: bold;">PAC</span>  | VALOR:
                         <span style="font-weight: bold;"> R$ {{valorFretePAC}}</span>
-                        | PRAZO: <span style="font-weight: bold;"> {{prazoFretePAC}} Dia(s)</span> Uteis 
+                        | PRAZO: <span style="font-weight: bold;"> {{prazoFretePAC}} Dia(s)</span> Uteis -->
                         <mat-radio-button value="sedex" (change)="attFrete()"></mat-radio-button>
                     </p>
 
@@ -49,7 +68,8 @@
                     <p *ngIf="precoSomadoFrete == ''">Selecione um Método de Entrega</p><br />
                     <p *ngIf="precoSomadoFrete != ''">VALOR TOTAL: <span style="font-weight: bold;">{{precoSomadoFrete | currency:'BRL'}}</span></p><br />
                     <!-- <h1>VALOR TOTAL: {{precoSomadoFrete | currency:'BRL'}}</h1><br /> -->
-                    <button class="btn btn-default" (click)="finalizar()" id="button-checkout">Finalizar Compra</button>
+                    <button class="btn btn-default pagamento-btn" (click)="finalizar()" id="button-checkout">Finalizar Compra</button>
+                    <div style="clear: both;"></div>
                 </div>
 
                 <div class="login" *ngIf="itemsCarrinho.length == 0">
