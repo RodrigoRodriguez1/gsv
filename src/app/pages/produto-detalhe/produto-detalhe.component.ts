@@ -3,8 +3,11 @@ import { ActivatedRoute, Router } from '@angular/router';
 import * as $ from 'jquery';
 import { ProdutosService } from 'src/app/services/produtos.service';
 import { OwlOptions } from 'ngx-owl-carousel-o';
+import { UsersService } from 'src/app/services/user.service';
+import { MatSnackBar } from '@angular/material';
 
-//declare function hello(): void;
+import { Validators, FormBuilder, FormGroup, ValidatorFn } from '@angular/forms'
+
 
 @Component({
   selector: 'app-produto-detalhe',
@@ -15,53 +18,12 @@ export class ProdutoDetalheComponent implements OnInit {
 
   constructor(private router: Router,
     private route: ActivatedRoute,
-    private produtosService: ProdutosService,) {
-
-    // $(function () {
-
-    //   var imagens = $('.product-image').length;
-    //   var imagemAtual = 0;
-
-    //   atualizarContagemImagens();
-    //   avancarImagem();
-    //   voltarImagem();
-
-    //   $('.product-image').eq(imagemAtual).css('display', 'block');
-
-    //   function avancarImagem() {
-    //     $('#botao-prosseguir').click(function () {
-    //       $('.product-image').eq(imagemAtual).css('display', 'none');
-    //       imagemAtual++;
-    //       if (imagemAtual > imagens - 1) {
-    //         imagemAtual = imagens - 1;
-    //       }
-    //       $('.product-image').eq(imagemAtual).css('display', 'block');
-    //     });
-    //   }
-
-    //   function voltarImagem() {
-    //     $('#botao-voltar').click(function () {
-    //       $('.product-image').eq(imagemAtual).css('display', 'none');
-    //       imagemAtual--;
-    //       if (imagemAtual < 0) {
-    //         imagemAtual = 0;
-    //       }
-    //       $('.product-image').eq(imagemAtual).css('display', 'block');
-    //     });
-    //   }
-
-    //   function atualizarContagemImagens() {
-    //     setInterval(function () {
-    //       var numeroTotalImagens = $('.product-image').length;
-    //       var numeroAtualImagem = imagemAtual + 1;
-    //       var textoContagem = document.getElementById('numero-imagens');
-    //       textoContagem.innerHTML = "(" + numeroAtualImagem + "/" + numeroTotalImagens + ")";
-    //     });
-    //   }
-
-    // });
-
+    private produtosService: ProdutosService,
+    private userService: UsersService,
+    private snackBar: MatSnackBar,) {
   }
+
+  cep
 
   sub: any;
   idProduto = 0;
@@ -136,6 +98,60 @@ export class ProdutoDetalheComponent implements OnInit {
       }
     },
     nav: true
+  }
+
+
+  valorFretePAC
+  prazoFretePAC
+
+  valorFreteSEDEX
+  prazoFreteSEDEX
+
+  loadingPAC = false
+  loadingSEDEX = false
+  consultaCEP(cep) {
+    console.log('cep: ')
+    console.log(cep)
+    this.userService.consultaCEP(cep).subscribe(result => {
+    console.log('retorno consulta cep: ')
+    console.log(result['dadosCEP'])
+
+      if(result['dadosCEP'] != 'nao_encontrado') {
+
+        // VALOR DO PAC: 
+        this.produtosService.getFretePACProduct(cep).subscribe(ret => {
+          this.valorFretePAC = ret['valor']
+          this.prazoFretePAC = ret['prazo']
+          // console.log(this.valorFretePAC)
+          this.loadingPAC = true
+        })
+
+        // VALOR DO SEDEX: 
+        this.produtosService.getFreteSEDEXProduct(cep).subscribe(ret => {
+          this.valorFreteSEDEX = ret['valor']
+          this.prazoFreteSEDEX = ret['prazo']
+          // console.log(this.valorFreteSEDEX)
+          this.loadingSEDEX = true
+        })
+
+
+      } else {
+        this.cep = ''
+
+        this.showMessage('O CEP informado está invalido!')
+      }
+
+
+    })
+  }
+
+  showMessage(msg: string, isErro: boolean = false): void {
+    this.snackBar.open(msg, 'X', {
+      duration: 4000,
+      horizontalPosition: "right",
+      verticalPosition: "top",
+      panelClass: isErro ? ['msg-erro'] : ['msg-success']
+    })
   }
 
 

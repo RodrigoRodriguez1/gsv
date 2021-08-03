@@ -29,10 +29,10 @@ export class ProdutosService {
     return this.http.get(`${this.apiUrl}/products/produtosUsados`)
   }
 
-  public getProduto(id: number) : any{
+  public getProduto(id: number): any {
     return this.http.get(this.apiUrl + `/products/${id}`)
   }
-  public getProdutoImage(id: number, imagem: number) : any{
+  public getProdutoImage(id: number, imagem: number): any {
     return this.http.get(this.apiUrl + `/products/produtoImage${imagem}/${id}`)
   }
 
@@ -70,7 +70,7 @@ export class ProdutosService {
     return this.http.post(this.apiUrl + '/pagamentos/create_preference', email)
   }
 
-  /* Pegando o valor do frete */
+  /* Pegando o valor do frete (carrinho) */
 
   getFreteSEDEX() {
     // Pegando o cep do usuario:
@@ -82,8 +82,23 @@ export class ProdutosService {
   getFretePAC() {
     // Pegando o cep do usuario:
     let dadosUsuario = JSON.parse(localStorage.getItem('currentUser'))
-    
+
     return this.http.get(this.apiUrl + '/pagamentos/getValorFretePAC/' + dadosUsuario.cep)
+  }
+
+  // ##########################################################################################
+  // ##########################################################################################
+  // ##########################################################################################
+  /* Pegando o valor do frete (produto detalhado) */
+
+  getFreteSEDEXProduct(cep) {
+
+    return this.http.get(this.apiUrl + '/pagamentos/getValorFreteSEDEX/' + cep)
+  }
+
+  getFretePACProduct(cep) {
+
+    return this.http.get(this.apiUrl + '/pagamentos/getValorFretePAC/' + cep)
   }
 
 }
