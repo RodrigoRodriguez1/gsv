@@ -48,25 +48,31 @@
 
                     <p style="font-size: 18px;text-align: left;padding-left: 48px;
                     padding-top: 90px;">
-                        <span style="font-size: 32px;">SEDEX </span>
-                        <!--<span style="font-weight: bold;">SEDEX</span> | VALOR:
-                        <span style="font-weight: bold;"> R$ {{valorFrete}}</span> 
-                        | PRAZO: <span style="font-weight: bold;"> {{prazoFrete}} Dia(s)</span> Uteis-->
+                        <span style="font-size: 32px;">SEDEX: 
+                        <span style="font-size: 24px;"> R$ {{valorFrete}} | 
+                        <span style="font-size: 24px;"> Prazo: {{prazoFrete}} dia(s) úteis  
+                        </span>
+                    </span>
+                </span>
                         <mat-radio-button value="pac" (change)="attFrete()"></mat-radio-button>
                     </p>
 
                     <p style="font-size: 18px;text-align: left;padding-left: 48px;">
-                        <span style="font-size: 32px">PAC </span>
-                        <!--<span style="font-weight: bold;">PAC</span>  | VALOR:
-                        <span style="font-weight: bold;"> R$ {{valorFretePAC}}</span>
-                        | PRAZO: <span style="font-weight: bold;"> {{prazoFretePAC}} Dia(s)</span> Uteis -->
+                        <span style="font-size: 32px;">PAC: 
+                            <span style="font-size: 24px;"> R$ {{valorFretePAC}} | 
+                            <span style="font-size: 24px;"> Prazo: {{prazoFretePAC}} dia(s) úteis  
+                            </span>
+                        </span>
+                    </span> 
                         <mat-radio-button value="sedex" (change)="attFrete()"></mat-radio-button>
                     </p>
 
                     </mat-radio-group>
 
-                    <p *ngIf="precoSomadoFrete == ''">Selecione um Método de Entrega</p><br />
-                    <p *ngIf="precoSomadoFrete != ''">VALOR TOTAL: <span style="font-weight: bold;">{{precoSomadoFrete | currency:'BRL'}}</span></p><br />
+                    <p class="ent-hpp" *ngIf="precoSomadoFrete == ''">Selecione um Método de Entrega</p><br />
+                    <p class="ent-hpp" *ngIf="precoSomadoFrete != ''">
+                        VALOR TOTAL: 
+                        <span style="font-weight: bold;">{{precoSomadoFrete | currency:'BRL'}}</span></p><br />
                     <!-- <h1>VALOR TOTAL: {{precoSomadoFrete | currency:'BRL'}}</h1><br /> -->
                     <button class="btn btn-default pagamento-btn" (click)="finalizar()" id="button-checkout">Finalizar Compra</button>
                     <div style="clear: both;"></div>

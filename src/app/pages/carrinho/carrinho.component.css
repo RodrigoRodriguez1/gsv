@@ -107,5 +107,13 @@
 
 .pagamento-rev > .pagamento-btn{
     margin-bottom: 30px;
+    margin-right: 30px;
     float: right;
+    border-radius: 0;
+}
+
+
+.ent-hpp{
+    text-align: right;
+    margin-right: 30px;
 }

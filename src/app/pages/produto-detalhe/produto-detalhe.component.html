@@ -57,14 +57,14 @@
         <div class="linha-h"></div>
         <p class="cep">Calcule seu frete: </p>
 
-        <mat-form-field>
+        <mat-form-field style="position: relative;transform: translate(-88%, 0px);">
           <mat-label>CEP:</mat-label>
           <input placeholder="Insira o CEP" [(ngModel)]="cep" matInput mask="00000-000" name="cep" id="cep" />
         </mat-form-field>
 
         <br />
-        <label *ngIf="loadingPAC">PAC: {{valorFretePAC}} - {{prazoFretePAC}} Dias</label><br />
-        <label *ngIf="loadingSEDEX">SEDEX: {{valorFreteSEDEX}} - {{prazoFreteSEDEX}} Dias</label><br />
+        <label style="position: relative;transform: translate(-95%, 0px);" *ngIf="loadingPAC">PAC: {{valorFretePAC}} - {{prazoFretePAC}} Dias úteis</label><br />
+        <label style="position: relative;transform: translate(-82%, 0px);" *ngIf="loadingSEDEX">SEDEX: {{valorFreteSEDEX}} - {{prazoFreteSEDEX}} Dias úteis</label><br />
         <button class="botao-calc-frete" (click)="consultaCEP(cep)">Calcular</button>
 
         <br />
