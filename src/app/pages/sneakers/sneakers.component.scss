@@ -1,113 +1,76 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'sans-serif';
+.titulo {
+    font-family: 'Roboto', sans-serif;
+    margin-top: 10px;
 }
 
-html,body{  
-    height: 100%;
+.divide-titulo {
+    height: 1px;
+    background: linear-gradient(to right, transparent, #464646, transparent);
+    margin-left: 370px;
+    margin-right: 370px;
+  }
+
+.filtro {
+    width: 20%;
 }
 
-.clear{
-    clear: both;
+mat-radio-button {
+    margin: 0px 7px 0px 7px;
 }
 
-.container{
-    max-width: 1280px;
-    padding: 0 2%;
-    margin: 0 auto;
+.sub-buscar {
+    font-weight: 300;
+    font-family: 'Roboto', sans-serif;
+    margin-top: 30px;
 }
 
-
-
-.shoes-welcome{
-    text-align: center;
-    padding: 65px;
-    font-size: 22px;
+.busca {
+    width: 35%;
+    margin-bottom: 30px;
 }
 
+// CARD
 
-.shoes-welcome h2{
-    border-bottom: 1px solid black;
-    width: 50%;
-    margin: 0 auto;
+.card {
+    width: 300px;
 }
 
-
-
-.tenis-section{
-    text-align: left;
-    padding: 10px 120px;
+.nome {
+    font-size: 24px;
+    max-width: 20ch;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
-
-
-.tenis-section-wraper{
-    display: inline-block;
-    width: 33%;
+.preco {
+    font-size: 14px;
 }
 
-
-
-.tenis-single{
-    display: inline-block;
-    width:75%;
-    height: 348px;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    /*background-image: url('../images/Categoria_tenis.jpg');*/
-    cursor: pointer;
-    margin-top: 15px;
+.box-card {
+    margin-bottom: 30px;
 }
 
-.fotoCategoriaShoes{
-    background-image: url('../../../images/Categoria_tenis.jpg');
-}
-
-
-
-/** Informações dos Produtos **/
-
-.maismenos > .botao-compra{
+.btn-visualizar {
     background-color: #c36ee2;
-    color: white;
+    color: #ffffff;
     border: 0px solid white;
-    padding: 10px 20px;
+    padding: 0px 15px;
     align-items: center;
-    margin-bottom: 5%;
+    transition: 0.2s;
+    border-radius: 15px 5px 15px 5px;
+
+    position: relative;
+    left: 5px;
+}
+
+.btn-visualizar:hover {
+    background-color: #ab57c9;
     transition: 0.2s;
 }
 
-.maismenos > .botao-compra:hover{
-    background-color: #ab57c9;
-    /*padding-left: calc(24px - 3px);*/
-    /*padding-right: calc(24px - 3px);*/
+.btn-carrinho {
+    position: relative;
+    left: 100px;
 }
 
-
-
-
-/************************/
-
-
-@media screen and (max-width: 720px) {
-        .tenis-section-wraper{
-            width: 100%;
-        }
-
-        .tenis-single{
-            width: 100%;
-        }
-
-        .shoes-welcome h2{
-            width: 110%;
-        }
-  }
-
-  @media screen and (max-width: 710px){
-      .tenis-section-wraper{
-          width: 120%;
-      }
-  }

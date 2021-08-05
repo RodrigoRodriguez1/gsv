@@ -11,6 +11,14 @@ export class SneakersComponent implements OnInit {
 
   constructor(private ProdutosService: ProdutosService,) { }
 
+  filtro = [
+    {value: 'maisvendidos', nome: 'Mais Vendidos'},
+    {value: 'pmaiormenor', nome: 'Preço: maior ao menor'},
+    {value: 'pmenormaior', nome: 'Preço: menor ao maior'},
+    {value: 'az', nome: 'A-Z'},
+    {value: 'za', nome: 'Z-A'}
+  ]
+
   produtos
   itemsCarrinho = []
 
