@@ -1,32 +1,76 @@
-<div class="vestWelcome">
-    <h2>CONFIRA NOSSOS ACESSÓRIOS</h2>
-</div><!--vestWelcome-->
+<div class="container">
 
 
 
+    <div class="row">
+        <div class="col-md text-center titulo">
+            <h1>Acessórios</h1>
+            <hr class="divide-titulo" />
+            <mat-form-field class="filtro" appearance="legacy">
+                <mat-label>Filtrar por</mat-label>
+                <mat-select>
+                    <mat-option *ngFor="let f of filtro" [value]="f.value">
+                        {{f.nome}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+    </div>
+    <!-- ##################################################### -->
 
-<div  class="container " id="vestWp">
-    <!-- TODOS OS ITENS SERÃO ADICIONADOS AQUI, DINAMICAMENTE -->
+    <div class="row">
+        <div class="col-md text-center titulo">
+            <mat-radio-group aria-label="Select an option">
+                <mat-radio-button color="primary" value="amarelo">Amarelo</mat-radio-button>
+                <mat-radio-button color="primary" value="azul">Azul</mat-radio-button>
+                <mat-radio-button color="primary" value="branco">Branco</mat-radio-button>
+                <mat-radio-button color="primary" value="cinza">Cinza</mat-radio-button>
+                <mat-radio-button color="primary" value="dourado">Dourado</mat-radio-button>
+                <mat-radio-button color="primary" value="prata">Prata</mat-radio-button>
+                <mat-radio-button color="primary" value="preto">Preto</mat-radio-button>
+                <mat-radio-button color="primary" value="verde">Verde</mat-radio-button>
+            </mat-radio-group>
+        </div>
+    </div>
 
-    <div class="row ">
-        <div class="col-md-4 col-sm-6 col-12"
-        *ngFor="let item of produtos;" > 
+    <!-- ##################################################### -->
+    <div class="row">
+        <div class="col-md text-center titulo">
+            <h3 class="sub-buscar">Buscar Produto</h3>
+            <mat-form-field class="busca" appearance="legacy">
+                <input matInput placeholder="Buscar...">
+                <mat-icon matSuffix>search</mat-icon>
+            </mat-form-field>
+        </div>
+    </div>
 
-        <img [attr.src]="'http://localhost:3000/' + item.imagem" width="200px"  [routerLink]="['/produto-detalhado', item.idProdutos]"/>
 
-        <div class="info-product">
-            <p>{{item.nome}}</p>
-            <p>{{item.genero}}</p>
-            <p style="font-weight: bold;">{{item.preco | currency: 'BRL'}}</p>
+
+    <!-- CARD DO PRODUTO -->
+    <div class="row">
+
+
+        <div class="col-md-3 d-flex justify-content-center box-card" *ngFor="let item of produtos;">
+            <mat-card class="card">
+                <img mat-card-image [attr.src]="'http://localhost:3000/' + item.imagem" width="200px"
+                    matTooltip="{{item.nome}}" [routerLink]="['/produto-detalhado', item.idProdutos]" />
+                <mat-card-content>
+                    <h2 class="nome">{{item.nome}}</h2>
+                    <h3 class="preco" style="font-weight: bold;">{{item.preco | currency: 'BRL'}}</h3>
+                </mat-card-content>
+                <mat-card-actions>
+                    <button class="btn-visualizar" mat-button
+                        [routerLink]="['/produto-detalhado', item.idProdutos]">Visualizar</button>
+                    <button mat-icon-button class="btn-carrinho"
+                        (click)="adicionarCarrinho(item.idProdutos, item.nome, item.preco, item.quantidade, item.imagem)">
+                        <mat-icon>add_shopping_cart</mat-icon>
+                    </button>
+                </mat-card-actions>
+            </mat-card>
         </div>
 
-        <div class="maismenos">
-            <button class="botao-compra" (click)="adicionarCarrinho(item.idProdutos, item.nome, item.preco, item.quantidade, item.imagem)">Comprar Produto</button>
-        </div><!--maismenos-->
 
     </div>
-</div>
 
-<div style="max-height: 1600px;height: 500px;">
 
 </div>

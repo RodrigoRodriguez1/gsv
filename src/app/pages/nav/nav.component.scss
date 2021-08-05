@@ -1,73 +1,70 @@
-
-.navBar{
-  height: 46px !important;
-  background-color: #f2dcfc;
-  font-family: 'Roboto', sans-serif !important;
-  position: relative;
-
-.textPrincipal{
-    font-size: 26px;
-    font-family: 'Roboto', sans-serif;
-    font-weight: 500;
-    color: #3d343d;
-  }
-  
-  ul{
-    padding: 0 20px;
-    a{
-      font-size: 16;
-      color: #585858;
-    }
-    .fa-instagram{
-      font-size: 20px;
-      color: #260436;
-    }
-    li{
-      cursor: pointer;
-    }
-  }
- 
+.only-mobile {
+  display: none;
 }
 
-.second-navbar{
-  height: 36px !important;
+.navbar-carrinho {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+
+  padding-left: 330px;
+  padding-right: 330px;
+
   background-color: #260436;
-  font-family: 'Roboto', sans-serif !important;
-  position: relative;
-
-.textPrincipal{
-    font-size: 26px;
-    font-family: 'Roboto', sans-serif;
-    font-weight: 500;
-    color: #3d343d;
-  }
-  
-  ul{
-    margin: 0 auto;
-    padding: 0 20px;
-    a{
-      font-size: 16;
-      color: #faeeff;
-    }
-    .fa-instagram{
-      font-size: 20px;
-      color: #faeeff;
-    }
-    li{
-      cursor: pointer;
-    }
-  }
- 
+  color: #ebebeb;
 }
 
-@media screen and (max-width: 1480px) {
-  .navBar ul{
-    left: 0px;
-  }
+.txt-carrinho {
+  text-decoration: none;
+  color: #f3f3f3;
 }
 
-@media screen and (max-width: 1200px) {
-    .navBar ul{
-      left: 0px;
-    }
+.txt-carrinho:hover {
+  text-decoration: none;
+  color: #d6d6d6;
+}
+
+// ###################################################
+
+.navbar-menu {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+
+  padding-left: 340px;
+  padding-right: 340px;
+
+  background-color: #f2dcfc;
+  color: #111111;
+}
+
+.txt-menu {
+  text-decoration: none;
+  color: #111111;
+}
+
+.txt-menu:hover {
+  text-decoration: none;
+  color: #1d1d1d;
+}
+
+@media (max-width: 991px) {
+  .navbar-menu {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .only-pc {
+    display: none;
+  }
+
+  .only-mobile {
+    background-color: #260436;
+    color: #f3f3f3;
+    display: flex;
+    width: 100%;
+    padding: 10px;
+  }
+
+  .item-mobile {
+    margin: 5px 10px 5px 10px;
+  }
 }
