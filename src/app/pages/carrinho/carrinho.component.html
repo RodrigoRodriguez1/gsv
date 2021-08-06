@@ -6,10 +6,10 @@
         <div class="col text-center">
             <div class="carrinho">
                 <h1 style="padding: 40px 2%;border-bottom: 1px solid black;
-                margin-bottom: 40px;">Carrinho de Compras <i style="font-size:40px;"class="fas fa-shopping-cart"></i></h1>
+                margin-bottom: 40px;">Carrinho de compras <i style="font-size:40px;"class="fas fa-shopping-cart"></i></h1>
                 
                 <div class="rev-pt" *ngIf="itemsCarrinho.length != 0">
-                    <h1 style="font-size: 34px;"><span>1</span> Revisão</h1>
+                    <h1 style="font-size: 28px;"><span>1</span> Revisão</h1>
                 </div>
                 
                 <div class="informacoes-produto" style="font-family: sans-serif;" *ngFor="let i of itemsCarrinho; let ind = index">
@@ -34,8 +34,8 @@
                 </div>
                 
                 
-                <div class="rev-pt" *ngIf="itemsCarrinho.length != 0">
-                    <h1 style="font-size: 34px;"><span>2</span> Método de Pagamento</h1>
+                <div class="rev-pt" style="margin-top: 20px;" *ngIf="usuario != null && itemsCarrinho.length != 0">
+                    <h1 style="font-size: 28px;"><span>2</span> Método de pagamento</h1>
                 </div>
 
 
@@ -69,12 +69,12 @@
 
                     </mat-radio-group>
 
-                    <p class="ent-hpp" *ngIf="precoSomadoFrete == ''">Selecione um Método de Entrega</p><br />
+                    <p class="ent-hpp" *ngIf="precoSomadoFrete == ''">Selecione um método de entrega</p><br />
                     <p class="ent-hpp" *ngIf="precoSomadoFrete != ''">
                         VALOR TOTAL: 
                         <span style="font-weight: bold;">{{precoSomadoFrete | currency:'BRL'}}</span></p><br />
                     <!-- <h1>VALOR TOTAL: {{precoSomadoFrete | currency:'BRL'}}</h1><br /> -->
-                    <button class="btn btn-default pagamento-btn" (click)="finalizar()" id="button-checkout">Finalizar Compra</button>
+                    <button class="btn btn-default pagamento-btn" (click)="finalizar()" id="button-checkout">Finalizar compra</button>
                     <div style="clear: both;"></div>
                 </div>
 
