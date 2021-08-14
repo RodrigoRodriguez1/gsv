@@ -1,38 +1,5 @@
 <div class="container">
 
-
-
-  <div class="row">
-    <div class="col-md text-center titulo">
-      <h1>Tenis</h1>
-      <hr class="divide-titulo" />
-      <mat-form-field class="filtro" appearance="legacy">
-        <mat-label>Filtrar por</mat-label>
-        <mat-select>
-          <mat-option *ngFor="let f of filtro" [value]="f.value">
-            {{f.nome}}
-          </mat-option>
-        </mat-select>
-      </mat-form-field>
-    </div>
-  </div>
-  <!-- ##################################################### -->
-
-  <div class="row">
-    <div class="col-md text-center titulo">
-      <mat-radio-group aria-label="Select an option">
-        <mat-radio-button color="primary" value="amarelo">Amarelo</mat-radio-button>
-        <mat-radio-button color="primary" value="azul">Azul</mat-radio-button>
-        <mat-radio-button color="primary" value="branco">Branco</mat-radio-button>
-        <mat-radio-button color="primary" value="cinza">Cinza</mat-radio-button>
-        <mat-radio-button color="primary" value="dourado">Dourado</mat-radio-button>
-        <mat-radio-button color="primary" value="prata">Prata</mat-radio-button>
-        <mat-radio-button color="primary" value="preto">Preto</mat-radio-button>
-        <mat-radio-button color="primary" value="verde">Verde</mat-radio-button>
-      </mat-radio-group>
-    </div>
-  </div>
-
   <!-- ##################################################### -->
   <div class="row">
     <div class="col-md text-center titulo">
@@ -48,27 +15,71 @@
 
   <!-- CARD DO PRODUTO -->
   <div class="row">
+    <div class="col-md-3">
+      <h1>Tenis</h1>
 
 
-    <div class="col-md-3 d-flex justify-content-center box-card" *ngFor="let item of produtos;">
-      <mat-card class="card">
-        <img mat-card-image [attr.src]="'http://localhost:3000/' + item.imagem" width="200px" matTooltip="{{item.nome}}"
-          [routerLink]="['/produto-detalhado', item.idProdutos]" />
-        <mat-card-content>
-          <h2 class="nome">{{item.nome}}</h2>
-          <h3 class="preco" style="font-weight: bold;">{{item.preco | currency: 'BRL'}}</h3>
-        </mat-card-content>
-        <mat-card-actions>
-          <button class="btn-visualizar" mat-button
-            [routerLink]="['/produto-detalhado', item.idProdutos]">Visualizar</button>
-          <button mat-icon-button class="btn-carrinho"
-            (click)="adicionarCarrinho(item.idProdutos, item.nome, item.preco, item.quantidade, item.imagem)">
-            <mat-icon>add_shopping_cart</mat-icon>
-          </button>
-        </mat-card-actions>
-      </mat-card>
+      <div class="filtro">
+        <mat-form-field class="filtro" appearance="legacy">
+          <mat-label>Filtrar por</mat-label>
+          <mat-select>
+            <mat-option *ngFor="let f of filtro" [value]="f.value">
+              {{f.nome}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+
+      <h4>Cores</h4>
+      <mat-radio-group>
+        <mat-radio-button color="primary" value="amarelo">Amarelo</mat-radio-button>
+        <mat-radio-button color="primary" value="azul">Azul</mat-radio-button>
+        <mat-radio-button color="primary" value="branco">Branco</mat-radio-button>
+        <mat-radio-button color="primary" value="cinza">Cinza</mat-radio-button>
+        <mat-radio-button color="primary" value="dourado">Dourado</mat-radio-button>
+        <mat-radio-button color="primary" value="prata">Prata</mat-radio-button>
+        <mat-radio-button color="primary" value="preto">Preto</mat-radio-button>
+        <mat-radio-button color="primary" value="verde">Verde</mat-radio-button>
+      </mat-radio-group>
+
+      <hr />
+
+      <h4>Propriedades</h4>
+
     </div>
 
+    <div class="col-md-9 box-card d-flex">
+
+      <div class="carregando" *ngIf="carregando">
+        <img src="https://i.imgur.com/gnuXFbP.gif" width="100px">
+        <p>Carregando...</p>
+      </div>
+
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-3" *ngFor="let item of produtos;">
+            <mat-card class="card">
+              <img mat-card-image [attr.src]="'http://localhost:3000/' + item.imagem" width="200px"
+                matTooltip="{{item.nome}}" [routerLink]="['/produto-detalhado', item.idProdutos]" />
+              <mat-card-content>
+                <h2 class="nome">{{item.nome}}</h2>
+                <h3 class="preco" style="font-weight: bold;">{{item.preco | currency: 'BRL'}}</h3>
+              </mat-card-content>
+              <mat-card-actions>
+                <button class="btn-visualizar" mat-button
+                  [routerLink]="['/produto-detalhado', item.idProdutos]">Visualizar</button>
+                <button mat-icon-button class="btn-carrinho"
+                  (click)="adicionarCarrinho(item.idProdutos, item.nome, item.preco, item.quantidade, item.imagem)">
+                  <mat-icon>add_shopping_cart</mat-icon>
+                </button>
+              </mat-card-actions>
+            </mat-card>
+          </div>
+        </div>
+      </div>
+
+    </div>
 
   </div>
 

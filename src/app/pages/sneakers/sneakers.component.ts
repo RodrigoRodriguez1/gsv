@@ -22,6 +22,8 @@ export class SneakersComponent implements OnInit {
   produtos
   itemsCarrinho = []
 
+  carregando = true
+
   ngOnInit() {
     // ################################################################
     // Tirando o finalizar compra caso necessario (ajuste tecnico)
@@ -35,6 +37,8 @@ export class SneakersComponent implements OnInit {
         (data) => {
           console.log(data['mensagem'])
           this.produtos = data['mensagem']
+
+          this.carregando = false
         },
         (error) => {
           console.log(error);
