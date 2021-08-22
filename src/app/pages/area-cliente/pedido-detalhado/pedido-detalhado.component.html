@@ -5,17 +5,22 @@
 
 <div class="container main" *ngIf="!carregando">
     <div class="row">
-        <div class="col text-center">
-            <h1>PEDIDO NUMERO: {{idPedido}}</h1>
-            <h2>STATUS DO PEDIDO: <span style="color: #00a841;">{{STATUS}}</span></h2>
-            <h3>PRODUTOS: </h3>
-            <div *ngFor="let p of pedidoDet">
-                <p>{{p.nome}} - {{p.preco | currency:'BRL'}}</p>
+        <div class="col text-center" style="margin-bottom: 30%;">
+            
+            <div class="caixa">
+                <p>Nº do pedido: <span style="font-weight: bold;">{{idPedido}}</span></p>
+                <div *ngFor="let p of pedidoDet">
+                    <p>Nome do produto: <span style="font-weight: bold;">{{p.nome}}</span></p>
+                </div>
+                <p>Tamanho:</p>
+                <hr />
+                <p>Status do pedido: <span style="font-weight: bold;">{{STATUS}}</span></p>
+                <p>Total: <span style="font-weight: bold;">{{somado | currency:'BRL'}}</span></p>
             </div>
-            <hr />
-            <p>TOTAL: {{somado | currency:'BRL'}}</p>
 
-            <h4>Algum problema? Entre em contato no e-mail: gsv@gsv.com</h4>
+            <p style="padding-top: 20px;">Algum problema? Entre em contato no e-mail: gsv@gsv.com</p>
         </div>
     </div>
 </div>
+
+<!--{{p.preco | currency:'BRL'}}-->
