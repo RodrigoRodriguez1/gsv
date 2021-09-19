@@ -69,10 +69,11 @@
               <mat-card-actions>
                 <button class="btn-visualizar" mat-button
                   [routerLink]="['/produto-detalhado', item.idProdutos, item.nome, item.preco, item.quantidade, item.imagem]">Visualizar</button>
-                <button mat-icon-button class="btn-carrinho"
+                <!-- NAO UTILIZADO MAIS POR CONTA DAS PROPRIEDADES -->
+                <!-- <button mat-icon-button class="btn-carrinho"
                   (click)="adicionarCarrinho(item.idProdutos, item.nome, item.preco, item.quantidade, item.imagem)">
                   <mat-icon>add_shopping_cart</mat-icon>
-                </button>
+                </button> -->
               </mat-card-actions>
             </mat-card>
           </div>
