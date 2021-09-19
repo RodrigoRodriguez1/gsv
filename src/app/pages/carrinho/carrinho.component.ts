@@ -64,6 +64,7 @@ export class CarrinhoComponent implements OnInit {
 
         this.precoSomadoFrete = ''
 
+        console.log('itens carrinho: ')
         console.log(this.itemsCarrinho)
       } else {
         console.log('é necessário fazer login!')

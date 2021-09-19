@@ -25,7 +25,7 @@ const routes: Routes = [
    { path: 'area-cliente', component: AreaClienteComponent},
    { path: 'carrinho', component: CarrinhoComponent},
    { path: 'metodo', component: MetodosPagamentoComponent},
-   { path: 'produto-detalhado/:id', component: ProdutoDetalheComponent },
+   { path: 'produto-detalhado/:id/:nome/:preco/:quantidade/:imagem', component: ProdutoDetalheComponent },
    { path: 'pedido-detalhado', component: PedidoDetalhadoComponent},
    { path: 'produto', component: ProdutoDetalheComponent},
    { path: 'pagar-mp', component: PagarMpComponent},

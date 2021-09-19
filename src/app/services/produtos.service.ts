@@ -35,6 +35,10 @@ export class ProdutosService {
   public getProdutoImage(id: number, imagem: number): any {
     return this.http.get(this.apiUrl + `/products/produtoImage${imagem}/${id}`)
   }
+  
+  public getPropriedadesProduto(id) {
+    return this.http.get(this.apiUrl + `/products/propriedadesProduto/${id}`)
+  }
 
   errorHandler(e: any): Observable<any> {
     console.log(e)

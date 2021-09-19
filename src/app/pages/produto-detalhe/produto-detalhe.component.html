@@ -1,27 +1,16 @@
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap" rel="stylesheet">
-
-<div class="logo">
-  <div class="logo-image"></div>
-</div>
-
-<div class="faixa">
-  <div class="titulo">
-    <p style="font-size: 48px;font-family: 'Oswald';">{{produtos.nome}}</p>
-  </div>
-</div>
-
-<div class="container">
+<div class="container-fluid">
   <div class="row">
+    <div class="col">
+      <div class="text-center">
+        <img src="https://i.imgur.com/JlxT3WR.png" width="250px" />
+      </div>
+    </div>
+    <div class="banner-preto"></div>
+  </div>
 
-    <div class="content-page" style="transform: translate(0px, -30%);">
-
-      <div class="caroussel23">
-
+  <div class="row conteudo">
+    <div class="col d-flex justify-content-center coluna-esquerda">
+      <div class="carousel">
         <owl-carousel-o [options]="customOptions">
           <ng-template [width]="10" carouselSlide>
             <img style="margin-top: 20%;border: 16px solid white;" [attr.src]="'http://localhost:3000/' +  images[0]"
@@ -45,47 +34,30 @@
           </ng-template>
         </owl-carousel-o>
       </div>
-
-
-
-      <div style="clear: both;"></div>
-      <div class="infos">
-        <p class="tamanho">Tamanho: </p>
-        <!--<p>Gênero: <span style="font-weight: bold;">{{produtos.genero}}</span></p>-->
-        <p class="preco">R$ {{produtos.preco}}</p>
-        <!--<p>Descrição: <span style="font-weight: bold;">{{produtos.descricao}}</span></p>-->
-        <div class="linha-h"></div>
-        <p class="cep">Calcule seu frete: </p>
-
-        <mat-form-field style="position: relative;transform: translate(-88%, 0px);">
-          <mat-label>CEP:</mat-label>
-          <input placeholder="Insira o CEP" [(ngModel)]="cep" matInput mask="00000-000" name="cep" id="cep" />
-        </mat-form-field>
-
-        <br />
-        <label style="position: relative;transform: translate(-95%, 0px);" *ngIf="loadingPAC">PAC: {{valorFretePAC}} - {{prazoFretePAC}} Dias úteis</label><br />
-        <label style="position: relative;transform: translate(-82%, 0px);" *ngIf="loadingSEDEX">SEDEX: {{valorFreteSEDEX}} - {{prazoFreteSEDEX}} Dias úteis</label><br />
-        <button class="botao-calc-frete" (click)="consultaCEP(cep)">Calcular</button>
-
-        <br />
-        <br />
-        <button class="botao-compra">Adicionar ao Carrinho</button>
-      </div>
-
-
     </div>
+    <div class="col text-center coluna-direita">
+      <h2 class="nomeProd">{{produtos.nome}}</h2>
+      <h2 class="preco">R$ {{produtos.preco}}</h2>
 
+      <hr />
+
+      <h2 class="cep">Calcule seu frete: </h2>
+      <mat-form-field>
+        <mat-label>CEP:</mat-label>
+        <input placeholder="Insira o CEP" [(ngModel)]="cep" matInput mask="00000-000" name="cep" id="cep" />
+      </mat-form-field>
+
+      <br />
+      <label *ngIf="loadingPAC">PAC: {{valorFretePAC}} - {{prazoFretePAC}} Dias úteis</label><br />
+      <label *ngIf="loadingSEDEX">SEDEX: {{valorFreteSEDEX}} - {{prazoFreteSEDEX}} Dias úteis</label><br />
+      <button class="botao-calc-frete" (click)="consultaCEP(cep)">Calcular</button>
+      <br />
+      <hr />
+      <h2>Selecione</h2>
+      <div *ngFor="let p of propriedades.mensagem">Nome: {{p.nome}} - Estoque: {{p.quantidade}}  <input style="margin-left: 5px;" class="form-check-input" type="radio" name="rdPropriedade" id="rdPropriedade" [value]='p' [(ngModel)]="valorPropriedade"> </div>
+      <br />
+      <button class="botao-compra" (click)="adicionarCarrinho()">Adicionar ao Carrinho</button>
+    </div>
   </div>
+
 </div>
-
-<!-- <div class="product-image  foto1"  [ngStyle]="{'background-image':' url(' + 'http://localhost:3000/' +images[1] + ')'}"></div> 
-<div class="product-image foto2"></div> 
-<div class="product-image foto3"></div> 
-<div class="product-image foto4"></div> 
-<div class="product-image foto5"></div> 
-
-<div class="botoes-imagem" style="width: 47.88%;height:40px;background-color:rgb(240, 240, 240)">
-    <button id="botao-prosseguir" style="float: right;border:0px solid white;font-size:24px;width: 50px;">></button>
-    <button id="botao-voltar" style="float: left;border:0px solid white;font-size:24px;width: 50px;"><</button>
-    <p id="numero-imagens" style="text-align: center;font-size:18px;">(0/7)</p>
-</div> -->
