@@ -20,10 +20,10 @@
 
 
       <div class="filtro">
-        <mat-form-field class="filtro" appearance="legacy">
+        <mat-form-field class="filtro"  appearance="legacy">
           <mat-label>Filtrar por</mat-label>
-          <mat-select>
-            <mat-option *ngFor="let f of filtro" [value]="f.value">
+          <mat-select (selectionChange)="filtros($event)">
+            <mat-option *ngFor="let f of filtro"  [value]="f.value">
               {{f.nome}}
             </mat-option>
           </mat-select>
