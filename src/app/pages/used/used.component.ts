@@ -11,8 +11,21 @@ export class UsedComponent implements OnInit {
 
   constructor(private ProdutosService: ProdutosService,) { }
 
+  filtro = [
+    // { value: 'maisvendidos', nome: 'Mais Vendidos' },
+    { value: 'pmaiormenor', nome: 'Preço: maior ao menor' },
+    { value: 'pmenormaior', nome: 'Preço: menor ao maior' },
+    { value: 'az', nome: 'A-Z' },
+    { value: 'za', nome: 'Z-A' }
+  ]
+
   produtos
+  produtosBK = []
   itemsCarrinho = []
+
+  carregando = true
+  cores = []
+  marca = []
 
   ngOnInit() {
     // ################################################################
@@ -25,8 +38,29 @@ export class UsedComponent implements OnInit {
 
     this.ProdutosService.getProdutosUsados().subscribe(
       (data) => {
-        console.log(data['mensagem'])
         this.produtos = data['mensagem']
+
+        this.produtosBK = data['mensagem']
+        
+        this.produtos.forEach(e => {
+          this.cores.push(e.cor.toString().toLowerCase())
+        });
+
+        this.cores =  this.cores.reduce(function(a,b){
+          if (a.indexOf(b) < 0 ) a.push(b);
+          return a;
+        },[]);
+
+        this.produtos.forEach(e => {
+          this.marca.push(e.marca.toString().toLowerCase())
+        });
+
+        this.marca =  this.marca.reduce(function(a,b){
+          if (a.indexOf(b) < 0 ) a.push(b);
+          return a;
+        },[]);
+        
+        this.carregando = false
       },
       (error) => {
         console.log(error);
@@ -62,5 +96,57 @@ export class UsedComponent implements OnInit {
 
   }
 
+  filtros(aux) {
+
+    if (aux.value == 'az') {
+     this.produtos.sort(function (a, b) {
+        if (a.nome < b.nome) { return -1; }
+        if (a.nome > b.nome) { return 1; }
+        return 0;
+      })
+    }
+    if (aux.value  == 'za')
+    this.produtos.sort(function (a, b) {
+        if (a.nome > b.nome) { return -1; }
+        if (a.nome < b.nome) { return 1; }
+        return 0;
+      })
+
+      if(aux.value == "pmaiormenor"){
+        this.produtos.sort((a, b) => b.preco - a.preco)
+
+      }
+      if(aux.value == "pmenormaior") {
+        this.produtos.sort((a, b) => a.preco - b.preco)
+
+      }
+
+      
+
+  }
+
+  filtroCores(aux){
+    this.produtos = this.produtosBK
+    this.produtos = this.produtos.filter( e  => (e.cor.toLowerCase() == aux.value));
+    debugger
+
+  }
+
+  filtroMarcas(aux){
+    this.produtos = this.produtosBK
+    this.produtos = this.produtos.filter( e  => (e.marca.toLowerCase() == aux.value));
+    debugger
+
+
+}
+
+
+filtroNome(aux){
+  this.produtos = this.produtosBK
+  if(aux.target.value != ""){
+  this.produtos = this.produtos.filter( e  => (e.nome.toLowerCase().match( aux.target.value.toLowerCase())));
+}
+
+}
 
 }

@@ -5,7 +5,7 @@
     <div class="col-md text-center titulo">
       <h3 class="sub-buscar">Buscar Produto</h3>
       <mat-form-field class="busca" appearance="legacy">
-        <input matInput placeholder="Buscar...">
+        <input matInput (keyup)="filtroNome($event)"  placeholder="Buscar...">
         <mat-icon matSuffix>search</mat-icon>
       </mat-form-field>
     </div>
@@ -32,22 +32,31 @@
 
 
       <h4>Cores</h4>
+
+
       <mat-radio-group>
-        <mat-radio-button color="primary" value="amarelo">Amarelo</mat-radio-button>
-        <mat-radio-button color="primary" value="azul">Azul</mat-radio-button>
-        <mat-radio-button color="primary" value="branco">Branco</mat-radio-button>
-        <mat-radio-button color="primary" value="cinza">Cinza</mat-radio-button>
-        <mat-radio-button color="primary" value="dourado">Dourado</mat-radio-button>
-        <mat-radio-button color="primary" value="prata">Prata</mat-radio-button>
-        <mat-radio-button color="primary" value="preto">Preto</mat-radio-button>
-        <mat-radio-button color="primary" value="verde">Verde</mat-radio-button>
+        <mat-radio-button  *ngFor="let c of cores" [value]="c" (change)="filtroCores($event)">{{c}}</mat-radio-button>
       </mat-radio-group>
 
       <hr />
 
       <!-- <h4>Propriedades</h4> -->
+      <h4>Marcas</h4>
+
+
+      <mat-radio-group>
+        <mat-radio-button  *ngFor="let m of marca" [value]="m" (change)="filtroMarcas($event)">{{m}}</mat-radio-button>
+      </mat-radio-group>
+  
+      <hr />
 
     </div>
+
+    
+   
+
+    <!-- <h4>Propriedades</h4> -->
+
 
     <div class="col-md-9 box-card d-flex">
 
@@ -56,9 +65,11 @@
         <p>Carregando...</p>
       </div>
 
-      <div class="container-fluid">
+      <div  class="container-fluid">
         <div class="row">
-          <div class="col-md-3" *ngFor="let item of produtos;">
+
+
+          <div  class="col-md-3" *ngFor="let item of produtos;">
             <mat-card class="card">
               <img mat-card-image [attr.src]="'http://localhost:3000/' + item.imagem" width="200px"
                 matTooltip="{{item.nome}}" [routerLink]="['/produto-detalhado', item.idProdutos]" />
@@ -69,16 +80,14 @@
               <mat-card-actions>
                 <button class="btn-visualizar" mat-button
                   [routerLink]="['/produto-detalhado', item.idProdutos, item.nome, item.preco, item.quantidade, item.imagem]">Visualizar</button>
-                <!-- NAO UTILIZADO MAIS POR CONTA DAS PROPRIEDADES -->
-                <!-- <button mat-icon-button class="btn-carrinho"
-                  (click)="adicionarCarrinho(item.idProdutos, item.nome, item.preco, item.quantidade, item.imagem)">
-                  <mat-icon>add_shopping_cart</mat-icon>
-                </button> -->
+              
               </mat-card-actions>
             </mat-card>
           </div>
+        
         </div>
       </div>
+
 
     </div>
 
