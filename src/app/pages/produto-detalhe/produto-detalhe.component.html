@@ -54,7 +54,7 @@
       <br />
       <hr />
       <h2>Selecione</h2>
-      <div *ngFor="let p of propriedades.mensagem">Nome: {{p.nome}} - Estoque: {{p.quantidade}}  <input style="margin-left: 5px;" class="form-check-input" type="radio" name="rdPropriedade" id="rdPropriedade" [value]='p' [(ngModel)]="valorPropriedade"> </div>
+      <div *ngFor="let p of propriedades.mensagem">{{p.nome}} - Estoque: {{p.quantidade}}  <input style="margin-left: 5px;" class="form-check-input" type="radio" name="rdPropriedade" id="rdPropriedade" [value]='p' [(ngModel)]="valorPropriedade"> </div>
       <br />
       <button class="botao-compra" (click)="adicionarCarrinho()">Adicionar ao Carrinho</button>
     </div>

@@ -25,7 +25,24 @@
 
 .nomeProd {
     color: #e6e6e6;
-    
     margin-bottom: 50px;
+}
+
+button {
+    font-family: 'Roboto', sans-serif;
+    outline: none;
+    background: #f2dcfc;
+    color: #000000;
+    border: none;
+    border-radius: 15px;
+    padding: 5px;
+    margin-bottom: 10px;
+    transition: 0.5s;
+}
+
+button:hover {
+    font-family: 'Roboto', sans-serif;
+    background: #eac7fa;
+    transition: 0.5s;
 }
 
