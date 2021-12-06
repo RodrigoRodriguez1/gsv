@@ -34,6 +34,7 @@ mat-radio-button {
 
 .card {
     width: 200px;
+    height: 290px;
     margin: 14px;
 }
 
@@ -58,8 +59,9 @@ mat-radio-button {
     transition: 0.2s;
     border-radius: 15px 5px 15px 5px;
 
-    position: relative;
-    left: 5px;
+    position: absolute;
+    left: 10px;
+    top: 245px;
 }
 
 .btn-visualizar:hover {
