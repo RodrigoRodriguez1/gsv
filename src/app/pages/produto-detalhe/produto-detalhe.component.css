@@ -21,7 +21,7 @@
 }
 
 .coluna-esquerda {
-    margin-top: -130px;
+    margin-top: 0;
 }
 
 .coluna-direita {
@@ -31,10 +31,11 @@
 .carousel {
     width: 780px;
     height: auto;
-    margin-bottom: 35px;
+    margin-bottom: 0px;
     position: relative;
     right: 160px;
-    bottom: 35px;
+    bottom: 180px;
+    z-index: 0;
 }
 
 .nomeProd {
@@ -44,6 +45,17 @@
 
     position: relative;
     bottom: 35px;
+}
+
+.slPropriedade {
+    width: 101%;
+    padding: 6px;
+    border-radius: 6px;
+    cursor: pointer;
+    outline: 0;
+    border: 0px;
+    background-color: rgb(245, 245, 245);
+    color: rgb(92, 92, 92);
 }
 
 button {

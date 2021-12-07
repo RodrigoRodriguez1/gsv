@@ -51,8 +51,6 @@ export class ProdutoDetalheComponent implements OnInit {
     // carregando as propriedades
     this.produtosService.getPropriedadesProduto(this.idProduto).subscribe(ret => {
       this.propriedades = ret
-      console.log('assadasdsa')
-      console.log(this.propriedades)
     })
 
     this.produtosService.getProduto(this.idProduto).subscribe((data: { [x: string]: any; }) => {
@@ -167,44 +165,45 @@ export class ProdutoDetalheComponent implements OnInit {
 
   adicionarCarrinho() {
     console.log(this.valorPropriedade)
-    debugger
-
-    let conjunto = {
-      'idProduto': this.idProduto,
-      'Nome': this.nomeProduto,
-      'Preco': this.precoProduto,
-      'Quantidade': this.valorPropriedade.quantidade,
-      'propriedade': this.valorPropriedade.nome,
-      'imagem': this.imagemProduto
-    }
-
-    if (JSON.parse(localStorage.getItem('carrinho')) == null) {
-
-      this.itemsCarrinho = []
-      this.itemsCarrinho.push(conjunto)
-      localStorage.setItem('carrinho', JSON.stringify(this.itemsCarrinho))
-      localStorage.getItem('carrinho')
-
+    // Tratamento de erro caso o usuario nao selecione a propriedade
+    if (this.valorPropriedade == undefined) {
+      this.showMessage('Selecione o tamanho desejado antes de adicionar ao carrinho.')
     } else {
+      let conjunto = {
+        'idProduto': this.idProduto,
+        'Nome': this.nomeProduto,
+        'Preco': this.precoProduto,
+        // 'Quantidade': this.valorPropriedade.quantidade,
+        'propriedade': this.valorPropriedade,
+        'imagem': this.imagemProduto
+      }
 
-      this.itemsCarrinho = JSON.parse(localStorage.getItem('carrinho'))
-      this.itemsCarrinho.push(conjunto)
-      localStorage.setItem('carrinho', JSON.stringify(this.itemsCarrinho))
-      localStorage.getItem('carrinho')
+      if (JSON.parse(localStorage.getItem('carrinho')) == null) {
 
+        this.itemsCarrinho = []
+        this.itemsCarrinho.push(conjunto)
+        localStorage.setItem('carrinho', JSON.stringify(this.itemsCarrinho))
+        localStorage.getItem('carrinho')
+
+      } else {
+        this.itemsCarrinho = JSON.parse(localStorage.getItem('carrinho'))
+        this.itemsCarrinho.push(conjunto)
+        localStorage.setItem('carrinho', JSON.stringify(this.itemsCarrinho))
+        localStorage.getItem('carrinho')
+      }
+      window.location.reload();
     }
-
   }
 
 
-showMessage(msg: string, isErro: boolean = false): void {
-  this.snackBar.open(msg, 'X', {
-    duration: 4000,
-    horizontalPosition: "right",
-    verticalPosition: "top",
-    panelClass: isErro ? ['msg-erro'] : ['msg-success']
-  })
-}
+  showMessage(msg: string, isErro: boolean = false): void {
+    this.snackBar.open(msg, 'X', {
+      duration: 4000,
+      horizontalPosition: "right",
+      verticalPosition: "top",
+      panelClass: isErro ? ['msg-erro'] : ['msg-success']
+    })
+  }
 
 
 }

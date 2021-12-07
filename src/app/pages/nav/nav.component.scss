@@ -10,6 +10,7 @@
   padding-right: 330px;
 
   background-color: #050505;
+  z-index: 99;
 }
 
 .txt-carrinho {
@@ -26,6 +27,13 @@
   background-color: white;
 }
 
+.logo-navbar {
+  position: absolute;
+  z-index: 100;
+  right: 90%;
+  top: -15px;
+}
+
 // ###################################################
 
 .navbar-menu {
@@ -37,6 +45,7 @@
 
   background-color: #050505;
   color: #f3f3f3;
+  z-index: 99;
 }
 
 .txt-menu {

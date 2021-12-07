@@ -24,23 +24,8 @@ export class AuthService {
   })
 
   loginUser(email: string, senha: string): Observable<any> {
-    return this.http.post(this.urlProd + 'login', { email, senha }, { headers: this.headers })
+    return this.http.post(this.urlProd + 'loginec', { email, senha }, { headers: this.headers })
       .pipe(map(data => data))
-  }
-
-  updateUser(id: string, senhaUser: string): Observable<any> {
-    const url_api = `https://companythoth.com.br/get-user/updateSenha/${id}`;
-
-   var senha = {
-      "senha" : senhaUser
-    }
-
-    var urlUdadte: 'http://localhost:3002/get-user/updateSenha'
-
-    const url = `${urlUdadte}/${id}`
-    return this.http.post<any>(url_api, senha).pipe(
-      map((obj) => obj),
-    )
   }
 
   setUser(user): void {

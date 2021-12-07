@@ -87,8 +87,9 @@
     right:-10%;
     top:50%;
     transform: translate(0%,10%);
-    transform:translate(0%,10%);
-    transform:translate(0%,10%);
+    transform: translate(0%,10%);
+    transform: translate(0%,10%);
+    margin: 100px 0;
 }
 
 
@@ -117,6 +118,7 @@
 .categorias-home-content{
     text-align: center;
     padding: 10px 0;
+    margin-top: 30px;
 }
 
 .categorias-home-content h2{
