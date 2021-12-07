@@ -3,8 +3,8 @@
   <!-- ##################################################### -->
   <div class="row">
     <div class="col-md text-center titulo">
-      <h3 class="sub-buscar">Buscar Produto</h3>
-      <mat-form-field class="busca" appearance="legacy">
+      <h3 class="sub-buscar" style="width: 73%;">Buscar Produto</h3>
+      <mat-form-field class="busca" appearance="legacy" style="margin-right: 97px;">
         <input matInput (keyup)="filtroNome($event)"  placeholder="Buscar...">
         <mat-icon matSuffix>search</mat-icon>
       </mat-form-field>
@@ -15,8 +15,8 @@
 
   <!-- CARD DO PRODUTO -->
   <div class="row">
-    <div class="col-md-3">
-      <h1>Tenis</h1>
+    <div class="col-md-3" style="position: relative;right: 10%;">
+      <h1>Sneakers</h1>
 
 
       <div class="filtro">
@@ -35,7 +35,7 @@
 
 
       <mat-radio-group>
-        <mat-radio-button  *ngFor="let c of cores" [value]="c" (change)="filtroCores($event)">{{c}}</mat-radio-button>
+        <mat-radio-button  *ngFor="let c of cores" [value]="c" (change)="filtroCores($event)" style="width: 50%;">{{c}}</mat-radio-button>
       </mat-radio-group>
 
       <hr />
@@ -45,7 +45,7 @@
 
 
       <mat-radio-group>
-        <mat-radio-button  *ngFor="let m of marca" [value]="m" (change)="filtroMarcas($event)">{{m}}</mat-radio-button>
+        <mat-radio-button  *ngFor="let m of marca" [value]="m" (change)="filtroMarcas($event)" style="width: 50%;">{{m}}</mat-radio-button>
       </mat-radio-group>
   
       <hr />

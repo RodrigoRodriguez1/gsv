@@ -9,8 +9,7 @@
   padding-left: 330px;
   padding-right: 330px;
 
-  background-color: #260436;
-  color: #ebebeb;
+  background-color: #050505;
 }
 
 .txt-carrinho {
@@ -23,27 +22,31 @@
   color: #d6d6d6;
 }
 
+.navbar-toggler{
+  background-color: white;
+}
+
 // ###################################################
 
 .navbar-menu {
   font-family: 'Roboto', sans-serif;
   font-size: 16px;
 
-  padding-left: 340px;
-  padding-right: 340px;
+  padding-left: 330px;
+  padding-right: 330px;
 
-  background-color: #f2dcfc;
-  color: #111111;
+  background-color: #050505;
+  color: #f3f3f3;
 }
 
 .txt-menu {
   text-decoration: none;
-  color: #111111;
+  color: #f3f3f3;
 }
 
 .txt-menu:hover {
   text-decoration: none;
-  color: #1d1d1d;
+  color: #f3f3f3;
 }
 
 @media (max-width: 991px) {
@@ -57,7 +60,7 @@
   }
 
   .only-mobile {
-    background-color: #260436;
+    background-color: #050505;
     color: #f3f3f3;
     display: flex;
     width: 100%;
