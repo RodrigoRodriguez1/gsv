@@ -11,13 +11,10 @@
     </div>
   </div>
 
-
-
   <!-- CARD DO PRODUTO -->
   <div class="row">
     <div class="col-md-3" style="position: relative;right: 10%;">
       <h1>Sneakers</h1>
-
 
       <div class="filtro">
         <mat-form-field class="filtro"  appearance="legacy">
@@ -30,31 +27,21 @@
         </mat-form-field>
       </div>
 
-
       <h4>Cores</h4>
-
 
       <mat-radio-group>
         <mat-radio-button  *ngFor="let c of cores" [value]="c" (change)="filtroCores($event)" style="width: 50%;">{{c}}</mat-radio-button>
       </mat-radio-group>
-
       <hr />
-
       <!-- <h4>Propriedades</h4> -->
       <h4>Marcas</h4>
-
-
       <mat-radio-group>
         <mat-radio-button  *ngFor="let m of marca" [value]="m" (change)="filtroMarcas($event)" style="width: 50%;">{{m}}</mat-radio-button>
       </mat-radio-group>
-  
       <hr />
-
     </div>
 
     
-   
-
     <!-- <h4>Propriedades</h4> -->
 
 
@@ -69,20 +56,19 @@
         <div class="row">
 
 
-          <div  class="col-md-3" *ngFor="let item of produtos;">
-            <mat-card class="card">
-              <img mat-card-image [attr.src]="'http://localhost:3000/' + item.imagem" width="200px"
+          <div class="col-md-3 card-sem-borda" *ngFor="let item of produtos;" [routerLink]="['/produto-detalhado', item.idProdutos, item.nome, item.preco, item.quantidade, item.imagem]">
+            <!-- <mat-card class="card"> -->
+              <img class="foto-produto" mat-card-image [attr.src]="'http://localhost:3000/' + item.imagem"
                 matTooltip="{{item.nome}}" [routerLink]="['/produto-detalhado', item.idProdutos]" />
               <mat-card-content>
                 <h2 class="nome">{{item.nome}}</h2>
                 <h3 class="preco" style="font-weight: bold;">{{item.preco | currency: 'BRL'}}</h3>
               </mat-card-content>
-              <mat-card-actions>
+              <!-- <mat-card-actions>
                 <button class="btn-visualizar" mat-button
                   [routerLink]="['/produto-detalhado', item.idProdutos, item.nome, item.preco, item.quantidade, item.imagem]">Visualizar</button>
-              
-              </mat-card-actions>
-            </mat-card>
+              </mat-card-actions> -->
+            <!-- </mat-card> -->
           </div>
         
         </div>

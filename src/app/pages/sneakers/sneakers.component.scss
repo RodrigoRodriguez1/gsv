@@ -34,16 +34,41 @@ mat-radio-button {
 
 .card {
     width: 200px;
-    height: 290px;
+    height: 330px;
     margin: 14px;
 }
 
+.card-sem-borda {
+    width: 200px;
+    height: 200px;
+    margin: 18px;
+}
+
+.card-sem-borda:hover {
+    width: 250px;
+    height: 200px;
+    margin: 18px;
+}
+
+.foto-produto {
+    width: 200px;
+    height: auto;
+    transition: 0.3s;
+}
+
+.foto-produto:hover {
+    width: 220px;
+    margin-left: -15px;
+    opacity: 0.7;
+    transition: 0.3s;
+}
+
 .nome {
-    font-size: 24px;
-    max-width: 20ch;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+    font-size: 18px;
+    // max-width: 20ch;
+    // overflow: hidden;
+    // text-overflow: ellipsis;
+    // white-space: nowrap;
 }
 
 .preco {
@@ -61,7 +86,7 @@ mat-radio-button {
 
     position: absolute;
     left: 10px;
-    top: 245px;
+    top: 280px;
 }
 
 .btn-visualizar:hover {
