@@ -1,5 +1,5 @@
 .banner-preto {
-    background-color: #181818;
+    background-image: linear-gradient(rgb(39, 39, 39), rgb(39, 39, 39));
 
     width: 100%;
     height: 120px;
@@ -7,7 +7,11 @@
 
 .box-logo {
     background-color: #181818;
+    background-image: linear-gradient(rgb(5, 5, 5), rgb(39, 39, 39));
+    background-repeat: repeat;
+    background-position: center;
     width: 100%;
+    height: 340px;
     padding: 30px 0;
 }
 
