@@ -32,6 +32,16 @@
   z-index: 100;
   right: 90%;
   top: -15px;
+  width: 140px;
+
+  transition: 0.4s;
+}
+
+.logo-navbar:hover {
+  width: 145px;
+  opacity: 0.7;
+
+  transition: 0.4s;
 }
 
 .nav-item{
