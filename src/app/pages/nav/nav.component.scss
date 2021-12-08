@@ -34,6 +34,14 @@
   top: -15px;
 }
 
+.nav-item{
+  font-weight: bold;
+}
+
+.down-item{
+  padding-left: 116px;
+}
+
 // ###################################################
 
 .navbar-menu {
@@ -79,4 +87,8 @@
   .item-mobile {
     margin: 5px 10px 5px 10px;
   }
+}
+
+.snk{
+  color: rgb(212, 212, 212);
 }

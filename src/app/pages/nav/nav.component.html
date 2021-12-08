@@ -45,7 +45,7 @@
       </ul>
     </div>
   </nav>
-  <img src="https://i.imgur.com/KBdFleq.png" width="140px" class="logo-navbar" />
+  <a href="/"><img src="https://i.imgur.com/KBdFleq.png" width="140px" class="logo-navbar" style="cursor: pointer;" /></a>
 </div>
 <!-- ######################################################################################## -->
 
@@ -65,10 +65,19 @@
       <li class="nav-item">
         <a class="nav-link txt-menu" [routerLink]="['/']">INÍCIO</a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item down-item">
         <a class="nav-link txt-menu" [routerLink]="['/tenis']">SNEAKERS</a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item down-item">
+        <a class="nav-link txt-menu snk" [routerLink]="['/tenis']">DUNK</a>
+      </li>
+      <li class="nav-item down-item">
+        <a class="nav-link txt-menu snk" [routerLink]="['/tenis']">AIR JORDAN</a>
+      </li>
+      <li class="nav-item down-item">
+        <a class="nav-link txt-menu" [routerLink]="['/tenis']">YEEZY</a>
+      </li>
+      <li class="nav-item down-item">
         <a class="nav-link txt-menu" href="/">ATENDIMENTO</a>
       </li>
       <!-- <li class="nav-item">
@@ -77,9 +86,9 @@
       <li class="nav-item">
         <a class="nav-link txt-menu" [routerLink]="['/usados']">ACESSÓRIOS</a>
       </li> -->
-      <li class="nav-item">
+      <li class="nav-item down-item">
         <a class="nav-link txt-menu" href="https://www.instagram.com/gsv.apparel/" target="_blank"><i
-            class="fab fa-instagram"></i> (CONTATO)</a>
+            class="fab fa-instagram"></i></a>
       </li>
     </ul>
   </div>

@@ -1,3 +1,18 @@
+.faixa{
+    background-color: #1d1d1d;
+    width: 100%;
+    height: 40px;
+}
+
+.faixa p{
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    font-size: 26px;
+    font-family: 'Roboto';
+    letter-spacing: 7px;
+}
+
 .logo{
     width: 430px;
     margin: 0 auto;
@@ -138,6 +153,7 @@
     color: white;
     transition: 0.5s;
     font-size: 22px;
+    letter-spacing: 2px;
 }
 
 .categorias-home .categorias-home-content .categorias-single:hover{
@@ -160,6 +176,13 @@
     outline: 0;
 }
 
+.jordan{
+    background-image: url('../../../images/Jordan-Brand.jpg');
+}
+
+.yeezy{
+    background-image: url('../../../images/yeezy-brand.jpg');
+}
 
 .product-home{
     margin-top: 120px;

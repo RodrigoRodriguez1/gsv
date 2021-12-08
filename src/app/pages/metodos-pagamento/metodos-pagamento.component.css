@@ -17,3 +17,20 @@
 
     transition: 0.5s;
 }
+
+
+.btnPix{
+    background-color: rgb(0, 209, 0);
+    border: none;
+    padding: 10px;
+    width: 100px;
+    border-radius: 20px 10px;
+    transition: 0.5s;
+    color: white;
+    text-decoration: none;
+}
+
+.btnPix:hover{
+    background-color: rgb(0, 133, 0);
+    transition: 0.5s;
+}

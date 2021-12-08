@@ -9,19 +9,19 @@
 }
 
 .login button {
-    background-color: #c36ee2;
+    border-radius: 0;
+    font-family: 'Roboto', sans-serif;
+    outline: none;
+    background: black;
     color: white;
-    width: 165px;
-    height: 40px;
-    align-items: center;
-
-    transition: 0.2s;
+    border: none;
+    border-radius: 6px;
+    width: 50%;
 }
 
 .login button:hover {
-    background-color: #ab57c9;
-
-    /*width: 170px;*/
+    background: rgb(78, 78, 78);
+    transition: 0.5s;
 }
 
 .botao-remover{
@@ -41,7 +41,7 @@
 }
 
 .botao-remover:hover {
-    font-size: 19px;
+    color:rgb(128, 128, 128);
 }
 
 .carrinho {
@@ -65,7 +65,7 @@
     text-align: left;
     width: 91%;
     margin-left: 60px;
-    font-size: 23px;
+    font-size: 19px;
     padding-top: 20px;
     
 }
@@ -89,7 +89,7 @@
 }
 
 .rev-pt{
-    background-color: #050505;
+    background-image: linear-gradient(#050505, #5e5e5e);
     width: 100%;
     height: 40px;
     /**margin: 0 auto;**/
@@ -130,11 +130,17 @@
     border-radius: 6px;
     width: 90%;
 
-    margin-top: 90px;
+    margin-top: 70px;
+}
+
+.pagamento-rev > .pagamento-btn:hover{
+    font-family: 'Roboto', sans-serif;
+    background: rgb(78, 78, 78);
+    transition: 0.5s;
 }
 
 
 .ent-hpp{
     position: relative;
-    top: 115px;
+    top: 80px;
 }
