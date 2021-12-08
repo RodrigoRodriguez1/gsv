@@ -59,11 +59,12 @@
 .txt-menu {
   text-decoration: none;
   color: #f3f3f3;
+  transition: 0.3s;
 }
 
 .txt-menu:hover {
-  text-decoration: none;
-  color: #f3f3f3;
+  opacity: 0.8;
+  transition: 0.3s;
 }
 
 @media (max-width: 991px) {

@@ -18,7 +18,7 @@ import { UsedComponent } from './pages/used/used.component';
 const routes: Routes = [
 
    { path: '', component: HomeComponent,pathMatch: 'full'  },
-   { path: 'tenis', component: SneakersComponent},
+   { path: 'tenis/:marca', component: SneakersComponent},
    { path: 'vestuario', component: ClothingComponent},
    { path: 'usados', component: UsedComponent},
    { path: 'login', component: LoginComponent},

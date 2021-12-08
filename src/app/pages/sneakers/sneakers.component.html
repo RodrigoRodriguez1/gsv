@@ -36,7 +36,7 @@
       <!-- <h4>Propriedades</h4> -->
       <h4>Marcas</h4>
       <mat-radio-group>
-        <mat-radio-button  *ngFor="let m of marca" [value]="m" (change)="filtroMarcas($event)" style="width: 50%;">{{m}}</mat-radio-button>
+        <mat-radio-button *ngFor="let mSelecionada of marca" [value]="mSelecionada" (change)="filtroMarcas($event)" style="width: 50%;">{{mSelecionada}}</mat-radio-button>
       </mat-radio-group>
       <hr />
     </div>
@@ -64,11 +64,6 @@
                 <h2 class="nome">{{item.nome}}</h2>
                 <h3 class="preco" style="font-weight: bold;">{{item.preco | currency: 'BRL'}}</h3>
               </mat-card-content>
-              <!-- <mat-card-actions>
-                <button class="btn-visualizar" mat-button
-                  [routerLink]="['/produto-detalhado', item.idProdutos, item.nome, item.preco, item.quantidade, item.imagem]">Visualizar</button>
-              </mat-card-actions> -->
-            <!-- </mat-card> -->
           </div>
         
         </div>

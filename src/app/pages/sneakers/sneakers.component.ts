@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProdutosService } from 'src/app/services/produtos.service';
 import * as $ from 'jquery';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-sneakers',
@@ -9,7 +10,8 @@ import * as $ from 'jquery';
 })
 export class SneakersComponent implements OnInit {
 
-  constructor(private ProdutosService: ProdutosService,) { }
+  constructor(private ProdutosService: ProdutosService,
+    private route: ActivatedRoute,) { }
 
   filtro = [
     // { value: 'maisvendidos', nome: 'Mais Vendidos' },
@@ -35,30 +37,54 @@ export class SneakersComponent implements OnInit {
     });
     // ################################################################
 
+    this.getProdutos();
 
+    // Capturando o filtro ja selecionado pela navbar
+    this.route.params.subscribe(params => {
+      if(params['marca'] == "n") {
+        this.getProdutos();
+      } else if (params['marca'] == "dunk") {
+        this.filtroMarcas({
+          'value': "nike dunk"
+        });
+      } else if (params['marca'] == "jordan") {
+        this.filtroMarcas({
+          'value': "nike jordan"
+        });
+      }
+      else if (params['marca'] == "yeezy") {
+        this.filtroMarcas({
+          'value': "yeezy"
+        });
+      }
+    })
+
+  }
+
+  getProdutos() {
     this.ProdutosService.getProdutosTenis().subscribe(
       (data) => {
 
         this.produtos = data['mensagem']
         this.produtosBK = data['mensagem']
-        
+
         this.produtos.forEach(e => {
           this.cores.push(e.cor.toString().toLowerCase())
         });
 
-        this.cores =  this.cores.reduce(function(a,b){
-          if (a.indexOf(b) < 0 ) a.push(b);
+        this.cores = this.cores.reduce(function (a, b) {
+          if (a.indexOf(b) < 0) a.push(b);
           return a;
-        },[]);
+        }, []);
 
         this.produtos.forEach(e => {
           this.marca.push(e.marca.toString().toLowerCase())
         });
 
-        this.marca =  this.marca.reduce(function(a,b){
-          if (a.indexOf(b) < 0 ) a.push(b);
+        this.marca = this.marca.reduce(function (a, b) {
+          if (a.indexOf(b) < 0) a.push(b);
           return a;
-        },[]);
+        }, []);
 
         this.carregando = false
       },
@@ -99,50 +125,48 @@ export class SneakersComponent implements OnInit {
   filtros(aux) {
 
     if (aux.value == 'az') {
-     this.produtos.sort(function (a, b) {
+      this.produtos.sort(function (a, b) {
         if (a.nome < b.nome) { return -1; }
         if (a.nome > b.nome) { return 1; }
         return 0;
       })
     }
-    if (aux.value  == 'za')
-    this.produtos.sort(function (a, b) {
+    if (aux.value == 'za')
+      this.produtos.sort(function (a, b) {
         if (a.nome > b.nome) { return -1; }
         if (a.nome < b.nome) { return 1; }
         return 0;
       })
 
-      if(aux.value == "pmaiormenor"){
-        this.produtos.sort((a, b) => b.preco - a.preco)
+    if (aux.value == "pmaiormenor") {
+      this.produtos.sort((a, b) => b.preco - a.preco)
 
-      }
-      if(aux.value == "pmenormaior") {
-        this.produtos.sort((a, b) => a.preco - b.preco)
+    }
+    if (aux.value == "pmenormaior") {
+      this.produtos.sort((a, b) => a.preco - b.preco)
 
-      }
+    }
 
-      
+
 
   }
 
-  filtroCores(aux){
+  filtroCores(aux) {
     this.produtos = this.produtosBK
-    this.produtos = this.produtos.filter( e  => (e.cor.toLowerCase() == aux.value));
-    debugger
-
+    this.produtos = this.produtos.filter(e => (e.cor.toLowerCase() == aux.value));
   }
 
-  filtroMarcas(aux){
+  filtroMarcas(aux) {
     this.produtos = this.produtosBK
-    this.produtos = this.produtos.filter( e  => (e.marca.toLowerCase() == aux.value));
+    this.produtos = this.produtos.filter(e => (e.marca.toLowerCase() == aux.value));
   }
 
 
-  filtroNome(aux){
+  filtroNome(aux) {
     this.produtos = this.produtosBK
-    if(aux.target.value != ""){
-    this.produtos = this.produtos.filter( e  => (e.nome.toLowerCase().match( aux.target.value.toLowerCase())));
-  }
+    if (aux.target.value != "") {
+      this.produtos = this.produtos.filter(e => (e.nome.toLowerCase().match(aux.target.value.toLowerCase())));
+    }
 
   }
 }
