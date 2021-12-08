@@ -1,7 +1,68 @@
 footer{
     background-color: #ccc;
-    color: gray;
+    color: white;
     font-size: 16px;
     bottom:0;
     width:100%;
+}
+
+
+.informacoes-1{
+    background-color: #050505;
+    width: 100%;
+    height: 320px;
+}
+
+.informacoes-2{
+    background-color: #181818;
+    width: 100%;
+    height: 120px;
+}
+
+.infos-dv{
+    display: flex;
+}
+
+.infos-dv h3{
+    color: rgb(233, 233, 233);
+    margin-top: 30px;
+    margin-right: 240px;
+    font-size: 23px;
+}
+
+/******/
+
+.images-fv{
+    display: flex;
+    padding-left: 120px;
+}
+
+.image-fv-1{
+    width: 180px;
+    height: 180px;
+    background-image: url('../../../images/carte-de-credit.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.image-fv-2{
+    width: 180px;
+    height: 180px;
+    background-image: url('../../../images/unnamed.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    position: relative;
+    right: 720;
+}
+
+.image-fv-3{
+    width: 140px;
+    height: 140px;
+    background-image: url('../../../images/like.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 }

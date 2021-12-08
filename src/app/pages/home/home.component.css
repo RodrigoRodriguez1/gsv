@@ -20,7 +20,7 @@
     width:auto;
     width: 1480px !important;
 
-    background-image: url('../../../images/image_data_01.png');
+    background-image: url('../../../images/gsv-pro-inicio.jpg');
 }
 
 .foto2{
@@ -29,7 +29,7 @@
     width:auto;
     width: 1480px !important;
     
-    background-image: url('../../../images/image_data_02.png');
+    background-image: url('../../../images/gsv-pro-inicio.jpg');
 }
 
 .foto3{
@@ -38,7 +38,7 @@
     width:auto;
     width: 1480px !important;
 
-    background-image: url('../../../images/image_data_03.png');
+    background-image: url('../../../images/gsv-pro-inicio.jpg');
 }
 
 .fotoCategoriaVest{
@@ -244,3 +244,4 @@
 .destaque{
     background-color: rgba(230,230,230,0.4)
 }
+

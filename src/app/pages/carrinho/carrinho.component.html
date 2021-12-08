@@ -5,87 +5,98 @@
     <div class="row">
         <div class="col text-center">
             <div class="carrinho">
+                
                 <h1 style="padding: 40px 2%;border-bottom: 1px solid black;
                 margin-bottom: 40px;">Carrinho de compras <i style="font-size:40px;" class="fas fa-shopping-cart"></i>
                 </h1>
 
-                <div class="rev-pt" *ngIf="itemsCarrinho.length != 0">
-                    <h1 style="font-size: 28px;"><span>1</span> Revisão</h1>
-                </div>
-
-                <div class="informacoes-produto" style="font-family: sans-serif;"
-                    *ngFor="let i of itemsCarrinho; let ind = index">
-                    <div class="info-imagem">
-                        <img [attr.src]="'http://localhost:3000/' + i.imagem" />
-                        <div style="clear: both;"></div>
-                    </div>
-
-                    <div class="info-t" style="font-family: 'Roboto Condensed';">
-                        <p>Nome: <span style="font-weight: bold;">{{i.Nome}}</span></p>
-                        <p>Tamanho: {{i.propriedade}}</p>
-                        <p>Preço: <span style="font-weight: bold;">{{i.Preco | currency:'BRL'}}</span></p>
-                        <!--<p>Quantidade disponivel: <span style="font-weight: bold;">{{i.Quantidade}}</span></p>-->
-                        <button class="botao-remover" (click)="removerItem(ind)"><i
-                                class="fas fa-trash-alt"></i></button>
+                <div class="col d-flex justify-content-center colunas">
+                    
+                    <div class="col coluna-esquerda">
+                        <div class="rev-pt" *ngIf="itemsCarrinho.length != 0">
+                            <h1 style="font-size: 28px;">Revisão</h1>
+                        </div>
+        
+                        <div class="informacoes-produto" style="font-family: sans-serif;"
+                            *ngFor="let i of itemsCarrinho; let ind = index">
+                            <div class="info-imagem">
+                                <img [attr.src]="'http://localhost:3000/' + i.imagem" />
+                                <div style="clear: both;"></div>
+                            </div>
+        
+                            <div class="info-t" style="font-family: 'Roboto Condensed';">
+                                <div style="margin-top: 30px;line-height: 50px;">
+                                    <p>Nome: <span style="font-weight: bold;">{{i.Nome}}</span></p>
+                                    <p>Tamanho: {{i.propriedade}}</p>
+                                    <p>Preço: <span style="font-weight: bold;">{{i.Preco | currency:'BRL'}}</span></p>
+                                </div>
+                                <!--<p>Quantidade disponivel: <span style="font-weight: bold;">{{i.Quantidade}}</span></p>-->
+                                <button class="botao-remover" (click)="removerItem(ind)">Remover</button>
+                            </div>
+                            <div style="clear: both;"></div>
+                        </div>
                     </div>
                     <div style="clear: both;"></div>
-                </div>
-                <!-- Botoes de compra -->
-                <div class="login" id="aqui" *ngIf="usuario == null && itemsCarrinho.length != 0">
-                    <h1>É necessário realizar login para finalizar a compra</h1>
-                    <button class="btn btn-default" routerLink="/login">Login</button>
-                </div>
+                    <div class="col coluna-direita">
+                        <!-- Botoes de compra -->
+                        <div class="login" id="aqui" *ngIf="usuario == null && itemsCarrinho.length != 0">
+                            <h1>É necessário realizar login para finalizar a compra</h1>
+                            <button class="btn btn-default" routerLink="/login">Login</button>
+                        </div>
 
 
-                <div class="rev-pt" style="margin-top: 20px;" *ngIf="usuario != null && itemsCarrinho.length != 0">
-                    <h1 style="font-size: 28px;"><span>2</span> Selecionar método de entrega</h1>
-                </div>
+                        <div class="rev-pt" style="margin-top: 0px;" *ngIf="usuario != null && itemsCarrinho.length != 0">
+                            <h1 style="font-size: 28px;">Selecionar método de entrega</h1>
+                        </div>
 
 
-                <div class="login pagamento-rev" *ngIf="usuario != null && itemsCarrinho.length != 0">
+                        <div class="login pagamento-rev" *ngIf="usuario != null && itemsCarrinho.length != 0">
 
-                    <mat-radio-group [(ngModel)]="tipoEntrega">
+                            <mat-radio-group [(ngModel)]="tipoEntrega">
 
 
 
-                        <p style="font-size: 18px;text-align: left;padding-left: 48px;
-                    padding-top: 90px;">
-                            <span style="font-size: 32px;">SEDEX:
-                                <span style="font-size: 24px;"> R$ {{valorFrete}} |
-                                    <span style="font-size: 24px;"> Prazo: {{prazoFrete}} dia(s) úteis
+                                <p style="font-size: 18px;text-align: left;padding-left: 48px;
+                            padding-top: 100px;">
+                                    <span style="font-size: 32px;">SEDEX:
+                                        <span style="font-size: 24px;"> R$ {{valorFrete}} |
+                                            <span style="font-size: 24px;"> Prazo: {{prazoFrete}} dia(s) úteis
+                                            </span>
+                                        </span>
                                     </span>
-                                </span>
-                            </span>
-                            <mat-radio-button value="pac" (change)="attFrete()"></mat-radio-button>
-                        </p>
+                                    <mat-radio-button value="pac" (change)="attFrete()"></mat-radio-button>
+                                </p>
 
-                        <p style="font-size: 18px;text-align: left;padding-left: 48px;">
-                            <span style="font-size: 32px;">PAC:
-                                <span style="font-size: 24px;"> R$ {{valorFretePAC}} |
-                                    <span style="font-size: 24px;"> Prazo: {{prazoFretePAC}} dia(s) úteis
+                                <p style="font-size: 18px;text-align: left;padding-left: 48px;">
+                                    <span style="font-size: 32px;">PAC:
+                                        <span style="font-size: 24px;"> R$ {{valorFretePAC}} |
+                                            <span style="font-size: 24px;"> Prazo: {{prazoFretePAC}} dia(s) úteis ...
+                                            </span>
+                                        </span>
                                     </span>
-                                </span>
-                            </span>
-                            <mat-radio-button value="sedex" (change)="attFrete()"></mat-radio-button>
-                        </p>
+                                    <mat-radio-button value="sedex" (change)="attFrete()"></mat-radio-button>
+                                </p>
 
-                    </mat-radio-group>
+                            </mat-radio-group>
 
-                    <p class="ent-hpp" *ngIf="precoSomadoFrete == ''">Selecione um método de entrega</p><br />
-                    <p class="ent-hpp" *ngIf="precoSomadoFrete != ''">
-                        VALOR TOTAL:
-                        <span style="font-weight: bold;">{{precoSomadoFrete | currency:'BRL'}}</span>
-                    </p><br />
-                    <!-- <h1>VALOR TOTAL: {{precoSomadoFrete | currency:'BRL'}}</h1><br /> -->
-                    <button class="btn btn-default pagamento-btn" (click)="finalizar()" id="button-checkout">Finalizar
-                        compra</button>
+                            <p class="ent-hpp" *ngIf="precoSomadoFrete == ''">Selecione um método de entrega</p><br />
+                            <p class="ent-hpp" *ngIf="precoSomadoFrete != ''">
+                                VALOR TOTAL:
+                                <span style="font-weight: bold;">{{precoSomadoFrete | currency:'BRL'}}</span>
+                            </p><br />
+                            <!-- <h1>VALOR TOTAL: {{precoSomadoFrete | currency:'BRL'}}</h1><br /> -->
+                            <button class="btn btn-default pagamento-btn" (click)="finalizar()" id="button-checkout">Finalizar
+                                compra</button>
+                            <div style="clear: both;"></div>
+                        </div>
+                    </div>
                     <div style="clear: both;"></div>
+                    <div class="login" *ngIf="itemsCarrinho.length == 0">
+                        <h1 style="padding: 6px;height: 610px;max-height: 1080px;text-align: center;">O carrinho está vazio! <i
+                                class="far fa-frown"></i></h1>
+                    </div>
                 </div>
 
-                <div class="login" *ngIf="itemsCarrinho.length == 0">
-                    <h1 style="padding: 6px;height: 610px;max-height: 1080px;">O carrinho está vazio! <i
-                            class="far fa-frown"></i></h1>
-                </div>
             </div>
         </div>
     </div>
