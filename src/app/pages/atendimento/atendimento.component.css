@@ -11,6 +11,7 @@
     font-size: 25px;
     margin-top: 90px;
     cursor: pointer;
+    width: 30%;
 }
 
 .contents p:hover{

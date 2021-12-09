@@ -30,6 +30,8 @@
     <div class="col text-center coluna-direita" style="margin-top: 6%;">
       <h2 class="nomeProd" style="color: black;text-align: left;font-weight: normal;">{{produtos.nome}}</h2>
       <h2 class="preco" style="text-align: left;font-size: 22px;font-weight: bold;">R$ {{produtos.preco}}</h2>
+      <p style="text-align: left;color: rgb(143, 143, 143);margin-top: 10px;letter-spacing: 1.5px;">em 10x de R$<span id="pc-calc" style="font-family: roboto;font-weight: 500;"></span></p>
+      <p style="text-align: left;color: rgb(143, 143, 143);margin-top: 10px;letter-spacing: 1.5px;">ou R$<span id="pc-or-calc" style="font-family: roboto;font-weight: 500;"></span> (à vista com 10% de desconto via PIX)</p>
 
       <h2 style="text-align: left;font-weight: normal;font-size: 25px;margin-top: 50px;">Tamanho</h2>
 
@@ -37,6 +39,7 @@
         <option *ngFor="let p of propriedades.mensagem" [value]='p.nome' name="rdPropriedade" id="rdPropriedade">{{p.nome}}</option>
       </select>
       
+      <br/>
       <br/>
       <button class="botao-compra" (click)="adicionarCarrinho()">Adicionar ao Carrinho</button>
 

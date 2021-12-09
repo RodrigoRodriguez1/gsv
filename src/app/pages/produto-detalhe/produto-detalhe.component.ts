@@ -88,8 +88,13 @@ export class ProdutoDetalheComponent implements OnInit {
       }
     })
 
+      
+      // Calculo da Parcela
+      var spanDoResultPrimeiro = document.getElementById("pc-calc")
+      spanDoResultPrimeiro.innerHTML += Math.ceil(this.precoProduto / 10);
 
-
+      var spanDoResultSegundo = document.getElementById("pc-or-calc")
+      spanDoResultSegundo.innerHTML += Math.ceil(this.precoProduto * 0.90) 
   }
 
   customOptions: OwlOptions = {
@@ -204,6 +209,4 @@ export class ProdutoDetalheComponent implements OnInit {
       panelClass: isErro ? ['msg-erro'] : ['msg-success']
     })
   }
-
-
 }

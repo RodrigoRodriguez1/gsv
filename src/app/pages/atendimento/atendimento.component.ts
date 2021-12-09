@@ -14,11 +14,17 @@ export class AtendimentoComponent implements OnInit {
       
       $(function(){
 
-          // Código gambiarrento :(
+          // Gambiarra.ts :(
 
 
           $("#adq").click(function(){
             $("#adq-context").animate({
+              height: 'toggle'
+            })
+          })
+
+          $("#tms").click(function(){
+            $("#tms-context").animate({
               height: 'toggle'
             })
           })
