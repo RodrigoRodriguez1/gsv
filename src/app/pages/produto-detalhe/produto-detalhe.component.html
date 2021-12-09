@@ -32,11 +32,10 @@
       <h2 class="preco" style="text-align: left;font-size: 22px;font-weight: bold;">R$ {{produtos.preco}}</h2>
 
       <h2 style="text-align: left;font-weight: normal;font-size: 25px;margin-top: 50px;">Tamanho</h2>
-      <div *ngFor="let p of propriedades.mensagem">
-        <select [value]='p' [(ngModel)]="valorPropriedade" class="slPropriedade">
-          <option name="rdPropriedade" id="rdPropriedade">{{p.nome}}</option>
-        </select>
-      </div>
+
+      <select *ngFor="let p of propriedades.mensagem" [value]='p' [(ngModel)]="valorPropriedade" class="slPropriedade">
+        <option name="rdPropriedade" id="rdPropriedade">{{p.nome}}</option>
+      </select>
       
       <br/>
       <button class="botao-compra" (click)="adicionarCarrinho()">Adicionar ao Carrinho</button>

@@ -1,0 +1,36 @@
+.container{
+    font-family: 'Roboto';
+}
+
+.contents{
+    padding-top: 30px;
+}
+
+.contents p{
+    font-family: 'Oswald';
+    font-size: 25px;
+    margin-top: 90px;
+    cursor: pointer;
+}
+
+.contents p:hover{
+    color: gray;
+}
+
+.info{
+    text-align: justify;
+    width: 60%;
+    height: auto;
+    display: none;
+    padding: 10px;
+}
+
+.perg{
+    font-weight: bold;
+    font-size: 20px;
+    text-transform: uppercase;
+}
+
+.resp{
+    padding: 10px;
+}

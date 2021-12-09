@@ -125,7 +125,7 @@
 }
 .categorias-home{
     margin: 0 auto;
-    margin-top: 590px;
+    margin-top: 650px;
     margin-bottom: 100px;
     width: 100%;
 }
@@ -154,12 +154,8 @@
     transition: 0.5s;
     font-size: 22px;
     letter-spacing: 2px;
+    cursor: pointer;
 }
-
-.categorias-home .categorias-home-content .categorias-single:hover{
-    
-}
-
 
 .row-content{
     width: 172.3%;
