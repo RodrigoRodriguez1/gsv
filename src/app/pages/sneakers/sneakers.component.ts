@@ -28,6 +28,7 @@ export class SneakersComponent implements OnInit {
   carregando = true
   cores = []
   marca = []
+  numero = []
 
   ngOnInit() {
     // ################################################################
@@ -65,6 +66,9 @@ export class SneakersComponent implements OnInit {
     this.ProdutosService.getProdutosTenis().subscribe(
       (data) => {
 
+        console.log('eeee')
+        console.log(data)
+
         this.produtos = data['mensagem']
         this.produtosBK = data['mensagem']
 
@@ -85,6 +89,16 @@ export class SneakersComponent implements OnInit {
           if (a.indexOf(b) < 0) a.push(b);
           return a;
         }, []);
+
+        this.produtos.forEach(e => {
+          this.numero.push(e.nomePropriedade.toString().toLowerCase())
+        });
+
+        this.numero = this.numero.reduce(function (a, b) {
+          if (a.indexOf(b) < 0) a.push(b);
+          return a;
+        }, []);
+
 
         this.carregando = false
       },
@@ -159,6 +173,11 @@ export class SneakersComponent implements OnInit {
   filtroMarcas(aux) {
     this.produtos = this.produtosBK
     this.produtos = this.produtos.filter(e => (e.marca.toLowerCase() == aux.value));
+  }
+
+  filtroNumero(aux) {
+    this.produtos = this.produtosBK
+    this.produtos = this.produtos.filter(e => (e.nomePropriedade == aux.value));
   }
 
 

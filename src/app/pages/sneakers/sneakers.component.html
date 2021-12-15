@@ -39,6 +39,12 @@
         <mat-radio-button *ngFor="let mSelecionada of marca" [value]="mSelecionada" (change)="filtroMarcas($event)" style="width: 50%;">{{mSelecionada}}</mat-radio-button>
       </mat-radio-group>
       <hr />
+
+      <h4>Numeros</h4>
+      <mat-radio-group>
+        <mat-radio-button *ngFor="let n of numero" [value]="n" (change)="filtroNumero($event)" style="width: 50%;">{{n}}</mat-radio-button>
+      </mat-radio-group>
+      <hr />
     </div>
 
     

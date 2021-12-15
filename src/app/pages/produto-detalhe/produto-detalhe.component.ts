@@ -51,6 +51,7 @@ export class ProdutoDetalheComponent implements OnInit {
     // carregando as propriedades
     this.produtosService.getPropriedadesProduto(this.idProduto).subscribe(ret => {
       this.propriedades = ret
+      debugger
     })
 
     this.produtosService.getProduto(this.idProduto).subscribe((data: { [x: string]: any; }) => {
