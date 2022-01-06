@@ -1,0 +1,37 @@
+/* ########################### */
+/* Classes para responsividade */
+
+.smartphone {
+  display: none;
+}
+
+@media only screen and (max-width: 780px) {
+  .desktop {
+    display: none;
+  }
+
+  .smartphone {
+    display: block;
+  }
+}
+
+/* ########################### */
+
+/* Estilo botao pagar MP */
+.btn-finalizar-mp {
+  display: flex;
+  margin: auto;
+  position: relative;
+  top: -595px;
+  width: 350px;
+  text-align: center;
+  justify-content: center;
+}
+
+@media only screen and (max-width: 780px) {
+  .btn-finalizar-mp {
+    position: relative;
+    top: -1135px;
+    width: 300px;
+  }
+}

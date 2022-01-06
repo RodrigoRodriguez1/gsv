@@ -52,10 +52,8 @@
 
 /** Informações do Produto **/
 .informacoes-produto{
-    /**background-color: rgb(238, 238, 238);**/
     width: 100%;
     height: 460px;
-    /**margin: 0 auto;**/
     border: 1px solid black;
     border-top: 0px solid black;
     padding-top: 60px;
@@ -78,14 +76,6 @@
 .info-imagem > img{
     width: 220px;
     max-width: 220px;
-}
-
-.coluna-esquerda{
-    
-}
-
-.coluna-direita{
-    
 }
 
 .rev-pt{
@@ -143,4 +133,47 @@
 .ent-hpp{
     position: relative;
     top: 80px;
+}
+
+/* CLASSES QUE SO FUNCIONAM NO CELULAR (SMARTPHONE) */
+
+.box-produto {
+    border-top: 35px solid #000000;
+    border-left: 1px solid #000000;
+    border-right: 1px solid #000000;
+    border-bottom: 1px solid #000000;
+    padding: 20px 0;
+    margin: 10px;
+}
+
+.revisao-smartphone {
+    position: relative;
+    margin-top: -25px;
+    top: -27px;
+    right: 0;
+    font-size: 18px;
+    color: #FFFFFF;
+}
+
+.remover-smartphone {
+    font-size: 17px;
+    position: relative;
+    margin-top: -15px;
+    margin-left: 210px;
+    bottom: 265px;
+}
+
+.frase-final-smartphone {
+    color: black;
+}
+
+.btn-finalizar-smartphone {
+    border-radius: 0;
+    font-family: 'Roboto', sans-serif;
+    outline: none;
+    background: black;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    width: 50%;
 }

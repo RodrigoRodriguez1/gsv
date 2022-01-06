@@ -1,84 +1,159 @@
-<div class="container" style="margin-bottom: 240px;">
+<div class="desktop">
+  <div class="container" style="margin-bottom: 240px;">
 
-  <!-- ##################################################### -->
-  <div class="row">
-    <div class="col-md text-center titulo">
-      <h3 class="sub-buscar" style="width: 73%;">Buscar Produto</h3>
-      <mat-form-field class="busca" appearance="legacy" style="margin-right: 97px;">
-        <input matInput (keyup)="filtroNome($event)"  placeholder="Buscar...">
-        <mat-icon matSuffix>search</mat-icon>
-      </mat-form-field>
-    </div>
-  </div>
-
-  <!-- CARD DO PRODUTO -->
-  <div class="row">
-    <div class="col-md-3" style="position: relative;right: 10%;">
-      <h1>Sneakers</h1>
-
-      <div class="filtro">
-        <mat-form-field class="filtro"  appearance="legacy">
-          <mat-label>Filtrar por</mat-label>
-          <mat-select (selectionChange)="filtros($event)">
-            <mat-option *ngFor="let f of filtro"  [value]="f.value">
-              {{f.nome}}
-            </mat-option>
-          </mat-select>
+    <!-- ##################################################### -->
+    <div class="row">
+      <div class="col-md text-center titulo">
+        <h3 class="sub-buscar" style="width: 73%;">Buscar Produto</h3>
+        <mat-form-field class="busca" appearance="legacy" style="margin-right: 97px;">
+          <input matInput (keyup)="filtroNome($event)" placeholder="Buscar...">
+          <mat-icon matSuffix>search</mat-icon>
         </mat-form-field>
       </div>
-
-      <h4>Cores</h4>
-
-      <mat-radio-group>
-        <mat-radio-button  *ngFor="let c of cores" [value]="c" (change)="filtroCores($event)" style="width: 50%;">{{c}}</mat-radio-button>
-      </mat-radio-group>
-      <hr />
-      <!-- <h4>Propriedades</h4> -->
-      <h4>Marcas</h4>
-      <mat-radio-group>
-        <mat-radio-button *ngFor="let mSelecionada of marca" [value]="mSelecionada" (change)="filtroMarcas($event)" style="width: 50%;">{{mSelecionada}}</mat-radio-button>
-      </mat-radio-group>
-      <hr />
-
-      <h4>Numeros</h4>
-      <mat-radio-group>
-        <mat-radio-button *ngFor="let n of numero" [value]="n" (change)="filtroNumero($event)" style="width: 50%;">{{n}}</mat-radio-button>
-      </mat-radio-group>
-      <hr />
     </div>
 
-    
-    <!-- <h4>Propriedades</h4> -->
+    <!-- FILTROS -->
+    <div class="row">
+      <div class="col-md-3" style="position: relative;right: 10%;">
+        <h1>Sneakers</h1>
 
+        <div class="filtro">
+          <mat-form-field class="filtro" appearance="legacy">
+            <mat-label>Filtrar por</mat-label>
+            <mat-select (selectionChange)="filtros($event)">
+              <mat-option *ngFor="let f of filtro" [value]="f.value">
+                {{f.nome}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
 
-    <div class="col-md-9 box-card d-flex">
+        <h4>Cores</h4>
 
-      <div class="carregando" *ngIf="carregando">
-        <img src="https://i.imgur.com/gnuXFbP.gif" width="100px">
-        <p>Carregando...</p>
+        <mat-radio-group>
+          <mat-radio-button *ngFor="let c of cores" [value]="c" (change)="filtroCores($event)" style="width: 50%;">{{c}}
+          </mat-radio-button>
+        </mat-radio-group>
+        <hr />
+
+        <h4>Marcas</h4>
+        <mat-radio-group>
+          <mat-radio-button *ngFor="let mSelecionada of marca" [value]="mSelecionada" (change)="filtroMarcas($event)"
+            style="width: 50%;">{{mSelecionada}}</mat-radio-button>
+        </mat-radio-group>
+        <hr />
+
+        <h4>Numeros</h4>
+
+        <mat-radio-group>
+          <mat-radio-button *ngFor="let n of numero" [value]="n" (change)="filtroNumero($event)" style="width: 50%;">
+            {{n}}
+          </mat-radio-button>
+        </mat-radio-group>
+        <hr />
       </div>
-
-      <div  class="container-fluid">
-        <div class="row">
-
-
-          <div class="col-md-3 card-sem-borda" *ngFor="let item of produtos;" [routerLink]="['/produto-detalhado', item.idProdutos, item.nome, item.preco, item.quantidade, item.imagem]">
-            <!-- <mat-card class="card"> -->
+      <div class="col-md-9 box-card d-flex">
+        <div class="carregando" *ngIf="carregando">
+          <img src="https://i.imgur.com/gnuXFbP.gif" width="100px">
+          <p>Carregando...</p>
+        </div>
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-3 card-sem-borda" *ngFor="let item of produtos;"
+              [routerLink]="['/produto-detalhado', item.idProdutos, item.nome, item.preco, item.quantidade, item.imagem]">
+              <!-- <mat-card class="card"> -->
               <img class="foto-produto" mat-card-image [attr.src]="'http://localhost:3000/' + item.imagem"
-                matTooltip="{{item.nome}}" [routerLink]="['/produto-detalhado', item.idProdutos]" />
+                matTooltip="{{item.nome}}" [routerLink]="['/produto-detalhado', item.idProdutos, item.nome, item.preco, item.quantidade, item.imagem]" />
               <mat-card-content>
                 <h2 class="nome">{{item.nome}}</h2>
                 <h3 class="preco" style="font-weight: bold;">{{item.preco | currency: 'BRL'}}</h3>
               </mat-card-content>
+            </div>
           </div>
-        
         </div>
       </div>
+    </div>
+  </div>
+</div>
 
+<!-- ################### -->
+<!-- CODIGO PARA CELULAR -->
+<!-- ################### -->
 
+<div class="smartphone">
+  <div class="container-fluid">
+    <!-- FILTRO -->
+    <div class="row">
+      <div class="col text-center titulo">
+        <h3 class="sub-buscar">Buscar Produto</h3>
+        <mat-form-field appearance="legacy">
+          <input matInput (keyup)="filtroNome($event)" placeholder="Buscar...">
+          <mat-icon matSuffix>search</mat-icon>
+        </mat-form-field>
+      </div>
+    </div>
+    <!-- /FILTRO -->
+
+    <div class="row">
+      <div class="col-md-3">
+        <h1>Sneakers</h1>
+
+        <div class="filtro">
+          <mat-form-field class="filtro" appearance="legacy">
+            <mat-label>Filtrar por</mat-label>
+            <mat-select (selectionChange)="filtros($event)">
+              <mat-option *ngFor="let f of filtro" [value]="f.value">
+                {{f.nome}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+
+        <h4>Cores</h4>
+
+        <mat-radio-group>
+          <mat-radio-button *ngFor="let c of cores" [value]="c" (change)="filtroCores($event)" style="width: 50%;">{{c}}
+          </mat-radio-button>
+        </mat-radio-group>
+        <hr />
+
+        <h4>Marcas</h4>
+        <mat-radio-group>
+          <mat-radio-button *ngFor="let mSelecionada of marca" [value]="mSelecionada" (change)="filtroMarcas($event)"
+            style="width: 50%;">{{mSelecionada}}</mat-radio-button>
+        </mat-radio-group>
+        <hr />
+
+        <h4>Numeros</h4>
+
+        <mat-radio-group>
+          <mat-radio-button *ngFor="let n of numero" [value]="n" (change)="filtroNumero($event)" style="width: 50%;">
+            {{n}}
+          </mat-radio-button>
+        </mat-radio-group>
+        <hr />
+      </div>
+      <div class="col-md-9 box-card d-flex">
+        <div class="carregando" *ngIf="carregando">
+          <img src="https://i.imgur.com/gnuXFbP.gif" width="100px">
+          <p>Carregando...</p>
+        </div>
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col card-sem-borda" *ngFor="let item of produtos;"
+              [routerLink]="['/produto-detalhado', item.idProdutos, item.nome, item.preco, item.quantidade, item.imagem]">
+              <!-- <mat-card class="card"> -->
+              <img class="foto-produto" mat-card-image [attr.src]="'http://localhost:3000/' + item.imagem"
+                matTooltip="{{item.nome}}" [routerLink]="['/produto-detalhado', item.idProdutos, item.nome, item.preco, item.quantidade, item.imagem]" />
+              <mat-card-content>
+                <h2 class="nome">{{item.nome}}</h2>
+                <h3 class="preco" style="font-weight: bold;">{{item.preco | currency: 'BRL'}}</h3>
+              </mat-card-content>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
   </div>
-
-
 </div>

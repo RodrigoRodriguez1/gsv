@@ -1,12 +1,11 @@
-<div class="container-fluid" style="margin-top: 80px;">
+<div class="container-fluid desktop" style="margin-top: 80px;">
 
   <div class="row conteudo" style="margin-bottom: 5%;">
     <div class="col d-flex justify-content-center coluna-esquerda">
       <div class="carousel">
         <owl-carousel-o [options]="customOptions">
           <ng-template [width]="50" carouselSlide>
-            <img style="margin-top: 27%;" [attr.src]="'http://localhost:3000/' +  images[0]"
-              width="50" />
+            <img style="margin-top: 27%;" [attr.src]="'http://localhost:3000/' +  images[0]" width="50" />
           </ng-template>
           <ng-template [width]="50" carouselSlide>
             <img style="margin-top: 27%;border: 0px solid white;" [attr.src]="'http://localhost:3000/' +  images[1]"
@@ -30,20 +29,99 @@
     <div class="col text-center coluna-direita" style="margin-top: 6%;">
       <h2 class="nomeProd" style="color: black;text-align: left;font-weight: normal;">{{produtos.nome}}</h2>
       <h2 class="preco" style="text-align: left;font-size: 22px;font-weight: bold;">R$ {{produtos.preco}}</h2>
-      <p style="text-align: left;color: rgb(143, 143, 143);margin-top: 10px;letter-spacing: 1.5px;">em 10x de R$<span id="pc-calc" style="font-family: roboto;font-weight: 500;"></span></p>
-      <p style="text-align: left;color: rgb(143, 143, 143);margin-top: 10px;letter-spacing: 1.5px;">ou R$<span id="pc-or-calc" style="font-family: roboto;font-weight: 500;"></span> (à vista com 10% de desconto via PIX)</p>
+      <p style="text-align: left;color: rgb(143, 143, 143);margin-top: 10px;letter-spacing: 1.5px;">em 10x de R$<span
+          id="pc-calc" style="font-family: roboto;font-weight: 500;"></span></p>
+      <p style="text-align: left;color: rgb(143, 143, 143);margin-top: 10px;letter-spacing: 1.5px;">ou R$<span
+          id="pc-or-calc" style="font-family: roboto;font-weight: 500;"></span> (à vista com 10% de desconto via PIX)
+      </p>
 
       <h2 style="text-align: left;font-weight: normal;font-size: 25px;margin-top: 50px;">Tamanho</h2>
 
       <select [(ngModel)]="valorPropriedade" class="slPropriedade">
-        <option *ngFor="let p of propriedades.mensagem" [value]='p.nome' name="rdPropriedade" id="rdPropriedade">{{p.nome}}</option>
+        <option *ngFor="let p of propriedades.mensagem" [value]='p.nome' name="rdPropriedade" id="rdPropriedade">
+          {{p.nome}}</option>
       </select>
-      
-      <br/>
-      <br/>
+
+      <br />
+      <br />
       <button class="botao-compra" (click)="adicionarCarrinho()">Adicionar ao Carrinho</button>
 
-      <h2 class="cep" style="text-align: left;font-weight: normal;font-size: 25px;margin-top: 50px;">Calcule seu frete: </h2>
+      <h2 class="cep" style="text-align: left;font-weight: normal;font-size: 25px;margin-top: 50px;">Calcule seu frete:
+      </h2>
+      <mat-form-field style="width: 100%;">
+        <mat-label>CEP:</mat-label>
+        <input placeholder="Insira o CEP" [(ngModel)]="cep" matInput mask="00000-000" name="cep" id="cep" />
+      </mat-form-field>
+
+      <br />
+      <label *ngIf="loadingPAC">PAC: {{valorFretePAC}} - {{prazoFretePAC}} Dias úteis</label><br />
+      <label *ngIf="loadingSEDEX">SEDEX: {{valorFreteSEDEX}} - {{prazoFreteSEDEX}} Dias úteis</label><br />
+      <button class="botao-calc-frete" (click)="consultaCEP(cep)">Calcular</button>
+      <br />
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+<div class="container-fluid smartphone">
+  <div class="row">
+    <div class="col text-center">
+      <h2 class="nomeProd-smartphone" >{{produtos.nome}}</h2>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col text-center">
+      <div class="carousel-smartphone">
+        <owl-carousel-o [options]="customOptions">
+          <ng-template [width]="50" carouselSlide>
+            <img style="margin-top: 27%;" [attr.src]="'http://localhost:3000/' +  images[0]" width="50" />
+          </ng-template>
+          <ng-template [width]="50" carouselSlide>
+            <img style="margin-top: 27%;border: 0px solid white;" [attr.src]="'http://localhost:3000/' +  images[1]"
+              width="50" />
+          </ng-template>
+          <ng-template [width]="50" carouselSlide>
+            <img style="margin-top: 27%;border: 0px solid white;" [attr.src]="'http://localhost:3000/' +  images[2]"
+              width="50" />
+          </ng-template>
+          <ng-template [width]="50" carouselSlide>
+            <img style="margin-top: 27%;border: 0px solid white;" [attr.src]="'http://localhost:3000/' +  images[3]"
+              width="50" />
+          </ng-template>
+          <ng-template [width]="50" carouselSlide>
+            <img style="margin-top: 27%;border: 0px solid white;" [attr.src]="'http://localhost:3000/' +  images[4]"
+              width="50" />
+          </ng-template>
+        </owl-carousel-o>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col text-center">
+      <h2 class="preco" style="text-align: left;font-size: 22px;font-weight: bold;">R$ {{produtos.preco}}</h2>
+      <p style="text-align: left;color: rgb(143, 143, 143);margin-top: 10px;letter-spacing: 1.5px;">em 10x de R$<span
+          id="pc-calc" style="font-family: roboto;font-weight: 500;"></span></p>
+      <p style="text-align: left;color: rgb(143, 143, 143);margin-top: 10px;letter-spacing: 1.5px;">ou R$<span
+          id="pc-or-calc" style="font-family: roboto;font-weight: 500;"></span> (à vista com 10% de desconto via PIX)
+      </p>
+
+      <h2 style="text-align: left;font-weight: normal;font-size: 25px;margin-top: 50px;">Tamanho</h2>
+
+      <select (change)="atribuiValorPropriedade($event.target.innerText)" [(ngModel)]="valorPropriedade" class="slPropriedade">
+        <option *ngFor="let p of propriedades.mensagem" [value]='p.nome' value='p.nome' name="rdPropriedade" id="rdPropriedade">
+          {{p.nome}}</option>
+      </select>
+
+      <br />
+      <br />
+      <button class="botao-compra" (click)="adicionarCarrinho()">Adicionar ao Carrinho</button>
+
+      <h2 class="cep" style="text-align: left;font-weight: normal;font-size: 25px;margin-top: 50px;">Calcule seu frete:
+      </h2>
       <mat-form-field style="width: 100%;">
         <mat-label>CEP:</mat-label>
         <input placeholder="Insira o CEP" [(ngModel)]="cep" matInput mask="00000-000" name="cep" id="cep" />

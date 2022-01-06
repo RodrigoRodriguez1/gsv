@@ -30,70 +30,30 @@
 
 
 .foto{
-
     height: 720px !important;
     width:auto;
     width: 1480px !important;
-
     background-image: url('../../../images/gsv-pro-inicio.jpg');
 }
 
 .foto2{
-
     height: 720px !important;
     width:auto;
     width: 1480px !important;
-    
     background-image: url('../../../images/J-low-mocha-teste.jpg');
 }
 
 .foto3{
-
     height: 720px !important;
     width:auto;
     width: 1480px !important;
-
     background-image: url('../../../images/J-low-mocha-teste.jpg');
-}
-
-.fotoCategoriaVest{
-    background-image: url('../../../images/Categoria_roupa.jpg');
-    padding: 10px;
-}
-
-.fotoCategoriaShoes{
-    background-image: url('../../../images/image_data_03.png');
-    margin-right: 3px;
-
-}
-
-
-
-.clear{
-    clear: both;
 }
 
 .containerSlide{
     max-width: 1480px;
     padding: 0 2%;
     margin: 0 auto;
-}
-
-
-.menu-desktop{
-    float: right;
-    position: relative;
-    right: 0;
-    top:   50%;
-    transform: translate(-0%,-120%);
-    transform: translate(-0%,-120%);
-    transform: translate(-0%,-120%);
-}
-
-.menu-desktop ul li{
-    display: inline-block;
-    padding: 0 20px;
-    cursor: pointer;
 }
 
 
@@ -123,6 +83,7 @@
     background-position:center;
     background-repeat: no-repeat;
 }
+
 .categorias-home{
     margin: 0 auto;
     margin-top: 650px;
@@ -249,11 +210,7 @@
 
 .maismenos > .botao-compra:hover{
     background-color: #ab57c9;
-    /*padding-left: calc(24px - 3px);*/
-    /*padding-right: calc(24px - 3px);*/
 }
-
-
 
 .espaco{
     height: 100px;
@@ -264,3 +221,108 @@
     background-color: rgba(230,230,230,0.4)
 }
 
+/* celular */
+
+.containerSlide-celular{
+    max-width: 90%;
+    margin: 0 auto;
+}
+
+.images-data-celular {
+    transform: translate(0%,10%);
+    transform: translate(0%,10%);
+    transform: translate(0%,10%);
+
+}
+
+.image-data-single-celular{
+    display: none;
+    margin: 0 auto;
+    width: 75%;
+    height:360px;
+    position: absolute;
+    right:0;
+    top:50%;
+    transform: translate(10%,-10%);
+    transform: translate(10%,-10%);
+    transform: translate(10%,-10%);
+    background-size: cover;
+    background-position:center;
+    background-repeat: no-repeat;
+}
+
+.foto{
+    height: 720px !important;
+    width:auto;
+    width: 1480px !important;
+    background-image: url('../../../images/gsv-pro-inicio.jpg');
+}
+
+.foto2{
+    height: 720px !important;
+    width:auto;
+    width: 1480px !important;
+    background-image: url('../../../images/J-low-mocha-teste.jpg');
+}
+
+.foto3{
+    height: 720px !important;
+    width:auto;
+    width: 1480px !important;
+    background-image: url('../../../images/J-low-mocha-teste.jpg');
+}
+
+.categorias-home-celular{
+    margin: 0 auto;
+    margin-top: 650px;
+    margin-bottom: 100px;
+    width: 100%;
+}
+
+.categorias-home-content-celular {
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 30px;
+}
+
+.categorias-home-content-celular h2 {
+    text-align: center;
+    padding: 5px 0;
+}
+
+.categorias-home-celular .categorias-home-content-celular .categorias-single-celular {
+    width: 100%;
+    height: auto;
+    padding: 100px 20px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: white;
+    transition: 0.5s;
+    font-size: 20px;
+}
+
+.yeezy-celular {
+    background-image: url('../../../images/yeezy-brand.jpg');
+    margin-top: 10px;
+}
+
+.row-content-celular {
+    text-align: center;
+    margin: auto;
+    width: 100%;
+    height: auto;
+    position: relative;
+    transform: translate(0%,185px);
+    background-color: rgba(1,1,1,0.8);
+    cursor: pointer;
+}
+
+.container-fluid {
+    padding: 0!important;
+    margin: 0!important;
+}
+
+.box-categorias-celular {
+    margin-top: -680px;
+}

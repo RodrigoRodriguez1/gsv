@@ -14,9 +14,6 @@ export class AtendimentoComponent implements OnInit {
       
       $(function(){
 
-          // Gambiarra.ts :(
-
-
           $("#adq").click(function(){
             $("#adq-context").animate({
               height: 'toggle'

@@ -54,6 +54,8 @@ mat-radio-button {
     width: 200px;
     height: auto;
     transition: 0.3s;
+    display: flex;
+    margin: auto;
 }
 
 .foto-produto:hover {
@@ -61,14 +63,12 @@ mat-radio-button {
     margin-left: -15px;
     opacity: 0.7;
     transition: 0.3s;
+    display: flex;
+    margin: auto;
 }
 
 .nome {
     font-size: 18px;
-    // max-width: 20ch;
-    // overflow: hidden;
-    // text-overflow: ellipsis;
-    // white-space: nowrap;
 }
 
 .preco {

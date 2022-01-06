@@ -40,6 +40,37 @@ h3 {
     background: #fafafa;
 }
 
+.smartphone {
+    display: none;
+  }
+  
+  @media only screen and (max-width: 600px) {
+    .box {
+        margin-bottom: 30px;
+    
+        width: 90%;
+        height: 105px;
+        padding: 25px 0px 10px 0px;
+      
+        background: #FFFFFF;
+        box-shadow: 0px 2px 4px 2px rgb(0 0 0 / 15%);
+        border-radius: 20px;
+    
+        align-items: center;
+    
+        cursor: pointer;
+    
+        transition: 0.6s;
+    }
+    
+    .box:hover {
+        transition: 0.6s;
+    
+        width: 65%;  
+        background: #fafafa;
+    }
+  }
+
 .box h1 {
     font-size: 18px;
     font-family: 'Roboto', sans-serif;

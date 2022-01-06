@@ -3,15 +3,12 @@
 }
 
 .contents{
-    padding-top: 30px;
 }
 
 .contents p{
     font-family: 'Oswald';
     font-size: 25px;
-    margin-top: 90px;
     cursor: pointer;
-    width: 30%;
 }
 
 .contents p:hover{
@@ -20,7 +17,6 @@
 
 .info{
     text-align: justify;
-    width: 60%;
     height: auto;
     display: none;
     padding: 10px;

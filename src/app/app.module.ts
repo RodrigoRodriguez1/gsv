@@ -36,6 +36,7 @@ import { PagarMpComponent } from './pages/metodos-pagamento/pagar-mp/pagar-mp.co
 import ptBr from '@angular/common/locales/pt';
 import { registerLocaleData } from '@angular/common';
 import { AtendimentoComponent } from './pages/atendimento/atendimento.component';
+import { PaginanaoencontradaComponent } from './pages/paginanaoencontrada/paginanaoencontrada.component';
 
 registerLocaleData(ptBr);
 
@@ -57,6 +58,7 @@ registerLocaleData(ptBr);
     ProdutoDetalheComponent,
     PagarMpComponent,
     AtendimentoComponent,
+    PaginanaoencontradaComponent,
   ],
   imports: [
     BrowserModule,

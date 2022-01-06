@@ -77,4 +77,23 @@ button:hover {
     transition: 0.5s;
 }
 
-/**/
+/* SMARTPHONE */
+
+.carousel-smartphone {
+    width: 90%;
+    height: auto;
+    z-index: 0;
+    margin: auto;
+}
+
+.nomeProd-smartphone {
+    color: #050505;
+    font-size: 18px;
+
+    position: relative;
+    top: 30px;
+}
+
+.preco-smartphone {
+    
+}

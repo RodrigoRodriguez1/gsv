@@ -9,6 +9,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
 import { MetodosPagamentoComponent } from './pages/metodos-pagamento/metodos-pagamento.component';
 import { PagarMpComponent } from './pages/metodos-pagamento/pagar-mp/pagar-mp.component';
+import { PaginanaoencontradaComponent } from './pages/paginanaoencontrada/paginanaoencontrada.component';
 import { ProdutoDetalheComponent } from './pages/produto-detalhe/produto-detalhe.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { SneakersComponent } from './pages/sneakers/sneakers.component';
@@ -32,6 +33,7 @@ const routes: Routes = [
    { path: 'produto', component: ProdutoDetalheComponent},
    { path: 'pagar-mp', component: PagarMpComponent},
 
+   { path: '**', component: PaginanaoencontradaComponent },
 ];
 
 @NgModule({

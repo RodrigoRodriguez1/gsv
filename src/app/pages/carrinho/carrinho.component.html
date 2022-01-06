@@ -1,29 +1,31 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
-<div class="container">
+
+
+<div class="container desktop">
     <div class="row">
         <div class="col text-center">
             <div class="carrinho">
-                
+
                 <h1 style="padding: 40px 2%;border-bottom: 1px solid black;
                 margin-bottom: 40px;">Carrinho de compras <i style="font-size:40px;" class="fas fa-shopping-cart"></i>
                 </h1>
 
                 <div class="col d-flex justify-content-center colunas">
-                    
+
                     <div class="col coluna-esquerda">
                         <div class="rev-pt" *ngIf="itemsCarrinho.length != 0">
                             <h1 style="font-size: 28px;">Revisão</h1>
                         </div>
-        
+
                         <div class="informacoes-produto" style="font-family: sans-serif;"
                             *ngFor="let i of itemsCarrinho; let ind = index">
                             <div class="info-imagem">
                                 <img [attr.src]="'http://localhost:3000/' + i.imagem" />
                                 <div style="clear: both;"></div>
                             </div>
-        
+
                             <div class="info-t" style="font-family: 'Roboto Condensed';">
                                 <div style="margin-top: 30px;line-height: 48px;">
                                     <p>Nome: <span style="font-weight: bold;">{{i.Nome}}</span></p>
@@ -37,16 +39,18 @@
                         </div>
                     </div>
                     <div style="clear: both;"></div>
+
                     <div class="col coluna-direita">
                         <!-- Botoes de compra -->
                         <div class="login" id="aqui" *ngIf="usuario == null && itemsCarrinho.length != 0">
                             <h1>É necessário realizar login para finalizar a compra</h1>
-                            <br/>
+                            <br />
                             <button class="btn btn-default" routerLink="/login">Login</button>
                         </div>
 
 
-                        <div class="rev-pt" style="margin-top: 0px;" *ngIf="usuario != null && itemsCarrinho.length != 0">
+                        <div class="rev-pt" style="margin-top: 0px;"
+                            *ngIf="usuario != null && itemsCarrinho.length != 0">
                             <h1 style="font-size: 28px;">Selecionar método de entrega</h1>
                         </div>
 
@@ -86,20 +90,129 @@
                                 <span style="font-weight: bold;">{{precoSomadoFrete | currency:'BRL'}}</span>
                             </p><br />
                             <!-- <h1>VALOR TOTAL: {{precoSomadoFrete | currency:'BRL'}}</h1><br /> -->
-                            <button class="btn btn-default pagamento-btn" (click)="finalizar()" id="button-checkout">Finalizar
+                            <button class="btn btn-default pagamento-btn" (click)="finalizar()"
+                                id="button-checkout">Finalizar
                                 compra</button>
                             <div style="clear: both;"></div>
                         </div>
                     </div>
+
                     <div style="clear: both;"></div>
-                    <div class="login" *ngIf="itemsCarrinho.length == 0">
-                        <h1 style="padding: 6px;height: 610px;max-height: 1080px;text-align: center;">O carrinho está vazio! <i
-                                class="far fa-frown"></i></h1>
-                    </div>
+
+
+                </div>
+                <div class="login" *ngIf="itemsCarrinho.length == 0">
+                    <h1 style="padding: 6px;height: 610px;max-height: 1080px;text-align: center;">O carrinho está
+                        vazio! <i class="far fa-frown"></i></h1>
                 </div>
 
             </div>
         </div>
     </div>
 </div>
-<!-- <h1 id="price">{{precoSomado}}</h1> -->
+
+<div class="container smartphone">
+    <!-- Linha HEADER-->
+    <div class="row">
+        <div class="col text-center">
+            <h1 style="padding: 40px 2%;border-bottom: 1px solid black;
+            margin-bottom: 40px;">Carrinho de compras <i style="font-size:40px;" class="fas fa-shopping-cart"></i>
+            </h1>
+        </div>
+    </div>
+
+    <!-- Linha O Carrinho esta vazio-->
+    <div class="row">
+        <div class="col text-center">
+            <div class="login" *ngIf="itemsCarrinho.length == 0">
+                <h1 style="padding: 6px;height: 610px;max-height: 1080px;text-align: center;">O carrinho está
+                    vazio! <i class="far fa-frown"></i></h1>
+            </div>
+        </div>
+    </div>
+
+    <!-- Linha que mostra os produtos que foram adicionados no carrinho -->
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <div class="box-produto" *ngIf="usuario != null && itemsCarrinho.length != 0">
+                <h3 class="revisao-smartphone">Revisão</h3>
+
+                <div style="font-family: sans-serif;" *ngFor="let i of itemsCarrinho; let ind = index">
+                    <div class="info-imagem">
+                        <img [attr.src]="'http://localhost:3000/' + i.imagem" />
+                    </div>
+
+                    <div style="font-family: 'Roboto Condensed';">
+                        <div>
+                            <p>Nome: <span style="font-weight: bold;">{{i.Nome}}</span></p>
+                            <p>Tamanho: {{i.propriedade}}</p>
+                            <p>Preço: <span style="font-weight: bold;">{{i.Preco | currency:'BRL'}}</span></p>
+                        </div>
+                        <h3 class="remover-smartphone" (click)="removerItem(ind)">Remover</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+
+        <!-- Botoes de compra -->
+        <div class="col text-center">
+            <div class="login" id="aqui" *ngIf="usuario == null && itemsCarrinho.length != 0">
+                <h1>É necessário realizar login para finalizar a compra</h1>
+                <br />
+                <button class="btn btn-default" routerLink="/login">Login</button>
+            </div>
+        </div>
+
+
+        <div class="col-md-12 text-center" *ngIf="usuario != null && itemsCarrinho.length != 0">
+            <div class="box-produto">
+                <h3 class="revisao-smartphone">Selecionar método de entrega</h3>
+
+                <div class="row">
+                    <div class="col text-left">
+                        <p>
+                            <span style="font-size: 20px;">SEDEX:
+                                <span style="font-size: 14px;"> R$ {{valorFrete}} |
+                                    <span style="font-size: 14px;"> Prazo: {{prazoFrete}} dia(s) úteis
+                                    </span>
+                                </span>
+                            </span>
+                            <mat-radio-button value="pac" (change)="attFrete()"></mat-radio-button>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col text-left">
+                        <p>
+                            <span style="font-size: 20px;">PAC:
+                                <span style="font-size: 14px;"> R$ {{valorFretePAC}} |
+                                    <span style="font-size: 14px;"> Prazo: {{prazoFretePAC}} dia(s) úteis
+                                    </span>
+                                </span>
+                            </span>
+                            <mat-radio-button value="sedex" (change)="attFrete()"></mat-radio-button>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col text-center">
+                        <p class="frase-final-smartphone" *ngIf="precoSomadoFrete == ''">Selecione um método de entrega</p><br />
+                        <p class="frase-final-smartphone" *ngIf="precoSomadoFrete != ''"> VALOR TOTAL:<span style="font-weight: bold;">{{precoSomadoFrete | currency:'BRL'}}</span></p>
+                        <br />
+                        <button class="btn-finalizar-smartphone" (click)="finalizar()" id="button-checkout">Finalizar
+                            compra</button>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
+
+    </div>
+</div>
