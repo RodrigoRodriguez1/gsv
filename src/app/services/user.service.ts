@@ -13,15 +13,15 @@ export class UsersService {
     constructor(private http: HttpClient,
         private snackBar: MatSnackBar) { }
 
-    urlProd = "http://localhost:3000/"
-    urlLocal = "http://localhost:3000/"  
+    url = "https://gsvapparel.com/api/"
+    // url = "http://localhost:3000/"
 
     createUser(request){
-        return this.http.post(this.urlProd + 'usuarios/cadastro', request)
+        return this.http.post(this.url + 'usuarios/cadastro', request)
     }
 
     consultaCEP(cep) {
-        return this.http.get(this.urlProd + 'pagamentos/consultaCEP/' + cep)
+        return this.http.get(this.url + 'pagamentos/consultaCEP/' + cep)
     }
 
 }

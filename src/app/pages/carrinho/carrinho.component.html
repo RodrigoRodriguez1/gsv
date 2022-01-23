@@ -22,7 +22,8 @@
                         <div class="informacoes-produto" style="font-family: sans-serif;"
                             *ngFor="let i of itemsCarrinho; let ind = index">
                             <div class="info-imagem">
-                                <img [attr.src]="'http://localhost:3000/' + i.imagem" />
+                                <img [attr.src]="'https://gsvapparel.com/api/' + i.imagem" />
+                                <!-- <img [attr.src]="'http://localhost:3000/' + i.imagem" /> -->
                                 <div style="clear: both;"></div>
                             </div>
 
@@ -139,7 +140,8 @@
 
                 <div style="font-family: sans-serif;" *ngFor="let i of itemsCarrinho; let ind = index">
                     <div class="info-imagem">
-                        <img [attr.src]="'http://localhost:3000/' + i.imagem" />
+                        <img [attr.src]="'https://gsvapparel.com/api/' + i.imagem" />
+                        <!-- <img [attr.src]="'http://localhost:3000/' + i.imagem" /> -->
                     </div>
 
                     <div style="font-family: 'Roboto Condensed';">

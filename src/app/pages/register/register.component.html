@@ -78,7 +78,7 @@
 
                 <mat-form-field>
                     
-                    <input formControlName="cep" [(ngModel)]="cep" matInput  mask="00000-000 " name="cep"
+                    <input formControlName="cep" placeholder="CEP" [(ngModel)]="cep" matInput  mask="00000-000 " name="cep"
                         id="cep" (blur)="consultaCEP($event.target.value)" required>
                 </mat-form-field>
 

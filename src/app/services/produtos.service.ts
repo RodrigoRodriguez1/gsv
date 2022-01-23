@@ -13,7 +13,8 @@ export class ProdutosService {
     "Content-Type": "multipart/form-data"
   })
 
-  apiUrl = 'http://localhost:3000'
+  apiUrl = 'https://gsvapparel.com/api'
+  // apiUrl = 'http://localhost:3000'
 
   constructor(private http: HttpClient, private snackBar: MatSnackBar) { }
 

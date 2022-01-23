@@ -32,8 +32,8 @@ export class ProdutoDetalheComponent implements OnInit {
   quantidadeProduto = 0
   imagemProduto = ''
   valorPropriedade
-  propriedades
-  produtos: any[] = []
+  propriedades: any
+  produtos: any = []
   images: any[] = []
   imagem1: any;
   itemsCarrinho = []

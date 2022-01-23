@@ -71,8 +71,10 @@
   
             <div  class="col-md-3" *ngFor="let item of produtos;">
               <mat-card class="card">
-                <img mat-card-image [attr.src]="'http://localhost:3000/' + item.imagem" width="200px"
-                  matTooltip="{{item.nome}}" [routerLink]="['/produto-detalhado', item.idProdutos]" />
+                <img mat-card-image [attr.src]="'https://gsvapparel.com/api/' + item.imagem" width="200px"
+                matTooltip="{{item.nome}}" [routerLink]="['/produto-detalhado', item.idProdutos]" />
+                <!-- <img mat-card-image [attr.src]="'http://localhost:3000/' + item.imagem" width="200px"
+                  matTooltip="{{item.nome}}" [routerLink]="['/produto-detalhado', item.idProdutos]" /> -->
                 <mat-card-content>
                   <h2 class="nome">{{item.nome}}</h2>
                   <h3 class="preco" style="font-weight: bold;">{{item.preco | currency: 'BRL'}}</h3>

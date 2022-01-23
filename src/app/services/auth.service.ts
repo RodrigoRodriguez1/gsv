@@ -12,8 +12,8 @@ import { map } from 'rxjs/operators';
 
 export class AuthService {
 
-  urlProd = "http://localhost:3000/usuarios/"  
-  urlLocal = "http://localhost:3000/usuarios/"  
+  url = "https://gsvapparel.com/api/usuarios/"  
+  // url = "http://localhost:3000/usuarios/"
 
   constructor(private router: Router,
               private snackBar: MatSnackBar,
@@ -24,7 +24,7 @@ export class AuthService {
   })
 
   loginUser(email: string, senha: string): Observable<any> {
-    return this.http.post(this.urlProd + 'loginec', { email, senha }, { headers: this.headers })
+    return this.http.post(this.url + 'loginec', { email, senha }, { headers: this.headers })
       .pipe(map(data => data))
   }
 

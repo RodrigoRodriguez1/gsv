@@ -38,6 +38,9 @@ import { registerLocaleData } from '@angular/common';
 import { AtendimentoComponent } from './pages/atendimento/atendimento.component';
 import { PaginanaoencontradaComponent } from './pages/paginanaoencontrada/paginanaoencontrada.component';
 
+// DESBUGANDO REFRESH EM PRODUCAO
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+
 registerLocaleData(ptBr);
 
 @NgModule({
@@ -80,6 +83,7 @@ registerLocaleData(ptBr);
     // NgxMaskModule.forRoot(),
   ],
   providers: [HttpClientModule,
+  {provide: LocationStrategy, useClass: HashLocationStrategy},
   { provide: LOCALE_ID, useValue: 'pt' }],
   
   bootstrap: [AppComponent]

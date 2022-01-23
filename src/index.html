@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <title>GSV APPAREL</title>
-  <base href="/">
+  <base href="./">
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
   <meta http-equiv="X-UA-Compatible" content="IE-edge">
@@ -38,7 +38,8 @@
     
 
 (async () => {
-    const rawResponse = await fetch("http://localhost:3000/pagamentos/create_preference", {
+    // const rawResponse = await fetch("http://localhost:3000/pagamentos/create_preference", {
+      const rawResponse = await fetch("https://gsvapparel.com/api/pagamentos/create_preference", {
       method: "POST",
       headers: {
       'Accept': 'application/json',
