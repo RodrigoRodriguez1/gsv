@@ -44,6 +44,10 @@ mat-radio-button {
     margin: 18px;
 }
 
+.card-sem-borda-celular {
+
+}
+
 .card-sem-borda:hover {
     width: 250px;
     height: 200px;
@@ -52,6 +56,14 @@ mat-radio-button {
 
 .foto-produto {
     width: 200px;
+    height: auto;
+    transition: 0.3s;
+    display: flex;
+    margin: auto;
+}
+
+.foto-produto-celular {
+    width: 150px;
     height: auto;
     transition: 0.3s;
     display: flex;

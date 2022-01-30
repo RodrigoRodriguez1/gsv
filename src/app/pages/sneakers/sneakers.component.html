@@ -142,10 +142,9 @@
         </div>
         <div class="container-fluid">
           <div class="row">
-            <div class="col card-sem-borda" *ngFor="let item of produtos;"
+            <div class="col-6 card-sem-borda-celular" *ngFor="let item of produtos;"
               [routerLink]="['/produto-detalhado', item.idProdutos, item.nome, item.preco, item.quantidade, item.imagem]">
-              <!-- <mat-card class="card"> -->
-                <img class="foto-produto" mat-card-image [attr.src]="'https://gsvapparel.com/api/' + item.imagem"
+                <img class="foto-produto-celular" mat-card-image [attr.src]="'https://gsvapparel.com/api/' + item.imagem"
                 matTooltip="{{item.nome}}" [routerLink]="['/produto-detalhado', item.idProdutos, item.nome, item.preco, item.quantidade, item.imagem]" />
               <!-- <img class="foto-produto" mat-card-image [attr.src]="'http://localhost:3000/' + item.imagem"
                 matTooltip="{{item.nome}}" [routerLink]="['/produto-detalhado', item.idProdutos, item.nome, item.preco, item.quantidade, item.imagem]" /> -->
