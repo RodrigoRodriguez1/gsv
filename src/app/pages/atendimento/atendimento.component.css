@@ -2,7 +2,8 @@
     font-family: 'Roboto';
 }
 
-.contents{
+.contents p{
+    line-height: 96px;
 }
 
 .contents p{
@@ -31,3 +32,4 @@
 .resp{
     padding: 10px;
 }
+
