@@ -88,13 +88,13 @@ export class ProdutoDetalheComponent implements OnInit {
       }
     })
 
-      
-      // Calculo da Parcela
-      var spanDoResultPrimeiro = document.getElementById("pc-calc")
-      spanDoResultPrimeiro.innerHTML += Math.ceil(this.precoProduto / 10);
 
-      var spanDoResultSegundo = document.getElementById("pc-or-calc")
-      spanDoResultSegundo.innerHTML += Math.ceil(this.precoProduto * 0.90) 
+    // Calculo da Parcela
+    var spanDoResultPrimeiro = document.getElementById("pc-calc")
+    spanDoResultPrimeiro.innerHTML += Math.ceil(this.precoProduto / 10);
+
+    var spanDoResultSegundo = document.getElementById("pc-or-calc")
+    spanDoResultSegundo.innerHTML += Math.ceil(this.precoProduto * 0.90)
   }
 
   customOptions: OwlOptions = {
@@ -201,7 +201,10 @@ export class ProdutoDetalheComponent implements OnInit {
         localStorage.setItem('carrinho', JSON.stringify(this.itemsCarrinho))
         localStorage.getItem('carrinho')
       }
-      window.location.reload();
+      this.showMessage('Produto adicionado no carrinho.')
+      setTimeout(() => {
+        window.location.reload();
+      }, 500);
     }
   }
 

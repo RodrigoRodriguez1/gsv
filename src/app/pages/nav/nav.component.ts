@@ -15,6 +15,8 @@ export class NavComponent implements OnInit {
   qtdCarrinhoParse;
   qtdCarrinho;
 
+  cookies: any = 'true'
+
   ngOnInit() {
     this.takeUser()
 
@@ -23,8 +25,13 @@ export class NavComponent implements OnInit {
       this.qtdCarrinho = 0
     } else {
       this.qtdCarrinho = this.qtdCarrinhoParse.length
-
     }
+
+    // Verificando se o usuario aceitou os cookies:
+
+    this.cookies = localStorage.getItem('cookies')
+    if(this.cookies == null)
+    this.cookies = 'true'
   }
 
   takeUser() {
@@ -50,6 +57,11 @@ export class NavComponent implements OnInit {
     this.router.navigate(['/carrinho']).then(nav => {
       window.location.reload()
     });
+  }
+
+  proCookies() {
+    this.cookies = false
+    localStorage.setItem('cookies', 'false')
   }
 
 }

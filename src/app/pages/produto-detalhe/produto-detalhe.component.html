@@ -129,7 +129,7 @@
 
       <h2 style="text-align: left;font-weight: normal;font-size: 25px;margin-top: 50px;">Tamanho</h2>
 
-      <select (change)="atribuiValorPropriedade($event.target.innerText)" [(ngModel)]="valorPropriedade" class="slPropriedade">
+      <select (change)="atribuiValorPropriedade($event.target.innerText)" (blur)="atribuiValorPropriedade($event.target.innerText)" [(ngModel)]="valorPropriedade" class="slPropriedade">
         <option *ngFor="let p of propriedades.mensagem" [value]='p.nome' value='p.nome' name="rdPropriedade" id="rdPropriedade">
           {{p.nome}}</option>
       </select>
