@@ -48,9 +48,7 @@
   font-weight: bold;
 }
 
-.down-item{
-  padding-left: 116px;
-}
+
 
 // ###################################################
 
@@ -150,13 +148,16 @@
   }
 
   .logo-navbar{
-    width: 110px;
-    right: 10%;
-    top: -2px;
+    width: 100px;
+    position: absolute;
+    position: absolute;
+    left: 50%;
+    top: 75px;
+
+    transform: translate(-50%, -50%);
   }
 
-  .logo-navbar:hover {
-    width: 110px;
-    opacity: 1;
+  .down-item{
+    padding-left: 5px!important;
   }
 }
