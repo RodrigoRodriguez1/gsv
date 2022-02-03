@@ -58,14 +58,14 @@
     height: 720px !important;
     width:auto;
     width: 1480px !important;
-    background-image: url('../../../images/J-low-mocha-teste.jpg');
+    background-image: url('../../../images/versao_pc.jpg');
 }
 
 .foto3{
     height: 720px !important;
     width:auto;
     width: 1480px !important;
-    background-image: url('../../../images/J-low-mocha-teste.jpg');
+    background-image: url('../../../images/versao_pc.jpg');
 }
 
 .containerSlide{
@@ -153,11 +153,11 @@
 }
 
 .jordan{
-    background-image: url('../../../images/jdb.jpg');
+    background-image: url('../../../images/jordan_destaque_pc.jpg');
 }
 
 .yeezy{
-    background-image: url('../../../images/yzb.jpg');
+    background-image: url('../../../images/yeezy_destaque_pc.jpg');
 }
 
 .product-home{
@@ -281,14 +281,14 @@
     height: 720px !important;
     width:auto;
     width: 1480px !important;
-    background-image: url('../../../images/J-low-mocha-teste.jpg');
+    background-image: url('../../../images/versao_pc.jpg');
 }
 
 .foto3{
     height: 720px !important;
     width:auto;
     width: 1480px !important;
-    background-image: url('../../../images/J-low-mocha-teste.jpg');
+    background-image: url('../../../images/versao_pc.jpg');
 }
 
 .categorias-home-celular{
@@ -321,8 +321,12 @@
     font-size: 20px;
 }
 
+.jordan-celular{
+    background-image: url('../../../images/jordan_destaque_celular.jpg');
+}
+
 .yeezy-celular {
-    background-image: url('../../../images/yzb.jpg');
+    background-image: url('../../../images/yeezy_destaque_celular.jpg');
     margin-top: 110px;
 }
 

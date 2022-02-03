@@ -96,12 +96,45 @@ export class ProdutoDetalheComponent implements OnInit {
     var spanDoResultSegundo = document.getElementById("pc-or-calc")
     spanDoResultSegundo.innerHTML += Math.ceil(this.precoProduto * 0.90)
 
+    // Código ruim pra mostrar as tabelas
+
     $("#btn-masculino").click(function(){
       $(".tabela-masculino").animate({
         height: 'toggle'
       })
     })
 
+    $("#btn-feminino").click(function(){
+      $(".tabela-feminino").animate({
+        height: 'toggle'
+      })
+    })
+
+    $("#btn-infantil").click(function(){
+      $(".tabela-infantil").animate({
+        height: 'toggle'
+      })
+    })
+
+    // Mais código ruim pra mostrar as tabelas no celular
+
+    $("#btn-masculino-celular").click(function(){
+      $(".tabela-masculino").animate({
+        height: 'toggle'
+      })
+    })
+
+    $("#btn-feminino-celular").click(function(){
+      $(".tabela-feminino").animate({
+        height: 'toggle'
+      })
+    })
+
+    $("#btn-infantil-celular").click(function(){
+      $(".tabela-infantil").animate({
+        height: 'toggle'
+      })
+    })
   }
 
   customOptions: OwlOptions = {
