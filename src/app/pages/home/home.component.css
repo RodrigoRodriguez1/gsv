@@ -27,6 +27,7 @@
     font-size: 20px;
     font-family: 'Roboto';
     letter-spacing: 5px;
+    padding-top: 15px;
 }
 
 .logo{
@@ -132,6 +133,7 @@
     font-size: 22px;
     letter-spacing: 2px;
     cursor: pointer;
+    margin: 8px;
 }
 
 .row-content{
@@ -150,11 +152,11 @@
 }
 
 .jordan{
-    background-image: url('../../../images/Jordan-Brand.jpg');
+    background-image: url('../../../images/jdb.jpg');
 }
 
 .yeezy{
-    background-image: url('../../../images/yeezy-brand.jpg');
+    background-image: url('../../../images/yzb.jpg');
 }
 
 .product-home{
@@ -298,7 +300,7 @@
 .categorias-home-content-celular {
     text-align: center;
     padding: 10px 0;
-    margin-top: 30px;
+    margin-top: 150px;
 }
 
 .categorias-home-content-celular h2 {
@@ -319,17 +321,17 @@
 }
 
 .yeezy-celular {
-    background-image: url('../../../images/yeezy-brand.jpg');
-    margin-top: 10px;
+    background-image: url('../../../images/yzb.jpg');
+    margin-top: 110px;
 }
 
 .row-content-celular {
     text-align: center;
     margin: auto;
-    width: 100%;
+    width: 110%;
     height: auto;
     position: relative;
-    transform: translate(0%,185px);
+    transform: translate(-5%,165px);
     background-color: rgba(1,1,1,0.8);
     cursor: pointer;
 }

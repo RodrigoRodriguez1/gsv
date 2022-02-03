@@ -77,6 +77,30 @@ button:hover {
     transition: 0.5s;
 }
 
+.btn-tabela{
+    font-family: 'Roboto', sans-serif;
+    outline: none;
+    background: white;
+    color: black;
+    border: none;
+    padding: 8px;
+    margin-bottom: 10px;
+    text-align: left;
+    transition: 0.5s;
+}
+
+.btn-tabela:hover{
+    background-color: white;
+}
+
+.tabela-masculino{
+    display: none;
+}
+
+.tabela tr td{
+    padding: 10px;
+}
+
 /* SMARTPHONE */
 
 .carousel-smartphone {

@@ -95,6 +95,13 @@ export class ProdutoDetalheComponent implements OnInit {
 
     var spanDoResultSegundo = document.getElementById("pc-or-calc")
     spanDoResultSegundo.innerHTML += Math.ceil(this.precoProduto * 0.90)
+
+    $("#btn-masculino").click(function(){
+      $(".tabela-masculino").animate({
+        height: 'toggle'
+      })
+    })
+
   }
 
   customOptions: OwlOptions = {

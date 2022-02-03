@@ -98,8 +98,8 @@
 
     <div class="row">
       <div class="col-md-3">
-        <h1>Sneakers</h1>
-
+        <h1>Sneakers <span style="font-size: 16px;margin-left: 150px;"><button id="show-filters" class="show-filters"><i class="fas fa-filter"></i> Filtros</button></span></h1>
+        
         <div class="filtro">
           <mat-form-field class="filtro" appearance="legacy">
             <mat-label>Filtrar por</mat-label>
@@ -111,51 +111,58 @@
           </mat-form-field>
         </div>
 
-        <h4>Cores</h4>
+        <div class="filtro-separado">
+          <h4>Cores</h4>
 
-        <select class="select_props">
-          <option *ngFor="let c of cores" [value]="c">{{c}}</option>
-        </select>
+          <select class="select_props">
+            <option *ngFor="let c of cores" [value]="c">{{c}}</option>
+          </select>
 
-        <!--
-        <mat-radio-group>
-          <mat-radio-button *ngFor="let c of cores" [value]="c" (change)="filtroCores($event)" style="width: 50%;">{{c}}
-          </mat-radio-button>
-        </mat-radio-group>
-        -->
-        
-        <hr />
+          <!--
+          <mat-radio-group>
+            <mat-radio-button *ngFor="let c of cores" [value]="c" (change)="filtroCores($event)" style="width: 50%;">{{c}}
+            </mat-radio-button>
+          </mat-radio-group>
+          -->
+          
+          <hr />
+        </div>
 
-        <h4>Marcas</h4>
+        <div class="filtro-separado">
+          <h4>Marcas</h4>
 
-        <select class="select_props">
-          <option *ngFor="let mSelecionada of marca" [value]="mSelecionada">{{mSelecionada}}</option>
-        </select>
+          <select class="select_props">
+            <option *ngFor="let mSelecionada of marca" [value]="mSelecionada">{{mSelecionada}}</option>
+          </select>
 
-        <!--
-        <mat-radio-group>
-          <mat-radio-button *ngFor="let mSelecionada of marca" [value]="mSelecionada" (change)="filtroMarcas($event)"
-            style="width: 50%;">{{mSelecionada}}</mat-radio-button>
-        </mat-radio-group>
-        -->
+          <!--
+          <mat-radio-group>
+            <mat-radio-button *ngFor="let mSelecionada of marca" [value]="mSelecionada" (change)="filtroMarcas($event)"
+              style="width: 50%;">{{mSelecionada}}</mat-radio-button>
+          </mat-radio-group>
+          -->
 
-        <hr />
+          <hr />
+        </div>
 
-        <h4>Numeros</h4>
+        <div class="filtro-separado">
+          <h4>Numeros</h4>
 
-        <select class="select_props">
-          <option *ngFor="let n of numero" [value]="n">{{n}}</option>
-        </select>
+          <select class="select_props">
+            <option *ngFor="let n of numero" [value]="n">{{n}}</option>
+          </select>
 
-        <!--
-        <mat-radio-group>
-          <mat-radio-button *ngFor="let n of numero" [value]="n" (change)="filtroNumero($event)" style="width: 50%;">
-            {{n}}
-          </mat-radio-button>
-        </mat-radio-group>
-        -->
+          <!--
+          <mat-radio-group>
+            <mat-radio-button *ngFor="let n of numero" [value]="n" (change)="filtroNumero($event)" style="width: 50%;">
+              {{n}}
+            </mat-radio-button>
+          </mat-radio-group>
+          -->
 
-        <hr />
+          <hr />
+        </div>
+
       </div>
       <div class="col-md-9 box-card d-flex">
         <div class="carregando" *ngIf="carregando">

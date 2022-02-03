@@ -31,6 +31,13 @@ export class SneakersComponent implements OnInit {
   numero = []
 
   ngOnInit() {
+
+    $("#show-filters").click(function(){
+      $(".filtro-separado").animate({
+        height: 'toggle'
+      })
+    })
+
     // ################################################################
     // Tirando o finalizar compra caso necessario (ajuste tecnico)
     $(function () {

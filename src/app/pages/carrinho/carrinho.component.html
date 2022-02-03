@@ -136,7 +136,7 @@
     <div class="row">
         <div class="col-md-12 text-center">
             <div class="box-produto" *ngIf="usuario != null && itemsCarrinho.length != 0">
-                <h3 class="revisao-smartphone">Revisão</h3>
+                <h3 class="revisao-smartphone" style="padding-top: 5px;">Revisão</h3>
 
                 <div style="font-family: sans-serif;" *ngFor="let i of itemsCarrinho; let ind = index">
                     <div class="info-imagem">
@@ -145,7 +145,7 @@
                     </div>
 
                     <div style="font-family: 'Roboto Condensed';">
-                        <div>
+                        <div style="text-align: left;margin-left: 60px;">
                             <p>Nome: <span style="font-weight: bold;">{{i.Nome}}</span></p>
                             <p>Tamanho: {{i.propriedade}}</p>
                             <p>Preço: <span style="font-weight: bold;">{{i.Preco | currency:'BRL'}}</span></p>
@@ -171,12 +171,12 @@
 
         <div class="col-md-12 text-center" *ngIf="usuario != null && itemsCarrinho.length != 0">
             <div class="box-produto">
-                <h3 class="revisao-smartphone">Selecionar método de entrega</h3>
+                <h3 class="revisao-smartphone" style="padding-top: 5px;">Selecionar método de entrega</h3>
 
                 <div class="row">
                     <div class="col text-left">
                         <p>
-                            <span style="font-size: 20px;">SEDEX:
+                            <span style="font-size: 20px;margin-left: 30px;">SEDEX:
                                 <span style="font-size: 14px;"> R$ {{valorFrete}} |
                                     <span style="font-size: 14px;"> Prazo: {{prazoFrete}} dia(s) úteis
                                     </span>
@@ -190,7 +190,7 @@
                 <div class="row">
                     <div class="col text-left">
                         <p>
-                            <span style="font-size: 20px;">PAC:
+                            <span style="font-size: 20px;margin-left: 30px;">PAC:
                                 <span style="font-size: 14px;"> R$ {{valorFretePAC}} |
                                     <span style="font-size: 14px;"> Prazo: {{prazoFretePAC}} dia(s) úteis
                                     </span>

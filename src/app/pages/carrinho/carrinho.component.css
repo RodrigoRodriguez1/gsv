@@ -65,7 +65,6 @@
     margin-left: 60px;
     font-size: 19px;
     padding-top: 20px;
-    
 }
 
 .info-imagem{
@@ -176,4 +175,8 @@
     border: none;
     border-radius: 6px;
     width: 50%;
+}
+
+@media (max-width: 991px) {
+    
 }
