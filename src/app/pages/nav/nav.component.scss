@@ -83,6 +83,10 @@
   color: rgb(212, 212, 212);
 }
 
+.caixa-cima {
+  z-index: 999;
+}
+
 
 // AVISO COOKIES
 .cookies {
@@ -155,6 +159,10 @@
     top: 75px;
 
     transform: translate(-50%, -50%);
+  }
+
+  .logo-navbar:hover {
+    width: 100px;
   }
 
   .down-item{
