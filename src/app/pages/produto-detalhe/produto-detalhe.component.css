@@ -91,14 +91,30 @@ button:hover {
 
 .btn-tabela:hover{
     background-color: white;
+    font-size: 17px;
 }
 
 .tabela-masculino{
     display: none;
 }
+.tabela-feminino{
+    display: none;
+}
+.tabela-infantil{
+    display: none;
+}
+
+.tabela{
+    width: 100%;
+}
 
 .tabela tr td{
     padding: 10px;
+    font-weight: bold;
+}
+
+.infos-tabela{
+    background-color: rgb(245, 245, 245);
 }
 
 /* SMARTPHONE */

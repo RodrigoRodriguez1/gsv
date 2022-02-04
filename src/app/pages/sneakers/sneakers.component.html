@@ -19,7 +19,7 @@
 
         <div class="filtro">
           <mat-form-field class="filtro" appearance="legacy">
-            <mat-label>Filtrar por</mat-label>
+            <mat-label>Ordenar por</mat-label>
             <mat-select (selectionChange)="filtros($event)">
               <mat-option *ngFor="let f of filtro" [value]="f.value">
                 {{f.nome}}
@@ -108,7 +108,7 @@
       <div class="col-md-3">
         <div class="filtro">
           <mat-form-field class="filtro" appearance="legacy">
-            <mat-label>Filtrar por</mat-label>
+            <mat-label>Ordenar por</mat-label>
             <mat-select (selectionChange)="filtros($event)">
               <mat-option *ngFor="let f of filtro" [value]="f.value">
                 {{f.nome}}
