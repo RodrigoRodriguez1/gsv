@@ -22,8 +22,9 @@ export class PedidosService {
     return this.http.get(`${this.apiUrl}/pedidos/pedidosCliente/${id}`)
   }
 
-  public pedidoDetalhadoAreaCliente(id) {
-    return this.http.get(`${this.apiUrl}/pedidos/pedidoDetalhadoAreaCliente/${id}`)
+  public pedidoDetalhadoAreaCliente(idPedido) {
+    let currentUser = JSON.parse(localStorage.getItem('currentUser'))
+    return this.http.get(`${this.apiUrl}/pedidos/pedidoDetalhadoAreaCliente/${idPedido}/${currentUser.id_usuario}`)
   }
 
 }

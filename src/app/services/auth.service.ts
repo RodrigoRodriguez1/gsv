@@ -33,10 +33,6 @@ export class AuthService {
     localStorage.setItem("currentUser", user_string)
   }
 
-  setToken(token): void {
-    localStorage.setItem("accessToken", token)
-  }
-
   getToken() {
     return localStorage.getItem("accessToken")
   }

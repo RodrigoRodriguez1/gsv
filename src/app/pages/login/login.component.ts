@@ -45,11 +45,12 @@ export class LoginComponent implements OnInit {
     if (this.registerForm.valid) {
       return this.authService.loginUser(this.registerForm.value['login'], this.registerForm.value['password']).subscribe(data => {
         if (this.registerForm.controls['login'].value === data.results[0].email) {
+          console.log("RESULTSSS: ")
+          console.log(data['results'][0])
           this.authService.setUser(data['results'][0])
           this.token = data.token
-          this.authService.setToken(this.token)
-          this.freteUsuario()
-          this.freteUsuarioPAC()
+          this.freteUsuario();
+          this.freteUsuarioPAC();
           this.router.navigate(['/']).then(nav => {
             window.location.reload();
           });
